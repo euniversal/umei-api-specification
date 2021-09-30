@@ -1,2 +1,4 @@
-# uemi-api-specification
-UEMI API specifications 
+# UEMI API specifications
+
+Specification for the API that FMOs in the eUniversal project 
+should support. 
