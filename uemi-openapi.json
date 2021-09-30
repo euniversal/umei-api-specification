@@ -11,7 +11,428 @@
     }
   ],
   "paths": {
-    
+    "/BaselineIntervals": {
+      "get": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "List or search BaselineIntervals",
+        "operationId": "BaselineInterval_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Create a new BaselineInterval",
+        "operationId": "BaselineInterval_Create_Single",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BaselineIntervals/{id}": {
+      "get": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Get an existing BaselineInterval by id",
+        "operationId": "BaselineInterval_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Update an existing BaselineInterval",
+        "operationId": "BaselineInterval_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Patch / partially update an existing BaselineInterval",
+        "operationId": "BaselineInterval_Patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Delete/Remove an existing BaselineInterval",
+        "operationId": "BaselineInterval_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
   },
   "components": {
     "schemas": {
