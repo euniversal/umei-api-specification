@@ -11,6 +11,439 @@
     }
   ],
   "paths": {
+    "/AssetPortfolios": {
+      "get": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "List or search AssetPortfolios",
+        "operationId": "AssetPortfolio_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "embeddings",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "Create a new AssetPortfolio",
+        "operationId": "AssetPortfolio_Create",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AssetPortfolios/{id}": {
+      "get": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "Get an existing AssetPortfolio by id",
+        "operationId": "AssetPortfolio_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "Update an existing AssetPortfolio",
+        "operationId": "AssetPortfolio_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "Patch / partially update an existing AssetPortfolio",
+        "operationId": "AssetPortfolio_Patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetPortfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AssetPortfolio"
+        ],
+        "summary": "Delete/Remove an existing AssetPortfolio",
+        "operationId": "AssetPortfolio_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/BaselineIntervals": {
       "get": {
         "tags": [
@@ -546,6 +979,60 @@
               "$ref": "#/components/schemas/Link"
             },
             "nullable": false,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "AssetPortfolio": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this item",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalProperties": true
+        }
+      },
+      "AssetPortfolioSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetPortfolio"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
             "readOnly": true
           }
         },
