@@ -1007,10 +1007,10 @@
           },
           "name": {
             "type": "string",
-            "nullable": true
-          },
-          "additionalProperties": true
-        }
+            "nullable": false
+          }
+        },
+        "additionalProperties": true
       },
       "AssetPortfolioSearchResult": {
         "type": "object",
