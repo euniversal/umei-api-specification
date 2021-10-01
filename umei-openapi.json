@@ -61,17 +61,6 @@
               },
               "nullable": true
             }
-          },
-          {
-            "name": "embeddings",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
           }
         ],
         "responses": {
@@ -865,6 +854,1146 @@
           }
         }
       }
+    },
+    "/GridNodes/grid": {
+      "get": {
+        "tags": [
+          "GridNode"
+        ],
+        "summary": "Get grid hierarchy",
+        "operationId": "GridNode_GetGrid",
+        "parameters": [
+          {
+            "name": "marketId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TreeNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MeterReadings/{id}": {
+      "get": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Get an existing MeterReading by id",
+        "operationId": "MeterReading_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Update an existing MeterReading",
+        "operationId": "MeterReading_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Patch / partially update an existing MeterReading",
+        "operationId": "MeterReading_Patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Delete/Remove an existing MeterReading",
+        "operationId": "MeterReading_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MeterReadings": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Create a new MeterReading",
+        "operationId": "MeterReading_Create",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Delete/Remove an existing MeterReading",
+        "operationId": "MeterReading_Delete",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "List or search MeterReadings",
+        "operationId": "MeterReading_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MeterReadings/create-multiple": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "operationId": "MeterReading_CreateMultiple",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeterReading"
+                },
+                "nullable": true
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeterReading"
+                },
+                "nullable": true
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeterReading"
+                },
+                "nullable": true
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeterReading"
+                },
+                "nullable": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/MeterReadings/import": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "operationId": "MeterReading_Import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Orders": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "List or search Orders",
+        "operationId": "Order_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Create a new Order",
+        "operationId": "Order_Create",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Orders/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Get an existing Order by id",
+        "operationId": "Order_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Update an existing Order",
+        "operationId": "Order_Update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Patch / partially update an existing order",
+        "operationId": "Order_Patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Delete/Remove an existing Order",
+        "operationId": "Order_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Trades": {
+      "get": {
+        "tags": [
+          "Trade"
+        ],
+        "summary": "List or search Trades",
+        "operationId": "Trade_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1037,6 +2166,345 @@
           }
         },
         "additionalProperties": true
+      },
+      "TreeNode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": false,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": false,
+            "readOnly": true
+          },
+          "parentId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TreeNode"
+            },
+            "nullable": false,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeterReading": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this item",
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "assetPortfolioId": {
+            "type": "string",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "energyProduction": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "energyConsumption": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "averagePowerConsumption": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "averagePowerProduction": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "MeterReadingSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeterReading"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this item",
+            "nullable": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "The grid node this order applies to. \r\nCalculated and validated for sell orders.\r\nRequired for buy orders.",
+            "nullable": true
+          },
+          "marketId": {
+            "type": "string",
+            "description": "Reference to the market.",
+            "nullable": true
+          },
+          "assetPortfolioId": {
+            "type": "string",
+            "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
+            "nullable": true
+          },
+          "regulationType": {
+            "enum": [
+              "Up",
+              "Down"
+            ],
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "The amount of power or energy being sold.\r\n            \r\nUnit: Mega watt, or MW, or MWh/h. \r\n\r\nFor Power, it denotes the max (in absolute terms) power\r\nconsumption/production during that period.\r\n            \r\nFor Energy, it denotes the energy available during the specified\r\nperiod. The unit is still MW, thus the length of the interval needs\r\nto be taken into account to calculate the actual energy usage/production.",
+            "format": "double",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "The price pr unit (MWh).",
+            "format": "double",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this order applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this order applies.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": true,
+        "description": ""
+      },
+      "OrderSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Order"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Trade": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this item",
+            "nullable": true
+          },
+          "marketId": {
+            "type": "string",
+            "description": "Reference to the market.",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "description": "Reference to the order.",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Quantity traded/filled.",
+            "format": "double",
+            "nullable": true
+          },
+          "side": {
+            "enum": [
+              "Buy",
+              "Sell"
+            ],
+            "type": "string",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetPortfolioId": {
+            "type": "string",
+            "nullable": true
+          },
+          "regulationType": {
+            "enum": [
+              "Up",
+              "Down"
+            ],
+            "type": "string",
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "customProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "TradeSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trade"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
       }
     }
   }
