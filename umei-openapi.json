@@ -1440,103 +1440,6 @@
         }
       }
     },
-    "/MeterReadings/from-source": {
-      "get": {
-        "tags": [
-          "MeterReading"
-        ],
-        "operationId": "MeterReading_GetMeterReadings",
-        "parameters": [
-          {
-            "name": "assetPortfolioId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
-          },
-          {
-            "name": "periodFromInclusive",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "periodToExclusive",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MeterReading"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/MeterReadings/import": {
       "post": {
         "tags": [
@@ -1892,7 +1795,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Patching an orders price/quantity will cancel the order and create a new one, see response headers",
+        "summary": "Patch / partially update an existing order",
         "operationId": "Order_Patch",
         "parameters": [
           {
@@ -2314,26 +2217,6 @@
             "description": "Status for this item",
             "nullable": true
           },
-          "created": {
-            "type": "string",
-            "description": "Item creation timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "createdByUserId": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastModified": {
-            "type": "string",
-            "description": "Item modification timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lastModifiedByUserId": {
-            "type": "string",
-            "nullable": true
-          },
           "links": {
             "type": "array",
             "items": {
@@ -2346,14 +2229,6 @@
             "type": "string",
             "nullable": true
           },
-          "assetId": {
-            "type": "string",
-            "nullable": true
-          },
-          "assetGridAssignmentId": {
-            "type": "string",
-            "nullable": true
-          },
           "periodFrom": {
             "type": "string",
             "format": "date-time",
@@ -2362,10 +2237,6 @@
           "periodTo": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
-          },
-          "batchReference": {
-            "type": "string",
             "nullable": true
           },
           "energyProduction": {
@@ -2389,7 +2260,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": true
       },
       "MeterReadingSearchResult": {
         "type": "object",
@@ -2438,54 +2309,6 @@
             "description": "Status for this item",
             "nullable": true
           },
-          "created": {
-            "type": "string",
-            "description": "Item creation timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "createdByUserId": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastModified": {
-            "type": "string",
-            "description": "Item modification timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lastModifiedByUserId": {
-            "type": "string",
-            "nullable": true
-          },
-          "completionType": {
-            "enum": [
-              "Filled",
-              "Killed",
-              "Cancelled",
-              "Expired",
-              "Rejected"
-            ],
-            "type": "string",
-            "description": "For closed/inactive orders, this field indicates why/how\r\nthe order was closed.",
-            "nullable": true
-          },
-          "ownerOrganizationId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validFrom": {
-            "type": "string",
-            "description": "The timestamp at which this order becomes active/tradable.  \r\nDefaults to current date time.\r\nSupport for future orders not currently implemented.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "validTo": {
-            "type": "string",
-            "description": "The timestamp this order expires / becomes inactive. \r\nMust be before PeriodTo.",
-            "format": "date-time",
-            "nullable": true
-          },
           "gridNodeId": {
             "type": "string",
             "description": "The grid node this order applies to. \r\nCalculated and validated for sell orders.\r\nRequired for buy orders.",
@@ -2501,50 +2324,10 @@
             "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
             "nullable": true
           },
-          "supplierOrganizationId": {
-            "type": "string",
-            "description": "For sell orders, this field is set to the SupplierOrganizationId of the asset portfolio.\r\nFor buy orders, this is used to a make a buy-order directed towards a specific BRP.",
-            "nullable": true
-          },
-          "side": {
-            "enum": [
-              "Buy",
-              "Sell"
-            ],
-            "type": "string",
-            "description": "Direction of order - buy or sell sell.\r\nRequired on create.\r\nNot updateable.",
-            "nullable": true
-          },
-          "comments": {
-            "type": "string",
-            "nullable": true
-          },
-          "externalReference": {
-            "type": "string",
-            "nullable": true
-          },
-          "fillType": {
-            "enum": [
-              "Normal",
-              "FillAndKill",
-              "FillOrKill"
-            ],
-            "type": "string",
-            "nullable": true
-          },
           "regulationType": {
             "enum": [
               "Up",
               "Down"
-            ],
-            "type": "string",
-            "nullable": true
-          },
-          "priceType": {
-            "enum": [
-              "Limit",
-              "Market",
-              "PayAsCleared"
             ],
             "type": "string",
             "nullable": true
@@ -2555,85 +2338,10 @@
             "format": "double",
             "nullable": true
           },
-          "minimumQuantity": {
-            "type": "number",
-            "description": "The order will not be partially filled lower than the minimum quantity.",
-            "format": "double",
-            "nullable": true
-          },
-          "flexMarginPrice": {
-            "type": "number",
-            "description": "The marginal price of the flexibility. \r\nWhen posting flexibility sell orders, this price represents\r\n the actual income while RebalancePrice will have to be paid\r\n back to the BRP (at least for some FSPs).\r\n \r\nAlso known as: Premium, ReservationPrice\r\nThe price is pr unit (MWh)",
-            "format": "double",
-            "nullable": true
-          },
-          "rebalancePrice": {
-            "type": "number",
-            "description": "The cost of rebalancing the energy bought.\r\nDefaults (and restricted) to 0 for Energy markets,\r\n and for buy orders.\r\nOnly applies to power markets.\r\n\r\nAlso known as: ActivationPrice\r\nThe price is pr unit (MWh).",
-            "format": "double",
-            "nullable": true
-          },
           "unitPrice": {
             "type": "number",
-            "description": "Sum of FlexMarginPrice and RebalancePrice.\r\nThe price is pr unit (MWh).",
+            "description": "The price pr unit (MWh).",
             "format": "double",
-            "nullable": true
-          },
-          "originalOrderId": {
-            "type": "string",
-            "description": "For split orders, this is a reference the originally placed order.",
-            "nullable": true
-          },
-          "originalQuantity": {
-            "type": "number",
-            "description": "Quantity specified when placing the order.\r\nFor split orders this value is not set.",
-            "format": "double",
-            "nullable": true
-          },
-          "quantityCompleted": {
-            "type": "number",
-            "description": "Quantity filled or killed.",
-            "format": "double",
-            "nullable": true
-          },
-          "targetOrganizationId": {
-            "type": "string",
-            "description": "If set, the order is only visible and tradeable for this organization.",
-            "nullable": true
-          },
-          "visibility": {
-            "enum": [
-              "Public",
-              "Private",
-              "DsoAndTso"
-            ],
-            "type": "string",
-            "nullable": true
-          },
-          "blockSizeInSeconds": {
-            "type": "integer",
-            "description": "Required on create?, not updateable.\r\nMust be a multiplum of the markets minimum\r\nisp size.",
-            "format": "int32",
-            "nullable": true
-          },
-          "minBlocks": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "maxBlocks": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "adjacentBlocks": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "restBlocks": {
-            "type": "integer",
-            "format": "int32",
             "nullable": true
           },
           "periodFrom": {
@@ -2647,108 +2355,10 @@
             "description": "The timestamp indicating the end of the interval for which this order applies.",
             "format": "date-time",
             "nullable": true
-          },
-          "longFlexContractId": {
-            "type": "string",
-            "description": "Reference to the longflex contract.",
-            "nullable": true
-          },
-          "assetTypeId": {
-            "type": "string",
-            "nullable": true
-          },
-          "renewableType": {
-            "enum": [
-              "Renewable",
-              "NonRenewable",
-              "Mixed"
-            ],
-            "type": "string",
-            "description": "Not required for buy orders.\r\nDerivable from the asset(portfolio)s for sell orders.",
-            "nullable": true
-          },
-          "minRampUpRate": {
-            "type": "number",
-            "description": "Minimum rate of change when upregulating.\r\n            \r\nUnit: MW/min - mega watts pr second.\r\n            \r\nNote that this is the Up ramp rate, corresponding to\r\nUp regulation / increased production.\r\nFor Up-regulating orders, this indicates the how fast an asset\r\nshould start power production / reducing consumption.",
-            "format": "float",
-            "nullable": true
-          },
-          "maxRampUpRate": {
-            "type": "number",
-            "description": "Maximum rate of change when upregulating.\r\n            \r\nUnit: MW/min - mega watts pr second.\r\n            \r\nNote that this is the Up rate, corresponding to\r\nUp regulation / increased production.\r\nFor Up-regulating orders, this indicates the how fast an asset\r\nshould start power production / reducing consumption.",
-            "format": "float",
-            "nullable": true
-          },
-          "minRampDownRate": {
-            "type": "number",
-            "description": "Minimum rate of change when downregulating.\r\n            \r\nUnit: MW/min - mega watts pr second.\r\n            \r\nNote that this is the Down ramp rate, corresponding to\r\nDown regulation / increased production.\r\nFor Down-regulating orders, this indicates the how fast an asset\r\nshould stop power production / increase consumption.",
-            "format": "float",
-            "nullable": true
-          },
-          "maxRampDownRate": {
-            "type": "number",
-            "description": "Maximum rate of change when downregulating.\r\n            \r\nUnit: MW/min - mega watts pr second.\r\n            \r\nNote that this is the Down ramp rate, corresponding to\r\nDown regulation / increased production.\r\nFor Down-regulating orders, this indicates the how fast an asset\r\nshould stop power production / increase consumption.",
-            "format": "float",
-            "nullable": true
-          },
-          "quantityType": {
-            "enum": [
-              "Power",
-              "Energy",
-              "ReactivePower"
-            ],
-            "type": "string",
-            "description": "The quantity type of this order - power or energy. \r\nRequired on create, not updateable.\r\nDerivable from market.",
-            "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "customProperties": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "targetOrderId": {
-            "type": "string",
-            "nullable": true
-          },
-          "ownerSubscriptionTypes": {
-            "type": "array",
-            "items": {
-              "enum": [
-                "NodesOperator",
-                "TSO",
-                "DSO",
-                "FSP",
-                "BRP",
-                "Agent"
-              ],
-              "type": "string"
-            },
-            "description": "Distinct subscription types of the owner organization.\r\nThis data is used by the matching service to match on visibility (DSO/TSO) for longflex orders.",
-            "nullable": true
-          },
-          "sysStartTime": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "sysEndTime": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": " LimitOrder vs MarketOrder - don't have prices .\r\n            \r\nNOTE: What happens when an order is partially met?\r\n does the met order disappear and a new order\r\n gets created? Or is the order updated with the\r\n new reduced quantity?"
+        "additionalProperties": true,
+        "description": ""
       },
       "OrderSearchResult": {
         "type": "object",
