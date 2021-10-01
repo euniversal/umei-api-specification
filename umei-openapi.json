@@ -2407,34 +2407,9 @@
             "description": "Status for this item",
             "nullable": true
           },
-          "created": {
-            "type": "string",
-            "description": "Item creation timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "createdByUserId": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastModified": {
-            "type": "string",
-            "description": "Item modification timestamp",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lastModifiedByUserId": {
-            "type": "string",
-            "nullable": true
-          },
           "marketId": {
             "type": "string",
             "description": "Reference to the market.",
-            "nullable": true
-          },
-          "dealId": {
-            "type": "string",
-            "description": "Reference to the deal.",
             "nullable": true
           },
           "orderId": {
@@ -2448,27 +2423,12 @@
             "format": "double",
             "nullable": true
           },
-          "ownerOrganizationId": {
-            "type": "string",
-            "description": "Reference to the order's owner organization.",
-            "nullable": true
-          },
-          "supplierOrganizationId": {
-            "type": "string",
-            "description": "This field is set to the SupplierOrganizationId of the sell order.",
-            "nullable": true
-          },
           "side": {
             "enum": [
               "Buy",
               "Sell"
             ],
             "type": "string",
-            "nullable": true
-          },
-          "rebalancePrice": {
-            "type": "number",
-            "format": "double",
             "nullable": true
           },
           "unitPrice": {
