@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "UEMI API Specification",
-    "description": "Specification for UEMI FMO API",
+    "title": "UMEI API Specification",
+    "description": "Specification for UMEI FMO API",
     "version": "1.0.0"
   },
   "servers": [
