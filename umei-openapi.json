@@ -1171,7 +1171,7 @@
           "MeterReading"
         ],
         "summary": "Delete/Remove an existing MeterReading",
-        "operationId": "MeterReading_Delete",
+        "operationId": "MeterReading_Delete_By_ID",
         "parameters": [
           {
             "name": "id",
@@ -1268,8 +1268,8 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Delete/Remove an existing MeterReading",
-        "operationId": "MeterReading_Delete",
+        "summary": "Delete/Remove one or several existing MeterReading(s) using a query",
+        "operationId": "MeterReading_Delete_By_Query",
         "parameters": [
           {
             "name": "query",
