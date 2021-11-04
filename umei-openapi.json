@@ -11,13 +11,13 @@
     }
   ],
   "paths": {
-    "/AssetPortfolios": {
+    "/Portfolios": {
       "get": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "List or search AssetPortfolios",
-        "operationId": "AssetPortfolio_Search",
+        "summary": "List or search Portfolios",
+        "operationId": "Portfolio_Search",
         "parameters": [
           {
             "name": "query",
@@ -69,37 +69,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               }
             }
@@ -108,30 +108,30 @@
       },
       "post": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Create a new AssetPortfolio",
-        "operationId": "AssetPortfolio_Create",
+        "summary": "Create a new Portfolio",
+        "operationId": "Portfolio_Create",
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
@@ -142,37 +142,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -180,13 +180,13 @@
         }
       }
     },
-    "/AssetPortfolios/{id}": {
+    "/Portfolios/{id}": {
       "get": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Get an existing AssetPortfolio by id",
-        "operationId": "AssetPortfolio_GetById",
+        "summary": "Get an existing Portfolio by id",
+        "operationId": "Portfolio_GetById",
         "parameters": [
           {
             "name": "id",
@@ -204,37 +204,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -243,10 +243,10 @@
       },
       "put": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Update an existing AssetPortfolio",
-        "operationId": "AssetPortfolio_Update",
+        "summary": "Update an existing Portfolio",
+        "operationId": "Portfolio_Update",
         "parameters": [
           {
             "name": "id",
@@ -262,22 +262,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
@@ -288,37 +288,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -327,10 +327,10 @@
       },
       "patch": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Patch / partially update an existing AssetPortfolio",
-        "operationId": "AssetPortfolio_Patch",
+        "summary": "Patch / partially update an existing Portfolio",
+        "operationId": "Portfolio_Patch",
         "parameters": [
           {
             "name": "id",
@@ -346,22 +346,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
@@ -372,37 +372,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -411,10 +411,10 @@
       },
       "delete": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Delete/Remove an existing AssetPortfolio",
-        "operationId": "AssetPortfolio_Delete",
+        "summary": "Delete/Remove an existing Portfolio",
+        "operationId": "Portfolio_Delete",
         "parameters": [
           {
             "name": "id",
@@ -2049,7 +2049,7 @@
             "nullable": false,
             "readOnly": true
           },
-          "assetPortfolioId": {
+          "PortfolioId": {
             "type": "string",
             "nullable": false
           },
@@ -2113,7 +2113,7 @@
         },
         "additionalProperties": true
       },
-      "AssetPortfolio": {
+      "Portfolio": {
         "type": "object",
         "properties": {
           "id": {
@@ -2141,7 +2141,7 @@
         },
         "additionalProperties": true
       },
-      "AssetPortfolioSearchResult": {
+      "PortfolioSearchResult": {
         "type": "object",
         "properties": {
           "numberOfHits": {
@@ -2152,7 +2152,7 @@
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AssetPortfolio"
+              "$ref": "#/components/schemas/Portfolio"
             },
             "nullable": true
           },
@@ -2225,7 +2225,7 @@
             "nullable": true,
             "readOnly": true
           },
-          "assetPortfolioId": {
+          "PortfolioId": {
             "type": "string",
             "nullable": true
           },
@@ -2319,7 +2319,7 @@
             "description": "Reference to the market.",
             "nullable": true
           },
-          "assetPortfolioId": {
+          "PortfolioId": {
             "type": "string",
             "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
             "nullable": true
@@ -2450,7 +2450,7 @@
             "type": "string",
             "nullable": true
           },
-          "assetPortfolioId": {
+          "PortfolioId": {
             "type": "string",
             "nullable": true
           },
