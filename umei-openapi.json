@@ -2053,15 +2053,20 @@
             "type": "string",
             "nullable": false
           },
-          "periodFrom": {
+          "startTime": {
             "type": "string",
+            "description": "The time at which the baseline starts; all date and time information are given in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) using the format described in [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) without time offset: `YYYY-MM-DDTHH:mm:ssZ`",
             "format": "date-time",
-            "nullable": false
+            "example": "2020-02-11T19:04:35Z",
+            "nullable": true
           },
-          "periodTo": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": false
+          "duration": {
+            "type": "integer",
+            "description": "Duration of the period covered by the baseline (number of minutes).",
+            "format": "int32",
+            "minimum": "1",
+            "example": "15",
+            "nullable": true
           },
           "energyProduction": {
             "type": "number",
@@ -2229,14 +2234,19 @@
             "type": "string",
             "nullable": true
           },
-          "periodFrom": {
+          "startTime": {
             "type": "string",
+            "description": "The time at which the meter reading starts; all date and time information are given in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) using the format described in [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) without time offset: `YYYY-MM-DDTHH:mm:ssZ`",
             "format": "date-time",
+            "example": "2020-02-11T19:04:35Z",
             "nullable": true
           },
-          "periodTo": {
-            "type": "string",
-            "format": "date-time",
+          "duration": {
+            "type": "integer",
+            "description": "Duration of the period covered by the meter reading (number of minutes).",
+            "format": "int32",
+            "minimum": "1",
+            "example": "15",
             "nullable": true
           },
           "energyProduction": {
@@ -2293,6 +2303,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "ID of the order (should be unique, otherwise an error will be returned)",
             "nullable": true
           },
           "status": {
@@ -2306,7 +2317,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status of the order",
             "nullable": true
           },
           "gridNodeId": {
@@ -2321,7 +2332,7 @@
           },
           "assetPortfolioId": {
             "type": "string",
-            "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
+            "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updatable.",
             "nullable": true
           },
           "regulationType": {
@@ -2344,16 +2355,19 @@
             "format": "double",
             "nullable": true
           },
-          "periodFrom": {
+          "startTime": {
             "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this order applies.",
+            "description": "The time at which the order starts to be available; all date and time information are given in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) using the format described in [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) without time offset: `YYYY-MM-DDTHH:mm:ssZ`",
             "format": "date-time",
+            "example": "2020-02-11T19:04:35Z",
             "nullable": true
           },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this order applies.",
-            "format": "date-time",
+          "duration": {
+            "type": "integer",
+            "description": "Duration of the availability of the order (number of minutes). An error will be sent if the time period is not compatible with the market rules.",
+            "format": "int32",
+            "minimum": "1",
+            "example": "15",
             "nullable": true
           }
         },
@@ -2436,14 +2450,14 @@
             "format": "double",
             "nullable": true
           },
-          "periodFrom": {
+          "startTime": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
-          "periodTo": {
-            "type": "string",
-            "format": "date-time",
+          "duration": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "gridNodeId": {
