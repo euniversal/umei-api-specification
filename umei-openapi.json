@@ -1998,28 +1998,6 @@
   },
   "components": {
     "schemas": {
-      "Link": {
-        "type": "object",
-        "properties": {
-          "rel": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "href": {
-            "type": "string",
-            "nullable": true
-          },
-          "method": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "BaseLineInterval": {
         "type": "object",
         "properties": {
@@ -2040,14 +2018,6 @@
             "type": "string",
             "description": "Status for this item",
             "nullable": false
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": false,
-            "readOnly": true
           },
           "assetPortfolioId": {
             "type": "string",
@@ -2106,14 +2076,6 @@
               "$ref": "#/components/schemas/BaseLineInterval"
             },
             "nullable": false
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": false,
-            "readOnly": true
           }
         },
         "additionalProperties": true
@@ -2160,14 +2122,6 @@
               "$ref": "#/components/schemas/AssetPortfolio"
             },
             "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": true
@@ -2221,14 +2175,6 @@
             "type": "string",
             "description": "Status for this item",
             "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
           },
           "assetPortfolioId": {
             "type": "string",
@@ -2286,14 +2232,6 @@
               "$ref": "#/components/schemas/MeterReading"
             },
             "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -2388,14 +2326,6 @@
               "$ref": "#/components/schemas/Order"
             },
             "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -2476,14 +2406,6 @@
             "type": "string",
             "nullable": true
           },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
           "customProperties": {
             "type": "object",
             "additionalProperties": {
@@ -2508,14 +2430,6 @@
               "$ref": "#/components/schemas/Trade"
             },
             "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false
