@@ -855,88 +855,6 @@
         }
       }
     },
-    "/GridNodes/grid": {
-      "get": {
-        "tags": [
-          "GridNode"
-        ],
-        "summary": "Get grid hierarchy",
-        "operationId": "GridNode_GetGrid",
-        "parameters": [
-          {
-            "name": "marketId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/MeterReadings/{id}": {
       "get": {
         "tags": [
@@ -2166,35 +2084,6 @@
           }
         },
         "additionalProperties": true
-      },
-      "TreeNode": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": false,
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": false,
-            "readOnly": true
-          },
-          "parentId": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "children": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TreeNode"
-            },
-            "nullable": false,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
       },
       "MeterReading": {
         "type": "object",
