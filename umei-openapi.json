@@ -2026,7 +2026,8 @@
           "id",
           "assetPortfolioId",
           "periodFrom",
-          "periodTo"
+          "periodTo",
+          "power"
         ],
         "properties": {
           "id": {
@@ -2069,25 +2070,17 @@
             "format": "date-time",
             "nullable": false
           },
-          "powerConsumption": {
+          "power": {
             "type": "number",
-            "description": "Average power consumption in MW forecasted for the portfolio of assets",
+            "description": "Average power in MW forecasted for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
-            "minimum": 0.0,
-            "maximum": 1E6,
-            "multipleOf": 0.001
-          },
-          "powerProduction": {
-            "type": "number",
-            "description": "Average power production in MW forecasted for the portfolio of assets",
-            "format": "double",
-            "minimum": 0.0,
+            "minimum": -1E6,
             "maximum": 1E6,
             "multipleOf": 0.001
           }
         },
         "additionalProperties": true,
-        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity. \r \n Each interval specifies at least a production of power or a consumption of power. The market platform will return an error if specifying both is legal or not (that might depend on e.g. asset type)."
+        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -2204,7 +2197,8 @@
           "id",
           "assetPortfolioId",
           "periodFrom",
-          "periodTo"
+          "periodTo",
+          "power"
         ],
         "properties": {
           "id": {
@@ -2247,21 +2241,18 @@
             "format": "date-time",
             "nullable": false
           },
-          "powerConsumption": {
+          "power": {
             "type": "number",
-            "description": "Average power consumption in MW measured for the portfolio of assets",
+            "description": "Average power consumption in MW measured for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
-            "nullable": false
-          },
-          "powerProduction": {
-            "type": "number",
-            "description": "Average power production in MW measured for the portfolio of assets",
-            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001,
             "nullable": false
           }
         },
         "additionalProperties": true,
-        "description": "MeterReading covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity. \r \n Each interval specifies at least a production of power or a consumption of power. The market platform will return an error if specifying both is legal or not (that might depend on e.g. asset type)."
+        "description": "MeterReading covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
