@@ -69,37 +69,65 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "type": "array",
+                  "description": "List of AssetPortfolios",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetPortfolio"
+                  }
                 }
               }
             }
@@ -491,37 +519,65 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                  "type": "array",
+                  "description": "List of BaselineIntervals",
+                  "items": {
+                    "$ref": "#/components/schemas/BaseLineInterval"
+                  }
                 }
               }
             }
@@ -1349,37 +1405,65 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                  "type": "array",
+                  "description": "List of MeterReadings",
+                  "items": {
+                    "$ref": "#/components/schemas/MeterReading"
+                  }
                 }
               }
             }
@@ -1535,37 +1619,65 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
+                  "type": "array",
+                  "description": "List of Orders",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
                 }
               }
             }
@@ -1957,37 +2069,65 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
+                  "type": "array",
+                  "description": "List of Trades",
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  }
                 }
               }
             }
@@ -2057,24 +2197,6 @@
         "additionalProperties": true,
         "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity. Each interval specifies at least one of the four energy/power values"
       },
-      "BaseLineIntervalSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BaseLineInterval"
-            },
-            "nullable": false
-          }
-        },
-        "additionalProperties": true
-      },
       "AssetPortfolio": {
         "type": "object",
         "properties": {
@@ -2099,24 +2221,6 @@
           "name": {
             "type": "string",
             "nullable": false
-          }
-        },
-        "additionalProperties": true
-      },
-      "AssetPortfolioSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetPortfolio"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": true
@@ -2208,24 +2312,6 @@
         },
         "additionalProperties": true
       },
-      "MeterReadingSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MeterReading"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "Order": {
         "type": "object",
         "properties": {
@@ -2297,24 +2383,6 @@
         },
         "additionalProperties": true,
         "description": ""
-      },
-      "OrderSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Order"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "Trade": {
         "type": "object",
@@ -2401,24 +2469,6 @@
           }
         },
         "additionalProperties": true
-      },
-      "TradeSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Trade"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       }
     }
   }
