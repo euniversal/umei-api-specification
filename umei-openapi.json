@@ -16,7 +16,7 @@
         "tags": [
           "AssetPortfolio"
         ],
-        "summary": "List or search AssetPortfolios",
+        "summary": "List or search one or several AssetPortfolio(s) using a query",
         "operationId": "AssetPortfolio_Search",
         "parameters": [
           {
@@ -65,7 +65,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "AssetPortfolio(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -137,8 +137,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "AssetPortfolio successfully created",
             "content": {
               "application/json": {
                 "schema": {
@@ -176,11 +176,14 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       }
     },
-    "/AssetPortfolios/{id}": {
+    "/AssetPortfolios/{assetPortfolioId}": {
       "get": {
         "tags": [
           "AssetPortfolio"
@@ -189,7 +192,7 @@
         "operationId": "AssetPortfolio_GetById",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetPortfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -200,7 +203,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "AssetPortfolio successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -245,11 +248,11 @@
         "tags": [
           "AssetPortfolio"
         ],
-        "summary": "Update an existing AssetPortfolio",
+        "summary": "Update an existing AssetPortfolio, or create if missing",
         "operationId": "AssetPortfolio_Update",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetPortfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -284,7 +287,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "AssetPortfolios successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -322,6 +325,49 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "AssetPortfolios successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetPortfolio"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -333,7 +379,7 @@
         "operationId": "AssetPortfolio_Patch",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetPortfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -368,7 +414,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "AssetPortfolio successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -406,6 +452,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -417,7 +466,7 @@
         "operationId": "AssetPortfolio_Delete",
         "parameters": [
           {
-            "name": "id",
+            "name": "assetPortfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -427,8 +476,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "AssetPortfolio successfully deleted"
           }
         }
       }
@@ -438,7 +487,7 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "List or search BaselineIntervals",
+        "summary": "List or search one or several BaselineInterval(s) using a query",
         "operationId": "BaselineInterval_Search",
         "parameters": [
           {
@@ -487,7 +536,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "BaselineInterval(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -559,8 +608,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "BaselineInterval successfully created",
             "content": {
               "application/json": {
                 "schema": {
@@ -598,11 +647,14 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       }
     },
-    "/BaselineIntervals/{id}": {
+    "/BaselineIntervals/{baselineId}": {
       "get": {
         "tags": [
           "BaselineInterval"
@@ -611,7 +663,7 @@
         "operationId": "BaselineInterval_GetById",
         "parameters": [
           {
-            "name": "id",
+            "name": "baselineId",
             "in": "path",
             "required": true,
             "schema": {
@@ -622,7 +674,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "BaselineInterval successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -667,11 +719,11 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "Update an existing BaselineInterval",
+        "summary": "Update an existing BaselineInterval, or create if missing",
         "operationId": "BaselineInterval_Update",
         "parameters": [
           {
-            "name": "id",
+            "name": "baselineId",
             "in": "path",
             "required": true,
             "schema": {
@@ -706,7 +758,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "BaselineInterval successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -744,6 +796,49 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "BaselineInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -755,7 +850,7 @@
         "operationId": "BaselineInterval_Patch",
         "parameters": [
           {
-            "name": "id",
+            "name": "baselineId",
             "in": "path",
             "required": true,
             "schema": {
@@ -790,7 +885,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "BaselineInterval successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -828,6 +923,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -839,7 +937,7 @@
         "operationId": "BaselineInterval_Delete",
         "parameters": [
           {
-            "name": "id",
+            "name": "baselineId",
             "in": "path",
             "required": true,
             "schema": {
@@ -849,8 +947,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "BaselineInterval successfully deleted"
           }
         }
       }
@@ -874,7 +972,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Grid hierarchy successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -937,7 +1035,7 @@
         }
       }
     },
-    "/MeterReadings/{id}": {
+    "/MeterReadings/{meterReadingId}": {
       "get": {
         "tags": [
           "MeterReading"
@@ -946,7 +1044,7 @@
         "operationId": "MeterReading_GetById",
         "parameters": [
           {
-            "name": "id",
+            "name": "meterReadingId",
             "in": "path",
             "required": true,
             "schema": {
@@ -957,7 +1055,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "MeterReading successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -1002,11 +1100,11 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Update an existing MeterReading",
+        "summary": "Update an existing MeterReading, or create if missing",
         "operationId": "MeterReading_Update",
         "parameters": [
           {
-            "name": "id",
+            "name": "meterReadingId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1041,7 +1139,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "MeterReading successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -1079,6 +1177,49 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "MeterReading successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -1090,7 +1231,7 @@
         "operationId": "MeterReading_Patch",
         "parameters": [
           {
-            "name": "id",
+            "name": "meterReadingId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1125,7 +1266,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "MeterReading successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -1163,6 +1304,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -1174,7 +1318,7 @@
         "operationId": "MeterReading_Delete_By_ID",
         "parameters": [
           {
-            "name": "id",
+            "name": "meterReadingId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1184,8 +1328,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "MeterReading successfully deleted"
           }
         }
       }
@@ -1222,8 +1366,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "MeterReading successfully created",
             "content": {
               "application/json": {
                 "schema": {
@@ -1261,6 +1405,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -1287,8 +1434,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "MeterReading(s) successfully deleted"
           }
         }
       },
@@ -1296,7 +1443,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "List or search MeterReadings",
+        "summary": "List or search one or several MeterReading(s) using a query",
         "operationId": "MeterReading_Search",
         "parameters": [
           {
@@ -1345,7 +1492,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "MeterReading(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -1392,6 +1539,7 @@
         "tags": [
           "MeterReading"
         ],
+        "summary": "Create several new MeterReadings",
         "operationId": "MeterReading_CreateMultiple",
         "requestBody": {
           "content": {
@@ -1434,8 +1582,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "201": {
+            "description": "MeterReadings successfully created"
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       }
@@ -1445,6 +1596,7 @@
         "tags": [
           "MeterReading"
         ],
+        "summary": "Import and create several MeterReadings",
         "operationId": "MeterReading_Import",
         "requestBody": {
           "content": {
@@ -1471,8 +1623,11 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "201": {
+            "description": "MeterReadings successfully imported and created"
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       }
@@ -1482,7 +1637,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "List or search Orders",
+        "summary": "List or search one or several Order(s) using a query",
         "operationId": "Order_Search",
         "parameters": [
           {
@@ -1531,7 +1686,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Order(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -1603,8 +1758,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Order successfully created",
             "content": {
               "application/json": {
                 "schema": {
@@ -1642,11 +1797,14 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       }
     },
-    "/Orders/{id}": {
+    "/Orders/{orderId}": {
       "get": {
         "tags": [
           "Order"
@@ -1655,7 +1813,7 @@
         "operationId": "Order_GetById",
         "parameters": [
           {
-            "name": "id",
+            "name": "orderId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1666,7 +1824,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Order successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -1711,11 +1869,11 @@
         "tags": [
           "Order"
         ],
-        "summary": "Update an existing Order",
+        "summary": "Update an existing Order, or create if missing",
         "operationId": "Order_Update",
         "parameters": [
           {
-            "name": "id",
+            "name": "orderId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1750,7 +1908,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Order successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -1788,6 +1946,49 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Order successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -1799,7 +2000,7 @@
         "operationId": "Order_Patch",
         "parameters": [
           {
-            "name": "id",
+            "name": "orderId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1834,7 +2035,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Order successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -1872,6 +2073,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
           }
         }
       },
@@ -1883,7 +2087,7 @@
         "operationId": "Order_Delete",
         "parameters": [
           {
-            "name": "id",
+            "name": "orderId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1893,8 +2097,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "Order successfully deleted"
           }
         }
       }
@@ -1904,7 +2108,7 @@
         "tags": [
           "Trade"
         ],
-        "summary": "List or search Trades",
+        "summary": "List or search one or several Trade(s) using a query",
         "operationId": "Trade_Search",
         "parameters": [
           {
@@ -1953,7 +2157,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Trade(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
@@ -2023,7 +2227,7 @@
       "BaseLineInterval": {
         "type": "object",
         "properties": {
-          "id": {
+          "baselineId": {
             "type": "string",
             "nullable": false
           },
@@ -2116,7 +2320,7 @@
       "AssetPortfolio": {
         "type": "object",
         "properties": {
-          "id": {
+          "assetPortfolioId": {
             "type": "string",
             "nullable": true
           },
@@ -2199,7 +2403,7 @@
       "MeterReading": {
         "type": "object",
         "properties": {
-          "id": {
+          "meterReadingId": {
             "type": "string",
             "nullable": true
           },
@@ -2291,7 +2495,7 @@
       "Order": {
         "type": "object",
         "properties": {
-          "id": {
+          "orderId": {
             "type": "string",
             "nullable": true
           },
