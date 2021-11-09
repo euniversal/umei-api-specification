@@ -2330,7 +2330,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the order. For a sell order, 'Up' means an increase of production and 'Down' is a decrease of production. For a buy order, 'Up' means an increase of consumption and 'Down' is a decrease of consumption.",
+            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
             "nullable": true
           },
           "side": {
@@ -2368,7 +2368,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The asset portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders."
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The asset portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the asset portfolio. "
       },
       "OrderSearchResult": {
         "type": "object",
