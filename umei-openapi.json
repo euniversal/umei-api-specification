@@ -2022,13 +2022,6 @@
       },
       "BaseLineInterval": {
         "type": "object",
-        "required": [
-          "id",
-          "assetPortfolioId",
-          "periodFrom",
-          "periodTo",
-          "power"
-        ],
         "properties": {
           "id": {
             "type": "string",
@@ -2193,17 +2186,10 @@
       },
       "MeterReading": {
         "type": "object",
-        "required": [
-          "id",
-          "assetPortfolioId",
-          "periodFrom",
-          "periodTo",
-          "power"
-        ],
         "properties": {
           "id": {
             "type": "string",
-            "nullable": false
+            "nullable": true
           },
           "status": {
             "enum": [
@@ -2217,29 +2203,29 @@
             ],
             "type": "string",
             "description": "Status for this item",
-            "nullable": false
+            "nullable": true
           },
           "links": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Link"
             },
-            "nullable": false,
+            "nullable": true,
             "readOnly": true
           },
           "assetPortfolioId": {
             "type": "string",
-            "nullable": false
+            "nullable": true
           },
           "periodFrom": {
             "type": "string",
             "format": "date-time",
-            "nullable": false
+            "nullable": true
           },
           "periodTo": {
             "type": "string",
             "format": "date-time",
-            "nullable": false
+            "nullable": true
           },
           "power": {
             "type": "number",
@@ -2248,7 +2234,7 @@
             "minimum": -1E6,
             "maximum": 1E6,
             "multipleOf": 0.001,
-            "nullable": false
+            "nullable": true
           }
         },
         "additionalProperties": true,
