@@ -2333,14 +2333,14 @@
             "description": "Type of regulation of the order. For a sell order, 'Up' means an increase of production and 'Down' is a decrease of production. For a buy order, 'Up' means an increase of consumption and 'Down' is a decrease of consumption.",
             "nullable": true
           },
-          "submissionType": {
+          "side": {
             "enum": [
               "Sell",
               "Buy"
             ],
             "type": "string",
             "description": "Type of submission of the order (buy / sell)",
-            "nullable": true
+            "nullable": false
           },
           "quantity": {
             "type": "number",
