@@ -2115,15 +2115,9 @@
       },
       "AssetPortfolio": {
         "type": "object",
-        "required": [
-          "id",
-          "name",
-          "gridZoneId"
-        ],
         "properties": {
           "id": {
             "type": "string",
-            "description": "ID of the portfolio of assets",
             "nullable": true
           },
           "status": {
@@ -2137,17 +2131,16 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status of the portfolio",
+            "description": "Status for this item",
             "nullable": true
           },
           "name": {
             "type": "string",
-            "description": "Name of the portfolio of assets",
             "nullable": false
           },
-          "gridZoneId": {
+          "gridNodeId": {
             "type": "string",
-            "description": "ID of the grid zone where the assets are located. An error will be returned if this zone does not exist in the grid.",
+            "description": "ID of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
           }
         },
@@ -2319,6 +2312,11 @@
             ],
             "type": "string",
             "description": "Status for this item",
+            "nullable": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "The grid node this order applies to. \r\nCalculated and validated for sell orders.\r\nRequired for buy orders.",
             "nullable": true
           },
           "marketId": {
