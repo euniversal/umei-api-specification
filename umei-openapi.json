@@ -1421,22 +1421,22 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status of the order",
             "nullable": true
           },
           "gridNodeId": {
             "type": "string",
-            "description": "The grid node this order applies to. \r\nCalculated and validated for sell orders.\r\nRequired for buy orders.",
+            "description": "The grid node this order applies to. An error will be returned if this grid node does not exist.",
             "nullable": true
           },
           "marketId": {
             "type": "string",
-            "description": "Reference to the market.",
+            "description": "Reference to the market. An error will be returned if this market does not exist.",
             "nullable": true
           },
           "assetPortfolioId": {
             "type": "string",
-            "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
+            "description": "The asset portfolio for which this order applies.  \r\nRequired for sell orders only.\r\nNot updatable.",
             "nullable": true
           },
           "regulationType": {
@@ -1445,17 +1445,27 @@
               "Down"
             ],
             "type": "string",
+            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
             "nullable": true
+          },
+          "side": {
+            "enum": [
+              "Sell",
+              "Buy"
+            ],
+            "type": "string",
+            "description": "Type of submission of the order (buy / sell)",
+            "nullable": false
           },
           "quantity": {
             "type": "number",
-            "description": "The amount of power or energy being sold.\r\n            \r\nUnit: Mega watt, or MW, or MWh/h. \r\n\r\nFor Power, it denotes the max (in absolute terms) power\r\nconsumption/production during that period.\r\n            \r\nFor Energy, it denotes the energy available during the specified\r\nperiod. The unit is still MW, thus the length of the interval needs\r\nto be taken into account to calculate the actual energy usage/production.",
+            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
             "format": "double",
             "nullable": true
           },
           "unitPrice": {
             "type": "number",
-            "description": "The price pr unit (MWh).",
+            "description": "The price pr unit (currency/MWh), the currency being deduced from the market.",
             "format": "double",
             "nullable": true
           },
@@ -1473,7 +1483,7 @@
           }
         },
         "additionalProperties": true,
-        "description": ""
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The asset portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the asset portfolio. "
       },
       "OrderSearchResult": {
         "type": "object",
