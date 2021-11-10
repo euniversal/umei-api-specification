@@ -1178,29 +1178,17 @@
             "format": "date-time",
             "nullable": false
           },
-          "energyProduction": {
+          "power": {
             "type": "number",
-            "description": "Total power production during the period in MWh. \r\nMust be non-negative. \r\n \r\n            \r\nThe unit is MWh.\r\nThis means that if this baseline interval covers\r\nthe period 08:00 to 08:30 and has a EnergyConsumption of 10 (MWh),\r\nthe actual energy produced during the entire interval is\r\n10MWh, and the average power consumption is 20MW.",
-            "format": "double"
-          },
-          "energyConsumption": {
-            "type": "number",
-            "description": "Total power consumption during the period in MWh. \r\nMust be non-negative. \r\n \r\n            \r\nThe unit is MWh.\r\nThis means that if this baseline interval covers\r\nthe period 08:00 to 08:30 and has a EnergyConsumption of 10 (MWh),\r\nthe actual energy usage during the entire interval is\r\n10MWh, and the average power consumption is 20MW.",
-            "format": "double"
-          },
-          "averagePowerConsumption": {
-            "type": "number",
-            "description": "Average power consumption in MW.\r\nMust be non-negative.",
-            "format": "double"
-          },
-          "averagePowerProduction": {
-            "type": "number",
-            "description": "Average power production in MW \r\nMust be non-negative.",
-            "format": "double"
+            "description": "Average power in MW forecasted for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001
           }
         },
         "additionalProperties": true,
-        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity. Each interval specifies at least one of the four energy/power values"
+        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -1354,28 +1342,18 @@
             "format": "date-time",
             "nullable": true
           },
-          "energyProduction": {
+          "power": {
             "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "energyConsumption": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "averagePowerConsumption": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "averagePowerProduction": {
-            "type": "number",
-            "format": "float",
+            "description": "Average power consumption in MW measured for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001,
             "nullable": true
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "MeterReading covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
