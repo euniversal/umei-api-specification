@@ -2322,7 +2322,7 @@
           },
           "portfolioId": {
             "type": "string",
-            "description": "The portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
+            "description": "The portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updatable.",
             "nullable": true
           },
           "regulationType": {
