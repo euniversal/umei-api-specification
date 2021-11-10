@@ -2049,7 +2049,7 @@
             "nullable": false,
             "readOnly": true
           },
-          "PortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": false
           },
@@ -2115,6 +2115,7 @@
       },
       "Portfolio": {
         "type": "object",
+        "description": "A portfolio represents a collection of one or more assets - e.g. batteries, dispatchable generators, etc - that can participate in a flexibility market. ",
         "properties": {
           "id": {
             "type": "string",
@@ -2225,7 +2226,7 @@
             "nullable": true,
             "readOnly": true
           },
-          "PortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": true
           },
@@ -2319,9 +2320,9 @@
             "description": "Reference to the market.",
             "nullable": true
           },
-          "PortfolioId": {
+          "portfolioId": {
             "type": "string",
-            "description": "The asset portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
+            "description": "The portfolio for which this order applies.  \r\nRequired on create for sell orders.\r\nNot updateable.",
             "nullable": true
           },
           "regulationType": {
@@ -2450,7 +2451,7 @@
             "type": "string",
             "nullable": true
           },
-          "PortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": true
           },
