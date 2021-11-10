@@ -71,36 +71,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolioSearchResult"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
-                }
               }
             }
           }
@@ -114,22 +84,7 @@
         "operationId": "AssetPortfolio_Create",
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetPortfolio"
               }
@@ -141,36 +96,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolio"
                 }
@@ -206,36 +131,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolio"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
               }
             }
           }
@@ -260,22 +155,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetPortfolio"
               }
@@ -287,36 +167,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolio"
                 }
@@ -344,22 +194,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/AssetPortfolio"
               }
@@ -371,36 +206,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolio"
                 }
@@ -493,36 +298,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
-                }
               }
             }
           }
@@ -536,22 +311,7 @@
         "operationId": "BaselineInterval_Create_Single",
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BaseLineInterval"
               }
@@ -563,36 +323,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
@@ -628,36 +358,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
               }
             }
           }
@@ -682,22 +382,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BaseLineInterval"
               }
@@ -709,36 +394,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
@@ -766,22 +421,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BaseLineInterval"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BaseLineInterval"
               }
@@ -793,36 +433,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
@@ -883,54 +493,6 @@
                     "$ref": "#/components/schemas/TreeNode"
                   }
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TreeNode"
-                  }
-                }
               }
             }
           }
@@ -963,36 +525,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
               }
             }
           }
@@ -1017,22 +549,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/MeterReading"
               }
@@ -1044,36 +561,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
@@ -1101,22 +588,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/MeterReading"
               }
@@ -1128,36 +600,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
@@ -1199,22 +641,7 @@
         "operationId": "MeterReading_Create",
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MeterReading"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/MeterReading"
               }
@@ -1226,36 +653,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
@@ -1351,36 +748,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/MeterReadingSearchResult"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReadingSearchResult"
-                }
               }
             }
           }
@@ -1395,34 +762,7 @@
         "operationId": "MeterReading_CreateMultiple",
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/MeterReading"
-                },
-                "nullable": true
-              }
-            },
             "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/MeterReading"
-                },
-                "nullable": true
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/MeterReading"
-                },
-                "nullable": true
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "type": "array",
                 "items": {
@@ -1537,36 +877,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/OrderSearchResult"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSearchResult"
-                }
               }
             }
           }
@@ -1580,22 +890,7 @@
         "operationId": "Order_Create",
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Order"
               }
@@ -1607,36 +902,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
@@ -1672,36 +937,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
               }
             }
           }
@@ -1726,22 +961,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Order"
               }
@@ -1753,36 +973,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
@@ -1810,22 +1000,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Order"
               }
@@ -1837,36 +1012,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
@@ -1956,36 +1101,6 @@
             "description": "Success",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeSearchResult"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TradeSearchResult"
                 }
