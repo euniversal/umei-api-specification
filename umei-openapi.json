@@ -11,13 +11,13 @@
     }
   ],
   "paths": {
-    "/AssetPortfolios": {
+    "/Portfolios": {
       "get": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "List or search one or several AssetPortfolio(s) using a query",
-        "operationId": "AssetPortfolio_Search",
+        "summary": "List or search one or several Portfolio(s) using a query",
+        "operationId": "Portfolio_Search",
         "parameters": [
           {
             "name": "query",
@@ -65,11 +65,11 @@
         ],
         "responses": {
           "200": {
-            "description": "AssetPortfolio(s) successfully returned",
+            "description": "Portfolio(s) successfully returned",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolioSearchResult"
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
                 }
               }
             }
@@ -78,26 +78,26 @@
       },
       "post": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Create a new AssetPortfolio",
-        "operationId": "AssetPortfolio_Create",
+        "summary": "Create a new Portfolio",
+        "operationId": "Portfolio_Create",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "AssetPortfolio successfully created",
+            "description": "Portfolio successfully created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -108,16 +108,16 @@
         }
       }
     },
-    "/AssetPortfolios/{assetPortfolioId}": {
+    "/Portfolios/{portfolioId}": {
       "get": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Get an existing AssetPortfolio by id",
-        "operationId": "AssetPortfolio_GetById",
+        "summary": "Get an existing Portfolio by id",
+        "operationId": "Portfolio_GetById",
         "parameters": [
           {
-            "name": "assetPortfolioId",
+            "name": "portfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -128,11 +128,11 @@
         ],
         "responses": {
           "200": {
-            "description": "AssetPortfolio successfully returned",
+            "description": "Portfolio successfully returned",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -141,13 +141,13 @@
       },
       "put": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Update an existing AssetPortfolio, or create if missing",
-        "operationId": "AssetPortfolio_Update",
+        "summary": "Update an existing Portfolio, or create if missing",
+        "operationId": "Portfolio_Update",
         "parameters": [
           {
-            "name": "assetPortfolioId",
+            "name": "portfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -160,58 +160,58 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "AssetPortfolios successfully updated",
+            "description": "Portfolios successfully updated",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "application/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
           },
           "201": {
-            "description": "AssetPortfolios successfully created",
+            "description": "Portfolios successfully created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -223,13 +223,13 @@
       },
       "patch": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Patch / partially update an existing AssetPortfolio",
-        "operationId": "AssetPortfolio_Patch",
+        "summary": "Patch / partially update an existing Portfolio",
+        "operationId": "Portfolio_Patch",
         "parameters": [
           {
-            "name": "assetPortfolioId",
+            "name": "portfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -242,18 +242,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetPortfolio"
+                "$ref": "#/components/schemas/Portfolio"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "AssetPortfolio successfully updated",
+            "description": "Portfolio successfully updated",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
+                  "$ref": "#/components/schemas/Portfolio"
                 }
               }
             }
@@ -265,13 +265,13 @@
       },
       "delete": {
         "tags": [
-          "AssetPortfolio"
+          "Portfolio"
         ],
-        "summary": "Delete/Remove an existing AssetPortfolio",
-        "operationId": "AssetPortfolio_Delete",
+        "summary": "Delete/Remove an existing Portfolio",
+        "operationId": "Portfolio_Delete",
         "parameters": [
           {
-            "name": "assetPortfolioId",
+            "name": "portfolioId",
             "in": "path",
             "required": true,
             "schema": {
@@ -282,7 +282,7 @@
         ],
         "responses": {
           "204": {
-            "description": "AssetPortfolio successfully deleted"
+            "description": "Portfolio successfully deleted"
           }
         }
       }
@@ -1368,7 +1368,7 @@
             "nullable": false,
             "readOnly": true
           },
-          "assetPortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": false
           },
@@ -1384,7 +1384,7 @@
           },
           "power": {
             "type": "number",
-            "description": "Average power in MW forecasted for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
+            "description": "Average power in MW forecasted for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
             "minimum": -1E6,
             "maximum": 1E6,
@@ -1420,10 +1420,11 @@
         },
         "additionalProperties": true
       },
-      "AssetPortfolio": {
+      "Portfolio": {
         "type": "object",
+        "description": "A portfolio represents one or more assets that can participate in a flexibility market, e.g. batteries, dispatchable generators etc",
         "properties": {
-          "assetPortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": true
           },
@@ -1448,7 +1449,7 @@
         },
         "additionalProperties": true
       },
-      "AssetPortfolioSearchResult": {
+      "PortfolioSearchResult": {
         "type": "object",
         "properties": {
           "numberOfHits": {
@@ -1459,7 +1460,7 @@
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AssetPortfolio"
+              "$ref": "#/components/schemas/Portfolio"
             },
             "nullable": true
           },
@@ -1532,7 +1533,7 @@
             "nullable": true,
             "readOnly": true
           },
-          "assetPortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": true
           },
@@ -1548,7 +1549,7 @@
           },
           "power": {
             "type": "number",
-            "description": "Average power consumption in MW measured for the portfolio of assets. A positive value corresponds to a production and a negative value is a consumption.",
+            "description": "Average power consumption in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
             "minimum": -1E6,
             "maximum": 1E6,
@@ -1616,9 +1617,9 @@
             "description": "Reference to the market. An error will be returned if this market does not exist.",
             "nullable": true
           },
-          "assetPortfolioId": {
+          "portfolioId": {
             "type": "string",
-            "description": "The asset portfolio for which this order applies.  \r\nRequired for sell orders only.\r\nNot updatable.",
+            "description": "The portfolio for which this order applies.  \r\nRequired for sell orders only.\r\nNot updatable.",
             "nullable": true
           },
           "regulationType": {
@@ -1665,7 +1666,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The asset portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the asset portfolio. "
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the portfolio. "
       },
       "OrderSearchResult": {
         "type": "object",
@@ -1757,7 +1758,7 @@
             "type": "string",
             "nullable": true
           },
-          "assetPortfolioId": {
+          "portfolioId": {
             "type": "string",
             "nullable": true
           },
