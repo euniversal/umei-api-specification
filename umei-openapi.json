@@ -1551,7 +1551,7 @@
           },
           "minimumAcceptanceQuantity": {
             "type": "number",
-            "description": "The minimum quantity (power or energy, MW) that should be selected in the order. If the market can not to accept at least this quantity, then the order will be fully rejected. This field is optional. This field will be used for block orders only. ",
+            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order. If the market can not to accept at least this quantity, then the order will be fully rejected. This field is optional. This field will be used for block orders only. ",
             "format": "double",
             "nullable": true
           },
@@ -1569,7 +1569,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a step order (i.e. order with uniform/constant price without any constraint on the selectable quantity), a block order (i.e. order with uniform/constant price that can be selected only with a minimum quantity) or an interpolated curve (i.e. order described by a piecewise linear function of prices and quantities). "
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a step order (i.e. order with uniform/constant price without any constraint on the selectable quantity), a block order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated curve (i.e. order described by a piecewise linear function of prices and quantities). "
       },
       "OrderSearchResult": {
         "type": "object",
