@@ -173,36 +173,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/AssetPortfolio"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AssetPortfolio"
-                }
               }
             }
           },
@@ -449,36 +419,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
               }
             }
           },
@@ -669,36 +609,6 @@
             "description": "MeterReading successfully created",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
@@ -1141,36 +1051,6 @@
             "description": "Order successfully created",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
