@@ -173,36 +173,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/Portfolio"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Portfolio"
-                }
               }
             }
           },
@@ -449,36 +419,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/BaseLineInterval"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
               }
             }
           },
@@ -669,36 +609,6 @@
             "description": "MeterReading successfully created",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeterReading"
                 }
@@ -1144,36 +1054,6 @@
                 "schema": {
                   "$ref": "#/components/schemas/Order"
                 }
-              },
-              "text/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/html": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
               }
             }
           },
@@ -1445,6 +1325,11 @@
           "name": {
             "type": "string",
             "nullable": false
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "ID of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
+            "nullable": true
           }
         },
         "additionalProperties": true
