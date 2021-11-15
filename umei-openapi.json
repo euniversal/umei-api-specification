@@ -1324,6 +1324,11 @@
           "name": {
             "type": "string",
             "nullable": false
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "ID of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
+            "nullable": true
           }
         },
         "additionalProperties": true
