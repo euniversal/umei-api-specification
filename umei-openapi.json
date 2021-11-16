@@ -1563,6 +1563,7 @@
           },
           "unitPrice": {
             "type": "number",
+            "description": "Price at which the quantity has been traded/filled",
             "format": "double",
             "nullable": true
           },
