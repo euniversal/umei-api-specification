@@ -1468,9 +1468,15 @@
             "format": "double",
             "nullable": true
           },
-          "unitPrice": {
+          "activationPrice": {
             "type": "number",
-            "description": "The price pr unit (currency/MWh), the currency being deduced from the market.",
+            "description": "The activation price pr unit (currency/MWh), the currency being deduced from the market.",
+            "format": "double",
+            "nullable": true
+          },
+          "reservationPrice": {
+            "type": "number",
+            "description": "The reservation price pr unit (currency/MWh), the currency being deduced from the market.",
             "format": "double",
             "nullable": true
           },
@@ -1561,9 +1567,9 @@
             "type": "string",
             "nullable": true
           },
-          "unitPrice": {
+          "price": {
             "type": "number",
-            "description": "Price at which the quantity has been traded/filled",
+            "description": "Price pr unit (currency/MWh) at which the quantity has been traded/filled, the currency being deduced from the market.",
             "format": "double",
             "nullable": true
           },
