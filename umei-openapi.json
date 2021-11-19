@@ -1525,33 +1525,18 @@
             "description": "Type of submission of the order (buy / sell)",
             "nullable": false
           },
-          "quantities": {
+          "points": {
             "type": "array",
-            "description": "The array of quantities of the order. If the order is a curtailable block order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the first quantity must always be zero. The market platform will return an error if the size of the array of prices is different from the size of the array of quantities.",
+            "description": "The array of quantity-price points of the order. If the order is a curtailable block order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the first quantity must always be zero.",
             "items": {
-              "type": "number",
-              "description": "An amount of power or energy offered/bidded in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
-              "format": "double",
-              "nullable": false
-            },
-            "minItems": 1,
-            "nullable": true
-          },
-          "unitPrices": {
-            "type": "array",
-            "description": "The array of prices of the order. If the order is a curtailable block order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the prices must be increasing for a sell order and decreasing for a buy order. The market platform will return an error if the size of the array of prices is different from the size of the array of quantities.",
-            "items": {
-              "type": "number",
-              "description": "The price per unit (currency/MWh) for the quantity offered/bidded in the order, the currency being deduced from the market.",
-              "format": "double",
-              "nullable": false
+              "$ref": "#/components/schemas/QuantityPricePoint"
             },
             "minItems": 1,
             "nullable": true
           },
           "minimumAcceptanceQuantity": {
             "type": "number",
-            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order. If the market can not to accept at least this quantity, then the order will be fully rejected. This field is optional. This field will be used for curtailable block orders only. ",
+            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order.",
             "format": "double",
             "nullable": true
           },
@@ -1570,6 +1555,24 @@
         },
         "additionalProperties": true,
         "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a curtailable block order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function of prices and quantities). "
+      },
+      "QuantityPricePoint": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "number",
+            "description": "An amount of power or energy offered/bidded in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "format": "double",
+            "nullable": false
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "The price per unit (currency/MWh) for the quantity offered/bidded in the order, the currency being deduced from the market.",
+            "format": "double",
+            "nullable": false
+          }
+        },
+        "description": "The quantity and price of an order"
       },
       "OrderSearchResult": {
         "type": "object",
