@@ -940,7 +940,7 @@
             }
           },
           "400": {
-            "description": "Invalid input"
+            "$ref": "#/components/responses/ValidationError"
           }
         }
       }
@@ -1162,6 +1162,18 @@
     }
   },
   "components": {
+    "responses": {
+      "ValidationError": {
+        "description": "The request failed validation",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
     "schemas": {
       "Link": {
         "type": "object",
@@ -1680,7 +1692,7 @@
           "property": {
             "type": "string", 
             "description": "The name of the property, specified as a relative or absolute json path, e.g. 'marketId' or 'quantities[1].quantity",
-            "required": false
+            "nullable": false
           },
           "message": {
             "type": "string",
