@@ -1519,8 +1519,9 @@
       "Trade": {
         "type": "object",
         "properties": {
-          "id": {
+          "tradeId": {
             "type": "string",
+            "description": "Id of the trade",
             "nullable": true
           },
           "status": {
