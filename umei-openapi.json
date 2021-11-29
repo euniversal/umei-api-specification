@@ -257,6 +257,27 @@
         }
       }
     },
+    "/Markets": {
+      "get": {
+        "tags": [
+          "Market"
+        ],
+        "summary": "List all Markets",
+        "operationId": "Market_List",
+        "responses": {
+          "200": {
+            "description": "Market(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketSearchResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/BaselineIntervals": {
       "get": {
         "tags": [
@@ -1325,6 +1346,38 @@
           }
         },
         "additionalProperties": true
+      },
+      "Market": {
+        "type": "object",
+        "properties": {
+          "marketId": {
+            "type": "string",
+            "description": "The id of the market. This id will be used to define to which market an order belongs.",
+            "nullable": false
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the market",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "A small description of the market",
+            "nullable": true
+          }
+        }
+      },
+      "MarketSearchResult": {
+        "type": "object",
+        "properties": {
+          "markets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Market"
+            },
+            "nullable": true
+          }
+        }
       },
       "MeterReading": {
         "type": "object",
