@@ -503,6 +503,252 @@
         }
       }
     },
+    "/HeadroomIntervals": {
+      "get": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "List or search one or several HeadroomInterval(s) using a query",
+        "operationId": "HeadroomInterval_Search",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "nullable": true
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "schema": {
+              "type": "integer",
+              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HeadroomInterval(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomIntervalSearchResult"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "Create a new HeadroomInterval",
+        "operationId": "HeadroomInterval_Create_Single",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeadroomInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "HeadroomInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/HeadroomIntervals/{headroomId}": {
+      "get": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "Get an existing HeadroomInterval by id",
+        "operationId": "HeadroomInterval_GetById",
+        "parameters": [
+          {
+            "name": "headroomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HeadroomInterval successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomInterval"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "Update an existing HeadroomInterval, or create if missing",
+        "operationId": "HeadroomInterval_Update",
+        "parameters": [
+          {
+            "name": "headroomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeadroomInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "HeadroomInterval successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomInterval"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "HeadroomInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "Patch / partially update an existing HeadroomInterval",
+        "operationId": "HeadroomInterval_Patch",
+        "parameters": [
+          {
+            "name": "headroomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HeadroomInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "HeadroomInterval successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeadroomInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "HeadroomInterval"
+        ],
+        "summary": "Delete/Remove an existing HeadroomInterval",
+        "operationId": "HeadroomInterval_Delete",
+        "parameters": [
+          {
+            "name": "headroomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "HeadroomInterval successfully deleted"
+          }
+        }
+      }
+    },
     "/MeterReadings/{meterReadingId}": {
       "get": {
         "tags": [
@@ -1234,7 +1480,8 @@
             "format": "double",
             "minimum": -1E6,
             "maximum": 1E6,
-            "multipleOf": 0.001
+            "multipleOf": 0.001,
+            "nullable": false
           }
         },
         "additionalProperties": true,
@@ -1252,6 +1499,87 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BaseLineInterval"
+            },
+            "nullable": false
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": false,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "HeadroomInterval": {
+        "type": "object",
+        "properties": {
+          "headroomId": {
+            "type": "string",
+            "description": "Id of the headroom (should be unique)",
+            "nullable": false
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": false,
+            "readOnly": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "Id of the grid node. An error will be returned if this grid node does not exist, or if several headrooms are provided for the same grid node on the same time interval.",
+            "nullable": false
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this headroom applies.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this headroom applies.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "powerMin": {
+            "type": "number",
+            "description": "Minimum capacity of the grid node in MW. A negative value corresponds to an injection, while a positive value corresponds to an offtake.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001,
+            "nullable": false
+          },
+          "powerMax": {
+            "type": "number",
+            "description": "Maximum capacity of the grid node in MW. A negative value corresponds to an injection, while a positive value corresponds to an offtake.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001,
+            "nullable": false
+          }
+        },
+        "additionalProperties": true,
+        "description": "Headroom (i.e. min and max capacities) of a grid node for a time interval.  \r\nAn headroom covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+      },
+      "HeadroomIntervalSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeadroomInterval"
             },
             "nullable": false
           },
