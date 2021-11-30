@@ -14,7 +14,7 @@
     "/Portfolios": {
       "get": {
         "tags": [
-          "Portfolio"
+          "Portfolio","DSO - All data","FSP - Own data"
         ],
         "summary": "List or search one or several Portfolio(s) using a query",
         "operationId": "Portfolio_Search",
@@ -78,7 +78,7 @@
       },
       "post": {
         "tags": [
-          "Portfolio"
+          "Portfolio","FSP - Own data"
         ],
         "summary": "Create a new Portfolio",
         "operationId": "Portfolio_Create",
@@ -111,7 +111,7 @@
     "/Portfolios/{portfolioId}": {
       "get": {
         "tags": [
-          "Portfolio"
+          "Portfolio", "DSO - All data", "FSP - Own data"
         ],
         "summary": "Get an existing Portfolio by id",
         "operationId": "Portfolio_GetById",
@@ -141,7 +141,7 @@
       },
       "put": {
         "tags": [
-          "Portfolio"
+          "Portfolio", "FSP - Own data"
         ],
         "summary": "Update an existing Portfolio, or create if missing",
         "operationId": "Portfolio_Update",
@@ -193,7 +193,7 @@
       },
       "patch": {
         "tags": [
-          "Portfolio"
+          "Portfolio", "FSP - Own data"
         ],
         "summary": "Patch / partially update an existing Portfolio",
         "operationId": "Portfolio_Patch",
@@ -235,7 +235,7 @@
       },
       "delete": {
         "tags": [
-          "Portfolio"
+          "Portfolio", "FSP - Own data"
         ],
         "summary": "Delete/Remove an existing Portfolio",
         "operationId": "Portfolio_Delete",
@@ -260,7 +260,7 @@
     "/BaselineIntervals": {
       "get": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "DSO - All data", "FSP - Own data"
         ],
         "summary": "List or search one or several BaselineInterval(s) using a query",
         "operationId": "BaselineInterval_Search",
@@ -324,7 +324,7 @@
       },
       "post": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "FSP - Own data"
         ],
         "summary": "Create a new BaselineInterval",
         "operationId": "BaselineInterval_Create_Single",
@@ -357,7 +357,7 @@
     "/BaselineIntervals/{baselineId}": {
       "get": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "DSO - All data", "FSP - Own data"
         ],
         "summary": "Get an existing BaselineInterval by id",
         "operationId": "BaselineInterval_GetById",
@@ -387,7 +387,7 @@
       },
       "put": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "FSP - Own data"
         ],
         "summary": "Update an existing BaselineInterval, or create if missing",
         "operationId": "BaselineInterval_Update",
@@ -439,7 +439,7 @@
       },
       "patch": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "FSP - Own data"
         ],
         "summary": "Patch / partially update an existing BaselineInterval",
         "operationId": "BaselineInterval_Patch",
@@ -481,7 +481,7 @@
       },
       "delete": {
         "tags": [
-          "BaselineInterval"
+          "BaselineInterval", "FSP - Own data"
         ],
         "summary": "Delete/Remove an existing BaselineInterval",
         "operationId": "BaselineInterval_Delete",
@@ -506,7 +506,7 @@
     "/MeterReadings/{meterReadingId}": {
       "get": {
         "tags": [
-          "MeterReading"
+          "MeterReading", "DSO - All data", "FSP - Own data"
         ],
         "summary": "Get an existing MeterReading by id",
         "operationId": "MeterReading_GetById",
@@ -536,7 +536,7 @@
       },
       "put": {
         "tags": [
-          "MeterReading"
+          "MeterReading","FSP - Own data"
         ],
         "summary": "Update an existing MeterReading, or create if missing",
         "operationId": "MeterReading_Update",
@@ -588,7 +588,7 @@
       },
       "patch": {
         "tags": [
-          "MeterReading"
+          "MeterReading","FSP - Own data"
         ],
         "summary": "Patch / partially update an existing MeterReading",
         "operationId": "MeterReading_Patch",
@@ -630,7 +630,7 @@
       },
       "delete": {
         "tags": [
-          "MeterReading"
+          "MeterReading","FSP - Own data"
         ],
         "summary": "Delete/Remove an existing MeterReading",
         "operationId": "MeterReading_Delete_By_ID",
@@ -655,7 +655,7 @@
     "/MeterReadings": {
       "post": {
         "tags": [
-          "MeterReading"
+          "MeterReading", "FSP - Own data"
         ],
         "summary": "Create a new MeterReading",
         "operationId": "MeterReading_Create",
@@ -686,7 +686,7 @@
       },
       "delete": {
         "tags": [
-          "MeterReading"
+          "MeterReading","FSP - Own data"
         ],
         "summary": "Delete/Remove one or several existing MeterReading(s) using a query",
         "operationId": "MeterReading_Delete_By_Query",
@@ -714,7 +714,7 @@
       },
       "get": {
         "tags": [
-          "MeterReading"
+          "MeterReading", "DSO - All data", "FSP - Own data"
         ],
         "summary": "List or search one or several MeterReading(s) using a query",
         "operationId": "MeterReading_Search",
@@ -780,7 +780,7 @@
     "/MeterReadings/create-multiple": {
       "post": {
         "tags": [
-          "MeterReading"
+          "MeterReading", "FSP - Own data"
         ],
         "summary": "Create several new MeterReadings",
         "operationId": "MeterReading_CreateMultiple",
@@ -810,7 +810,7 @@
     "/MeterReadings/import": {
       "post": {
         "tags": [
-          "MeterReading"
+          "MeterReading", "FSP - Own data"
         ],
         "summary": "Import and create several MeterReadings",
         "operationId": "MeterReading_Import",
@@ -851,7 +851,7 @@
     "/Orders": {
       "get": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "List or search one or several Order(s) using a query",
         "operationId": "Order_Search",
@@ -915,7 +915,7 @@
       },
       "post": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "Create a new Order",
         "operationId": "Order_Create",
@@ -948,7 +948,7 @@
     "/Orders/{orderId}": {
       "get": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "Get an existing Order by id",
         "operationId": "Order_GetById",
@@ -978,7 +978,7 @@
       },
       "put": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "Update an existing Order, or create if missing",
         "operationId": "Order_Update",
@@ -1030,7 +1030,7 @@
       },
       "patch": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "Patch / partially update an existing order",
         "operationId": "Order_Patch",
@@ -1072,7 +1072,7 @@
       },
       "delete": {
         "tags": [
-          "Order"
+          "Order", "All market participants (FSPs and DSOs) - Own data"
         ],
         "summary": "Delete/Remove an existing Order",
         "operationId": "Order_Delete",
@@ -1097,7 +1097,7 @@
     "/Trades": {
       "get": {
         "tags": [
-          "Trade"
+          "Trade", "All market participants (FSPs and DSOs) - All data"
         ],
         "summary": "List or search one or several Trade(s) using a query",
         "operationId": "Trade_Search",
@@ -1161,6 +1161,52 @@
       }
     }
   },
+  "tags": [
+    {
+      "name": "Portfolio",
+      "description": "Requests to create, retrieve, update or delete portfolio(s)"
+    },
+    {
+      "name": "BaselineInterval",
+      "description": "Requests to create, retrieve, update or delete baseline(s)"
+    },
+    {
+      "name": "MeterReading",
+      "description": "Requests to create, retrieve, update or delete measurement(s)"
+    },
+    {
+      "name": "Order",
+      "description": "Requests to create, retrieve, update or delete order(s)"
+    },
+    {
+      "name": "Trade",
+      "description": "Requests to retrieve trade(s)"
+    },
+    {
+      "name": "FSP - All data",
+      "description": "Requests authorized only for the Flexibility Supply Providers. A FSP can have access to all data available through those request, regardless of who created this data."
+    },
+    {
+      "name": "FSP - Own data",
+      "description": "Requests authorized only for the Flexibility Supply Providers. A FSP can not have access to all data available through those request, but only to the data he created."
+    },
+    {
+      "name": "DSO - All data",
+      "description": "Requests authorized only for the Distribution System Operators. A DSO can have access to all data available through those request, regardless of who created this data."
+    },
+    {
+      "name": "DSO - Own data",
+      "description": "Requests authorized only for the Distribution System Operators. A DSO can not have access to all data available through those request, but only to the data he created."
+    },
+    {
+      "name": "All market participants (FSPs and DSOs) - All data",
+      "description": "Requests authorized for all market participants (FSPs and DSOs). A market participant can have access to all data available through those request, regardless of who created this data."
+    },
+    {
+      "name": "All market participants (FSPs and DSOs) - Own data",
+      "description": "Requests authorized for all market participants (FSPs and DSOs). A market participant can not have access to all data available through those request, but only to the data he created."
+    }
+  ],
   "components": {
     "schemas": {
       "Link": {
