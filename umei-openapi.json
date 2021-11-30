@@ -117,13 +117,7 @@
         "operationId": "Portfolio_GetById",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           }
         ],
         "responses": {
@@ -147,13 +141,7 @@
         "operationId": "Portfolio_Update",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           }
         ],
         "requestBody": {
@@ -199,13 +187,7 @@
         "operationId": "Portfolio_Patch",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           }
         ],
         "requestBody": {
@@ -241,13 +223,7 @@
         "operationId": "Portfolio_Delete",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           }
         ],
         "responses": {
@@ -363,13 +339,7 @@
         "operationId": "BaselineInterval_GetById",
         "parameters": [
           {
-            "name": "baselineId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/baselineId"
           }
         ],
         "responses": {
@@ -393,13 +363,7 @@
         "operationId": "BaselineInterval_Update",
         "parameters": [
           {
-            "name": "baselineId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/baselineId"
           }
         ],
         "requestBody": {
@@ -445,13 +409,7 @@
         "operationId": "BaselineInterval_Patch",
         "parameters": [
           {
-            "name": "baselineId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/baselineId"
           }
         ],
         "requestBody": {
@@ -487,13 +445,7 @@
         "operationId": "BaselineInterval_Delete",
         "parameters": [
           {
-            "name": "baselineId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/baselineId"
           }
         ],
         "responses": {
@@ -512,13 +464,7 @@
         "operationId": "MeterReading_GetById",
         "parameters": [
           {
-            "name": "meterReadingId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/meterReadingId"
           }
         ],
         "responses": {
@@ -542,13 +488,7 @@
         "operationId": "MeterReading_Update",
         "parameters": [
           {
-            "name": "meterReadingId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/meterReadingId"
           }
         ],
         "requestBody": {
@@ -594,13 +534,7 @@
         "operationId": "MeterReading_Patch",
         "parameters": [
           {
-            "name": "meterReadingId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/meterReadingId"
           }
         ],
         "requestBody": {
@@ -636,13 +570,7 @@
         "operationId": "MeterReading_Delete_By_ID",
         "parameters": [
           {
-            "name": "meterReadingId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/meterReadingId"
           }
         ],
         "responses": {
@@ -954,13 +882,7 @@
         "operationId": "Order_GetById",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           }
         ],
         "responses": {
@@ -984,13 +906,7 @@
         "operationId": "Order_Update",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           }
         ],
         "requestBody": {
@@ -1036,13 +952,7 @@
         "operationId": "Order_Patch",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           }
         ],
         "requestBody": {
@@ -1078,13 +988,7 @@
         "operationId": "Order_Delete",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           }
         ],
         "responses": {
@@ -1162,6 +1066,44 @@
     }
   },
   "components": {
+    "parameters": {
+      "portfolioId": {
+        "name": "portfolioId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "baselineId": {
+        "name": "baselineId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "meterReadingId": {
+        "name": "meterReadingId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "orderId": {
+        "name": "orderId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      }
+    },
     "schemas": {
       "Link": {
         "type": "object",
