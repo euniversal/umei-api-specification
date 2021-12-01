@@ -1223,6 +1223,7 @@
         "properties": {
           "baselineId": {
             "type": "string",
+            "description": "Id of the baseline (should be unique)",
             "nullable": false
           },
           "status": {
@@ -1236,7 +1237,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this baseline",
             "nullable": false
           },
           "links": {
@@ -1249,15 +1250,18 @@
           },
           "portfolioId": {
             "type": "string",
+            "description": "The portfolio for which this baseline applies. An error will be returned if this portfolio does not exist.",
             "nullable": false
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this baseline applies.",
             "format": "date-time",
             "nullable": false
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this baseline applies.",
             "format": "date-time",
             "nullable": false
           },
@@ -1271,7 +1275,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -1305,6 +1309,7 @@
         "properties": {
           "portfolioId": {
             "type": "string",
+            "description": "Id of the portfolio (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1318,16 +1323,17 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this portfolio",
             "nullable": true
           },
           "name": {
             "type": "string",
+            "description": "Name of the portfolio",
             "nullable": false
           },
           "gridNodeId": {
             "type": "string",
-            "description": "ID of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
+            "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
           }
         },
@@ -1396,6 +1402,7 @@
         "properties": {
           "meterReadingId": {
             "type": "string",
+            "description": "Id of the measurement (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1409,7 +1416,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this measurement",
             "nullable": true
           },
           "links": {
@@ -1422,21 +1429,24 @@
           },
           "portfolioId": {
             "type": "string",
+            "description": "The portfolio for which this measurement applies. An error will be returned if this portfolio does not exist.",
             "nullable": true
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this measurement applies.",
             "format": "date-time",
             "nullable": true
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this measurement applies.",
             "format": "date-time",
             "nullable": true
           },
           "power": {
             "type": "number",
-            "description": "Average power consumption in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
+            "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
             "minimum": -1E6,
             "maximum": 1E6,
@@ -1445,7 +1455,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "MeterReading covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
@@ -1478,6 +1488,7 @@
         "properties": {
           "orderId": {
             "type": "string",
+            "description": "Id of the order (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1586,6 +1597,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "Id of the trade (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1599,7 +1611,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this trade",
             "nullable": true
           },
           "marketId": {
@@ -1624,6 +1636,7 @@
               "Sell"
             ],
             "type": "string",
+            "description": "Type of the trade (buy / sell)",
             "nullable": true
           },
           "unitPrice": {
@@ -1634,20 +1647,24 @@
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this trade applies.",
             "format": "date-time",
             "nullable": true
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this trade applies.",
             "format": "date-time",
             "nullable": true
           },
           "gridNodeId": {
             "type": "string",
+            "description": "Reference to the grid node.",
             "nullable": true
           },
           "portfolioId": {
             "type": "string",
+            "description": "Reference to the portfolio.",
             "nullable": true
           },
           "regulationType": {
@@ -1656,6 +1673,7 @@
               "Down"
             ],
             "type": "string",
+            "description": "Type of regulation of the trade. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
             "nullable": true
           },
           "links": {
