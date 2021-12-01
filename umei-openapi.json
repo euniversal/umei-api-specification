@@ -20,16 +20,38 @@
         "operationId": "Portfolio_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "gridNodeId",
             "in": "query",
+            "description": "Search by grid node id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Search by portfolio name",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
@@ -287,16 +309,38 @@
         "operationId": "BaselineInterval_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Search by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
@@ -713,16 +757,38 @@
         "operationId": "MeterReading_Delete_By_Query",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Delete by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Delete by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Delete by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           }
@@ -741,16 +807,38 @@
         "operationId": "MeterReading_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Search by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
@@ -878,16 +966,47 @@
         "operationId": "Order_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "gridNodeId",
             "in": "query",
+            "description": "Search by grid node id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "marketId",
+            "in": "query",
+            "description": "Search by market id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "portfolioId",
+            "in": "query",
+            "description": "Search by portfolio id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
+              "type": "string",
               "nullable": true
             }
           },
@@ -1124,16 +1243,56 @@
         "operationId": "Trade_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "orderId",
             "in": "query",
+            "description": "Search by order id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "marketId",
+            "in": "query",
+            "description": "Search by market id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "portfolioId",
+            "in": "query",
+            "description": "Search by portfolio id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
+              "type": "string",
               "nullable": true
             }
           },
