@@ -36,10 +36,10 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -282,10 +282,10 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -736,10 +736,10 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -873,10 +873,10 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -940,7 +940,7 @@
             }
           },
           "400": {
-            "description": "Invalid input"
+            "$ref": "#/components/responses/ValidationError"
           }
         }
       }
@@ -1119,10 +1119,10 @@
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -1162,6 +1162,18 @@
     }
   },
   "components": {
+    "responses": {
+      "ValidationError": {
+        "description": "The request failed validation",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
     "schemas": {
       "Link": {
         "type": "object",
@@ -1441,7 +1453,7 @@
           },
           "portfolioId": {
             "type": "string",
-            "description": "The portfolio for which this order applies.  \r\nRequired for sell orders only.\r\nNot updatable.",
+            "description": "The portfolio for which this order applies.  Required for sell orders only. Not updatable.",
             "nullable": true
           },
           "regulationType": {
@@ -1464,7 +1476,7 @@
           },
           "quantity": {
             "type": "number",
-            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.   For power, it denotes the max (in absolute terms) power consumption/production in MW during the specified period.\r     For energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
             "format": "double",
             "nullable": true
           },
@@ -1636,6 +1648,71 @@
           }
         },
         "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "description": "An object describing the problem in a machine-and-user readable version, based on / extending RFC7807. ",
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when de-referenced, it provide human-readable documentation for the problem type (e.g., using HTML [W3C.REC-html5-20141028]). When this member is not present, its value is assumed to be \"about:blank\"",
+            "nullable": false,
+            "example": "https://umei.org/error-codes/invalid-grid-reference"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation;",
+            "example": "The grid node id is not found or not valid for this operation"
+          },
+          "status": {
+            "type": "string",
+            "description": "The HTTP status code generated by the origin server for this occurrence of the problem. ",
+            "example": "400",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem.",
+            "example": "Grid node #231432 MyGridNode is not participating in this market"
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if de-referenced.",
+            "example": "https://my-fmo.eu/error-instances/4232312"
+          },
+          "validation-errors": {
+            "type": "array",
+            "description": "If present, contains a list of invalid parameters that the client should correct before retrying the operation",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "description": "Reference to a field that failed validation along with an description of the validation error",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "The name of the property, specified as a relative or absolute json path, e.g. 'marketId' or 'quantities[1].quantity'",
+            "nullable": false,
+            "example": "gridNodeId"
+          },
+          "message": {
+            "type": "string",
+            "description": "Description of the issue with this property",
+            "example": "The specified grid node is not participating in this market",
+            "nullable": false
+          },
+          "value": {
+            "type": "string",
+            "description": "Value received as input for this property",
+            "example": "231432",
+            "nullable": true
+          }
+        }
       }
     }
   }
