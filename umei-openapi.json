@@ -1805,13 +1805,6 @@
             },
             "nullable": true,
             "readOnly": true
-          },
-          "customProperties": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": true
