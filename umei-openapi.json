@@ -1698,18 +1698,18 @@
             "type": "string",
             "description": "The name of the property, specified as a relative or absolute json path, e.g. 'marketId' or 'quantities[1].quantity'",
             "nullable": false,
-            "example": "marketId"
+            "example": "gridNodeId"
           },
           "message": {
             "type": "string",
             "description": "Description of the issue with this property",
-            "example": "must be greater than or equal to 0",
+            "example": "The specified grid node is not participating in this market",
             "nullable": false
           },
           "value": {
             "type": "string",
             "description": "Value received as input for this property",
-            "example": "-5",
+            "example": "231432",
             "nullable": true
           }
         }
