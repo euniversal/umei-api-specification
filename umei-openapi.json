@@ -20,26 +20,48 @@
         "operationId": "Portfolio_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "gridNodeId",
             "in": "query",
+            "description": "Search by grid node id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Search by portfolio name",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -257,6 +279,27 @@
         }
       }
     },
+    "/Markets": {
+      "get": {
+        "tags": [
+          "Market"
+        ],
+        "summary": "List all Markets",
+        "operationId": "Market_List",
+        "responses": {
+          "200": {
+            "description": "Market(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketSearchResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/BaselineIntervals": {
       "get": {
         "tags": [
@@ -266,26 +309,48 @@
         "operationId": "BaselineInterval_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Search by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -692,16 +757,38 @@
         "operationId": "MeterReading_Delete_By_Query",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Delete by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Delete by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Delete by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           }
@@ -720,26 +807,48 @@
         "operationId": "MeterReading_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "portfolioId",
             "in": "query",
+            "description": "Search by portfolio id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
               "nullable": true
             }
           },
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -857,26 +966,57 @@
         "operationId": "Order_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "gridNodeId",
             "in": "query",
+            "description": "Search by grid node id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "marketId",
+            "in": "query",
+            "description": "Search by market id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "portfolioId",
+            "in": "query",
+            "description": "Search by portfolio id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
+              "type": "string",
               "nullable": true
             }
           },
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -940,7 +1080,7 @@
             }
           },
           "400": {
-            "description": "Invalid input"
+            "$ref": "#/components/responses/ValidationError"
           }
         }
       }
@@ -1103,26 +1243,66 @@
         "operationId": "Trade_Search",
         "parameters": [
           {
-            "name": "query",
+            "name": "orderId",
             "in": "query",
+            "description": "Search by order id",
             "schema": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gridNodeId",
+            "in": "query",
+            "description": "Search by grid node id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "marketId",
+            "in": "query",
+            "description": "Search by market id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "portfolioId",
+            "in": "query",
+            "description": "Search by portfolio id",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Search by status",
+            "schema": {
+              "enum": [
+                "Received",
+                "Pending",
+                "Rejected",
+                "Active",
+                "Inactive",
+                "Completed",
+                "Deleted"
+              ],
+              "type": "string",
               "nullable": true
             }
           },
           {
             "name": "take",
             "in": "query",
-            "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
             "schema": {
               "type": "integer",
-              "description": "Number of hits to return. \r\nIf client does not specify Take the server MAY apply a default Take value\r\n(which will be returned in the SearchResult object).\r\nThe default value is not guaranteed to be the same for different requests\"",
+              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
               "format": "int32"
             }
           },
@@ -1208,6 +1388,18 @@
     }
   ],
   "components": {
+    "responses": {
+      "ValidationError": {
+        "description": "The request failed validation",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
     "schemas": {
       "Link": {
         "type": "object",
@@ -1236,6 +1428,7 @@
         "properties": {
           "baselineId": {
             "type": "string",
+            "description": "Id of the baseline (should be unique)",
             "nullable": false
           },
           "status": {
@@ -1249,7 +1442,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this baseline",
             "nullable": false
           },
           "links": {
@@ -1262,15 +1455,18 @@
           },
           "portfolioId": {
             "type": "string",
+            "description": "The portfolio for which this baseline applies. An error will be returned if this portfolio does not exist.",
             "nullable": false
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this baseline applies.",
             "format": "date-time",
             "nullable": false
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this baseline applies.",
             "format": "date-time",
             "nullable": false
           },
@@ -1284,7 +1480,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "BaseLineInterval covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -1318,6 +1514,7 @@
         "properties": {
           "portfolioId": {
             "type": "string",
+            "description": "Id of the portfolio (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1331,16 +1528,17 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this portfolio",
             "nullable": true
           },
           "name": {
             "type": "string",
+            "description": "Name of the portfolio",
             "nullable": false
           },
           "gridNodeId": {
             "type": "string",
-            "description": "ID of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
+            "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
           }
         },
@@ -1372,11 +1570,44 @@
         },
         "additionalProperties": true
       },
+      "Market": {
+        "type": "object",
+        "properties": {
+          "marketId": {
+            "type": "string",
+            "description": "The id of the market. This id will be used to define to which market an order belongs.",
+            "nullable": false
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the market",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "A small description of the market",
+            "nullable": true
+          }
+        }
+      },
+      "MarketSearchResult": {
+        "type": "object",
+        "properties": {
+          "markets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Market"
+            },
+            "nullable": true
+          }
+        }
+      },
       "MeterReading": {
         "type": "object",
         "properties": {
           "meterReadingId": {
             "type": "string",
+            "description": "Id of the measurement (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1390,7 +1621,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this measurement",
             "nullable": true
           },
           "links": {
@@ -1403,21 +1634,24 @@
           },
           "portfolioId": {
             "type": "string",
+            "description": "The portfolio for which this measurement applies. An error will be returned if this portfolio does not exist.",
             "nullable": true
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this measurement applies.",
             "format": "date-time",
             "nullable": true
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this measurement applies.",
             "format": "date-time",
             "nullable": true
           },
           "power": {
             "type": "number",
-            "description": "Average power consumption in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
+            "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
             "minimum": -1E6,
             "maximum": 1E6,
@@ -1426,7 +1660,7 @@
           }
         },
         "additionalProperties": true,
-        "description": "MeterReading covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
@@ -1459,6 +1693,7 @@
         "properties": {
           "orderId": {
             "type": "string",
+            "description": "Id of the order (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1487,7 +1722,7 @@
           },
           "portfolioId": {
             "type": "string",
-            "description": "The portfolio for which this order applies.  \r\nRequired for sell orders only.\r\nNot updatable.",
+            "description": "The portfolio for which this order applies.  Required for sell orders only. Not updatable.",
             "nullable": true
           },
           "regulationType": {
@@ -1510,7 +1745,7 @@
           },
           "quantity": {
             "type": "number",
-            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.   For power, it denotes the max (in absolute terms) power consumption/production in MW during the specified period.\r     For energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
             "format": "double",
             "nullable": true
           },
@@ -1567,6 +1802,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "Id of the trade (should be unique)",
             "nullable": true
           },
           "status": {
@@ -1580,7 +1816,7 @@
               "Deleted"
             ],
             "type": "string",
-            "description": "Status for this item",
+            "description": "Status for this trade",
             "nullable": true
           },
           "marketId": {
@@ -1605,6 +1841,7 @@
               "Sell"
             ],
             "type": "string",
+            "description": "Type of the trade (buy / sell)",
             "nullable": true
           },
           "unitPrice": {
@@ -1615,20 +1852,24 @@
           },
           "periodFrom": {
             "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this trade applies.",
             "format": "date-time",
             "nullable": true
           },
           "periodTo": {
             "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this trade applies.",
             "format": "date-time",
             "nullable": true
           },
           "gridNodeId": {
             "type": "string",
+            "description": "Reference to the grid node.",
             "nullable": true
           },
           "portfolioId": {
             "type": "string",
+            "description": "Reference to the portfolio.",
             "nullable": true
           },
           "regulationType": {
@@ -1637,6 +1878,7 @@
               "Down"
             ],
             "type": "string",
+            "description": "Type of regulation of the trade. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
             "nullable": true
           },
           "links": {
@@ -1682,6 +1924,71 @@
           }
         },
         "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "description": "An object describing the problem in a machine-and-user readable version, based on / extending RFC7807. ",
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when de-referenced, it provide human-readable documentation for the problem type (e.g., using HTML [W3C.REC-html5-20141028]). When this member is not present, its value is assumed to be \"about:blank\"",
+            "nullable": false,
+            "example": "https://umei.org/error-codes/invalid-grid-reference"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation;",
+            "example": "The grid node id is not found or not valid for this operation"
+          },
+          "status": {
+            "type": "string",
+            "description": "The HTTP status code generated by the origin server for this occurrence of the problem. ",
+            "example": "400",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem.",
+            "example": "Grid node #231432 MyGridNode is not participating in this market"
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if de-referenced.",
+            "example": "https://my-fmo.eu/error-instances/4232312"
+          },
+          "validation-errors": {
+            "type": "array",
+            "description": "If present, contains a list of invalid parameters that the client should correct before retrying the operation",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "description": "Reference to a field that failed validation along with an description of the validation error",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "The name of the property, specified as a relative or absolute json path, e.g. 'marketId' or 'quantities[1].quantity'",
+            "nullable": false,
+            "example": "gridNodeId"
+          },
+          "message": {
+            "type": "string",
+            "description": "Description of the issue with this property",
+            "example": "The specified grid node is not participating in this market",
+            "nullable": false
+          },
+          "value": {
+            "type": "string",
+            "description": "Value received as input for this property",
+            "example": "231432",
+            "nullable": true
+          }
+        }
       }
     }
   }
