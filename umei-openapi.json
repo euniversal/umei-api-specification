@@ -1380,7 +1380,7 @@
       "BaseLineInterval": {
         "type": "object",
         "properties": {
-          "baselineId": {
+          "id": {
             "type": "string",
             "description": "Id of the baseline (should be unique)",
             "nullable": false
@@ -1466,7 +1466,7 @@
         "type": "object",
         "description": "A portfolio represents one or more assets that can participate in a flexibility market, e.g. batteries, dispatchable generators etc",
         "properties": {
-          "portfolioId": {
+          "id": {
             "type": "string",
             "description": "Id of the portfolio (should be unique)",
             "nullable": true
@@ -1527,7 +1527,7 @@
       "Market": {
         "type": "object",
         "properties": {
-          "marketId": {
+          "id": {
             "type": "string",
             "description": "The id of the market. This id will be used to define to which market an order belongs.",
             "nullable": false
@@ -1559,7 +1559,7 @@
       "MeterReading": {
         "type": "object",
         "properties": {
-          "meterReadingId": {
+          "id": {
             "type": "string",
             "description": "Id of the measurement (should be unique)",
             "nullable": true
@@ -1645,7 +1645,7 @@
       "Order": {
         "type": "object",
         "properties": {
-          "orderId": {
+          "id": {
             "type": "string",
             "description": "Id of the order (should be unique)",
             "nullable": true
@@ -1754,7 +1754,7 @@
       "Trade": {
         "type": "object",
         "properties": {
-          "tradeId": {
+          "id": {
             "type": "string",
             "description": "Id of the trade (should be unique)",
             "nullable": true
