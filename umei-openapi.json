@@ -258,7 +258,7 @@
     "/Markets": {
       "get": {
         "tags": [
-          "Market"
+          "Market", "All market participants (FSPs and DSOs) - All data"
         ],
         "summary": "List all Markets",
         "operationId": "Market_List",
