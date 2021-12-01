@@ -1627,7 +1627,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
+            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means a decrease in available power (either reduced production or increased consumption). ",
             "nullable": true
           },
           "side": {
@@ -1639,15 +1639,18 @@
             "description": "Type of submission of the order (buy / sell)",
             "nullable": false
           },
-          "quantity": {
-            "type": "number",
-            "description": "The amount of power or energy of the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.   For power, it denotes the max (in absolute terms) power consumption/production in MW during the specified period.\r     For energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
-            "format": "double",
+          "pricePoints": {
+            "type": "array",
+            "description": "The array of quantity-price points of the order. If the order is a fixed-price order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the first quantity must always be zero.",
+            "items": {
+              "$ref": "#/components/schemas/QuantityPricePoint"
+            },
+            "minItems": 1,
             "nullable": true
           },
-          "unitPrice": {
+          "minimumAcceptanceQuantity": {
             "type": "number",
-            "description": "The price pr unit (currency/MWh), the currency being deduced from the market.",
+            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order.",
             "format": "double",
             "nullable": true
           },
@@ -1665,7 +1668,25 @@
           }
         },
         "additionalProperties": true,
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node ID is required for sell orders and buy orders unless it can be derived from the portfolio. "
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node id is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
+      },
+      "QuantityPricePoint": {
+        "type": "object",
+        "description": "A price-quantity-point of an order. A non-empty set of quantity-price-points describe a piecewise linear mapping from quantity to price. ",
+        "properties": {
+          "quantity": {
+            "type": "number",
+            "description": "An amount of power or energy offered/bid in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "format": "double",
+            "nullable": false
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "The price per unit (currency/MWh) for the quantity offered/bid in the order, the currency being deduced from the market.",
+            "format": "double",
+            "nullable": false
+          }
+        }
       },
       "OrderSearchResult": {
         "type": "object",
