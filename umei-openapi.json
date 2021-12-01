@@ -1474,7 +1474,7 @@
             "description": "Type of submission of the order (buy / sell)",
             "nullable": false
           },
-          "points": {
+          "pricePoints": {
             "type": "array",
             "description": "The array of quantity-price points of the order. If the order is a fixed-price order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the first quantity must always be zero.",
             "items": {
