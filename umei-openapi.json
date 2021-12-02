@@ -1665,6 +1665,11 @@
             "description": "The timestamp indicating the end of the interval for which this order applies.",
             "format": "date-time",
             "nullable": true
+          },
+          "longflexContractId": {
+            "type": "string",
+            "description": "A reference to the corresponding longflex contract, if this order is part of or based on a longflex contract",
+            "nullable": true
           }
         },
         "additionalProperties": true,
