@@ -1618,7 +1618,7 @@
           },
           "portfolioId": {
             "type": "string",
-            "description": "The portfolio for which this order applies.  Required for sell orders only. Not updatable.",
+            "description": "The portfolio for which this order applies. Required for sell orders only (an error will be returned if this portfolio does not exist). Not updatable.",
             "nullable": true
           },
           "regulationType": {

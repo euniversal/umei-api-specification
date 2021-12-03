@@ -8,19 +8,14 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 
 |  Code                      | Description                               |
 |----------------------------|-------------------------------------------|
-| invalid-market-id          | The given market does not exist, is not available for the current user, or is otherwise not available for the given order.
-
-
-
-InvalidMarket
-: The given market does not exist, is not available for the current user, or is otherwise not available for the given order.
-
-InvalidGridnode
-: The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order.
-
-MarketClosed
-: The market is not open for trading for the period specified in the order
-
-MarketNotYetOpen
-: The market has not yet opened for trading for the period specified in the order
-
+|InvalidMarket | The given market does not exist, is not available for the current user, or is otherwise not available for the given order
+|InvalidGridNode | The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order
+|InvalidPortfolio | The given portfolio does not exist, or is not available for the current user
+|InvalidStatus | The status specified is not valid for the item selected
+|InvalidLongflexContractId | The given longflex contract does not exist, or is not available for the current user
+|MarketClosed | The market is not open for trading for the period specified in the order
+|MarketNotYetOpen | The market has not yet opened for trading for the period specified in the order
+|Unauthorized | The request is not authorized for the current user
+|InconsistentPeriods | 'periodTo' must be subsequent to 'periodFrom'
+|NonZeroFirstQuantity | The quantity of the first 'QuantityPricePoint' of an interpolated order must always be zero
+|NonUpdatablePortfolio | The portfolio can not be updated for the given order
