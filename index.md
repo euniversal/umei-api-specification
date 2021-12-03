@@ -12,3 +12,6 @@ The OpenAPI specification is available here:
 
 A SwaggerUI-version can be viewed here:  
 [Swagger UI](swagger-ui.html)
+
+A glossary is available here:
+[Glossary](swagger-ui.html)
