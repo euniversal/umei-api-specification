@@ -1316,8 +1316,7 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "BaseLineInterval": {
         "type": "object",
@@ -1375,7 +1374,6 @@
             "multipleOf": 0.001
           }
         },
-        "additionalProperties": true,
         "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
@@ -1401,8 +1399,7 @@
             "nullable": false,
             "readOnly": true
           }
-        },
-        "additionalProperties": true
+        }
       },
       "Portfolio": {
         "type": "object",
@@ -1437,8 +1434,7 @@
             "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
           }
-        },
-        "additionalProperties": true
+        }
       },
       "PortfolioSearchResult": {
         "type": "object",
@@ -1463,8 +1459,7 @@
             "nullable": true,
             "readOnly": true
           }
-        },
-        "additionalProperties": true
+        }
       },
       "Market": {
         "type": "object",
@@ -1555,7 +1550,6 @@
             "nullable": true
           }
         },
-        "additionalProperties": true,
         "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
@@ -1581,8 +1575,7 @@
             "nullable": true,
             "readOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "Order": {
         "type": "object",
@@ -1672,7 +1665,6 @@
             "nullable": true
           }
         },
-        "additionalProperties": true,
         "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node id is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
       },
       "QuantityPricePoint": {
@@ -1716,8 +1708,7 @@
             "nullable": true,
             "readOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "Trade": {
         "type": "object",
@@ -1811,8 +1802,7 @@
             "nullable": true,
             "readOnly": true
           }
-        },
-        "additionalProperties": true
+        }
       },
       "TradeSearchResult": {
         "type": "object",
@@ -1837,13 +1827,11 @@
             "nullable": true,
             "readOnly": true
           }
-        },
-        "additionalProperties": false
+        }
       },
       "ProblemDetails": {
         "type": "object",
         "description": "An object describing the problem in a machine-and-user readable version, based on / extending RFC7807. ",
-        "additionalProperties": true,
         "properties": {
           "type": {
             "type": "string",
