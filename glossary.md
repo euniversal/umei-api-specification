@@ -25,7 +25,7 @@
 **Limit price:** For buy orders, this is the upper limit of what the buyer is willing to pay. 
 For a sell order, this is the lower limit of what the seller is willing to accept. See "Market price". 
 
-**Market price:** For buy orders, this means that the buyer will buy as much as possible (up to the quantity specified in the order) at the current market sell price. For sell orders, this means that the seller will sell as much as possible (up to the quantity specified in the order) at the current market buy price. 
+**Market price:** For buy orders, this means that the buyer will is willing to pay the current market sell price. For sell orders, this means that the seller is willing to sell at the current market buy price. 
 
 **MeterReading:** Registration of the actual power consumed/injected by an asset
 
