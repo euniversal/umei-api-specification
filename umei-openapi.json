@@ -1672,6 +1672,17 @@
             "type": "string",
             "description": "A small description of the market",
             "nullable": true
+          },
+          "quantityType": {
+            "type": "string",
+            "enum": [
+              "Power",
+              "ReactivePower",
+              "Energy",
+              "Capacity"
+            ],
+            "description": "The type of quantity which is traded in this market. Each market can operate in only one type of quantity. ",
+            "nullable": false
           }
         }
       },
