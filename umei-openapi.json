@@ -1676,7 +1676,7 @@
           "quantityType": {
             "type": "string",
             "enum": [
-              "Power",
+              "ActivePower",
               "ReactivePower",
               "Energy",
               "Capacity"
