@@ -1419,7 +1419,6 @@
         "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
         "schema": {
           "type": "integer",
-          "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
           "format": "int32"
         }
       },
