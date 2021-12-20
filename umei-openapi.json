@@ -122,7 +122,7 @@
         }
       }
     },
-    "/Portfolios/{portfolioId}": {
+    "/Portfolios/{id}": {
       "get": {
         "tags": [
           "Portfolio"
@@ -131,13 +131,7 @@
         "operationId": "Portfolio_GetById",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -167,7 +161,7 @@
         "operationId": "Portfolio_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -219,7 +213,7 @@
         "operationId": "Portfolio_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -261,7 +255,7 @@
         "operationId": "Portfolio_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1455,6 +1449,15 @@
       }
     },
     "parameters": {
+      "id": {
+        "name": "id",
+        "description": "The id of the item",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
       "take": {
         "name": "take",
         "in": "query",
