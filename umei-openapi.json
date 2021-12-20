@@ -56,33 +56,13 @@
             }
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           }
         ],
         "responses": {
@@ -363,33 +343,13 @@
             }
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           },
           {
             "$ref": "#/components/parameters/periodFrom"
@@ -915,33 +875,13 @@
             }
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           },
           {
             "$ref": "#/components/parameters/periodFrom"
@@ -1131,33 +1071,13 @@
             }
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           }
         ],
         "responses": {
@@ -1429,33 +1349,13 @@
             }
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           }
         ],
         "responses": {
@@ -1513,6 +1413,35 @@
       }
     },
     "parameters": {
+      "take": {
+        "name": "take",
+        "in": "query",
+        "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
+        "schema": {
+          "type": "integer",
+          "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
+          "format": "int32"
+        }
+      },
+      "skip": {
+        "name": "skip",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "orderBy": {
+        "name": "orderBy",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "nullable": true
+        }
+      },
       "portfolioId": {
         "name": "portfolioId",
         "in": "path",
@@ -1550,7 +1479,7 @@
         }
       },
       "timeStamp": {
-        "name": "timeStamp", 
+        "name": "timeStamp",
         "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
         "in": "query",
         "required": false,
@@ -1561,7 +1490,7 @@
       "periodFrom": {
         "name": "periodFrom",
         "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
-        "in": "path", 
+        "in": "path",
         "required": false,
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
@@ -1570,7 +1499,7 @@
       "periodFrom.gt": {
         "name": "periodFrom.gt",
         "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
-        "in": "path", 
+        "in": "path",
         "required": false,
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
@@ -1579,7 +1508,7 @@
       "periodFrom.gte": {
         "name": "periodFrom.gte",
         "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
-        "in": "path", 
+        "in": "path",
         "required": false,
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
@@ -1588,7 +1517,7 @@
       "periodFrom.lt": {
         "name": "periodFrom.lt",
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
-        "in": "path", 
+        "in": "path",
         "required": false,
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
@@ -1597,7 +1526,7 @@
       "periodFrom.lte": {
         "name": "periodFrom.lte",
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
-        "in": "path", 
+        "in": "path",
         "required": false,
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
@@ -1647,7 +1576,7 @@
         "schema": {
           "$ref": "#/components/parameters/timeStamp"
         }
-      }      
+      }
     },
     "schemas": {
       "Link": {
