@@ -1078,6 +1078,36 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -1356,6 +1386,36 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
