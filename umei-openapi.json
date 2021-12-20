@@ -1482,8 +1482,7 @@
       "portfolioId": {
         "name": "portfolioId",
         "description": "Search by portfolio id",
-        "in": "path",
-        "required": true,
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
