@@ -1,5 +1,8 @@
 {
-  "openAPIUrl": "https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml",
-  "options": {},
+  "openAPIUrl": "https://raw.githubusercontent.com/euniversal/umei-api-specification/main/umei-openapi.json",
+  "options": {
+    "packageName": "Umei.Server",
+    "useDateTimeOffset": "true"
+  },
   "spec": {}
 }

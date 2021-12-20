@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # sudo apt install httpie
-
 # sudo apt install jq
 
+rm -rf output/aspnetcore*
 mkdir -p output
 
 http POST http://api.openapi-generator.tech/api/gen/servers/aspnetcore @aspnetcore.requestbody.json \
