@@ -131,7 +131,13 @@
         "operationId": "Portfolio_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "name": "portfolioId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
           }
         ],
         "responses": {
