@@ -307,13 +307,7 @@
         "operationId": "BaselineInterval_Search",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
             "name": "gridNodeId",
@@ -839,13 +833,7 @@
         "operationId": "MeterReading_Search",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
             "name": "gridNodeId",
@@ -1044,13 +1032,7 @@
             }
           },
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
             "name": "status",
@@ -1352,13 +1334,7 @@
             }
           },
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
             "name": "status",
@@ -1505,6 +1481,7 @@
       },
       "portfolioId": {
         "name": "portfolioId",
+        "description": "Search by portfolio id",
         "in": "path",
         "required": true,
         "schema": {
