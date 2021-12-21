@@ -20,40 +20,13 @@
         "operationId": "Portfolio_Search",
         "parameters": [
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "name",
-            "in": "query",
-            "description": "Search by portfolio name",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -310,31 +283,10 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -433,7 +385,7 @@
         }
       }
     },
-    "/BaselineIntervals/{baselineId}": {
+    "/BaselineIntervals/{id}": {
       "get": {
         "tags": [
           "BaselineInterval"
@@ -442,7 +394,7 @@
         "operationId": "BaselineInterval_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -472,7 +424,7 @@
         "operationId": "BaselineInterval_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -524,7 +476,7 @@
         "operationId": "BaselineInterval_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -566,7 +518,7 @@
         "operationId": "BaselineInterval_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -582,7 +534,7 @@
         }
       }
     },
-    "/MeterReadings/{meterReadingId}": {
+    "/MeterReadings/{id}": {
       "get": {
         "tags": [
           "MeterReading"
@@ -591,7 +543,7 @@
         "operationId": "MeterReading_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -621,7 +573,7 @@
         "operationId": "MeterReading_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -673,7 +625,7 @@
         "operationId": "MeterReading_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -715,7 +667,7 @@
         "operationId": "MeterReading_Delete_By_ID",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -777,40 +729,43 @@
         "operationId": "MeterReading_Delete_By_Query",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Delete by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Delete by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Delete by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -836,31 +791,10 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1014,43 +948,16 @@
         "operationId": "Order_Search",
         "parameters": [
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "marketId",
-            "in": "query",
-            "description": "Search by market id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/marketId"
           },
           {
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1149,7 +1056,7 @@
         }
       }
     },
-    "/Orders/{orderId}": {
+    "/Orders/{id}": {
       "get": {
         "tags": [
           "Order"
@@ -1158,7 +1065,7 @@
         "operationId": "Order_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1188,7 +1095,7 @@
         "operationId": "Order_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -1240,7 +1147,7 @@
         "operationId": "Order_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -1282,7 +1189,7 @@
         "operationId": "Order_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1307,52 +1214,19 @@
         "operationId": "Trade_Search",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "query",
-            "description": "Search by order id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "marketId",
-            "in": "query",
-            "description": "Search by market id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/marketId"
           },
           {
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1488,6 +1362,24 @@
           "nullable": true
         }
       },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Search by status",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Received",
+            "Pending",
+            "Rejected",
+            "Active",
+            "Inactive",
+            "Completed",
+            "Deleted"
+          ],
+          "nullable": true
+        }
+      },
       "portfolioId": {
         "name": "portfolioId",
         "description": "Search by portfolio id",
@@ -1497,10 +1389,19 @@
           "nullable": true
         }
       },
+      "gridNodeId": {
+        "name": "gridNodeId",
+        "description": "Search by grid node id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
       "baselineId": {
         "name": "baselineId",
-        "in": "path",
-        "required": true,
+        "description": "Search by baseline id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
@@ -1508,8 +1409,8 @@
       },
       "meterReadingId": {
         "name": "meterReadingId",
-        "in": "path",
-        "required": true,
+        "description": "Search by measurement id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
@@ -1517,8 +1418,17 @@
       },
       "orderId": {
         "name": "orderId",
-        "in": "path",
-        "required": true,
+        "description": "Search by order id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "marketId": {
+        "name": "marketId",
+        "description": "Search by market id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
