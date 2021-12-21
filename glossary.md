@@ -35,7 +35,7 @@ For a sell order, this is the lower limit of what the seller is willing to accep
 
 **Order:** Flexibility order placed on a market. The order can be either “Buy” in case the market participant wants to procure flexibility or “Sell” in case the market participant wants to offer flexibility. 
 
-**PayAsBid:** This is a market rule stating that the price at which trade between two offers will occur is the proposed price of the first order placed on the platform. 
+**PayAsBid:** This is a market rule stating that the price at which trade between two orders will occur is the proposed price of the first order placed on the platform. 
 
 **PayAsCleared:** This is a market rule stating that the price at which a trade will occur is the one of the market equilibrium (determined by the buy and sell curves). 
 
