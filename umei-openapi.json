@@ -26,22 +26,7 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -301,22 +286,7 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -765,22 +735,7 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Delete by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/periodFrom"
@@ -839,22 +794,7 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1017,22 +957,7 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1301,22 +1226,7 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1449,6 +1359,24 @@
           "items": {
             "type": "string"
           },
+          "nullable": true
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Search by status",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Received",
+            "Pending",
+            "Rejected",
+            "Active",
+            "Inactive",
+            "Completed",
+            "Deleted"
+          ],
           "nullable": true
         }
       },
