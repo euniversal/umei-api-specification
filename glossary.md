@@ -77,3 +77,34 @@ Possible categorizations are *Normal* (remains in market), *FillOrKill*, *FillAn
 **PriceType:** Some orders have a fixed limit on how high (for buy orders) or low (for sell orders) 
 the price can be. Other orders will buy/sell at the current market price. 
 Possible categorizations are: *Limit*, *Market*. 
+
+
+# Status of items
+
+Each of the items within an FMO can have different statuses at different stages in their lifecycle. 
+Not all status are relevant for all items. Each FMO can have limitations on allowed statuses, 
+depending on entity types and other factors (e.g. market rules). 
+
+However, each of the statuses have the same meaning across different FMOs: 
+
+**Received:** The item has been received but not yet processed. If the response includes a 
+link or id, the status of the item can be polled at a later time. 
+
+**Pending:** The item has been received, but is pending approval from an external system, 
+either manual or automatic. 
+
+**Rejected:** The item has been received and stored, but rejected. The rejection can be 
+automatic or manual, by external partners or by the FMO, and can possibly be revoked. 
+
+**Active:** The item is now active in the FMO system. 
+Note that for orders in a continuous market, this means that the order in financial terms also 
+is referred to as *passive*, meaning that it is lying in the system, 
+awaiting possible future matches. 
+
+**Inactive:** The item has manually or automatically been marked as not operational. The 
+status might be changed at a later time. 
+
+**Completed:** The item has completed it lifecycle and is no longer active. An example of this 
+is an order that has been fully matched. 
+
+**Deleted:** The item has been deleted, manually or automatically, and is no longer active. 
