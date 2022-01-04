@@ -14,3 +14,6 @@ A list of error codes is provided in [error-codes](error-codes).
 
 A SwaggerUI-version can be viewed here:  
 [Swagger UI](swagger-ui.html)
+
+A glossary is available here:
+[Glossary](glossary)
