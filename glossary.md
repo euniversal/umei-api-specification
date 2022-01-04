@@ -17,7 +17,7 @@ Typically assets are either consumers (e.g. heating systems, factories) or produ
 
 **Fill-or-kill:** Type of order that is immediately matched. The order is either matched in full and then killed, or else it is killed and instantly removed. No partial matching is allowed. Available in NODES continuous market. Commonly abbreviated as FoK. 
 
-**FMO:** Flexible Market Operator, a market where participants can trade flexibility. 
+**FMO:** Flexible Market Operator, the operator of the platform hosting a market on which participants can trade flexibility. 
 
 **FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   
 
