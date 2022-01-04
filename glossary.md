@@ -3,7 +3,7 @@
 **Activation market:** Flexibility market where the assets are dispatched for the 
  period covered by a trade.  
 
-**Asset:** In this context, an asset represents a physical or vertical device which 
+**Asset:** In this context, an asset represents a physical or virtual device which 
 has power characteristics that can be controlled, thus providing flexibility. 
 Typically assets are either consumers (e.g. heating systems, factories) or producers
 (e.g. renewable energy sources or traditional power plants), while some assets
