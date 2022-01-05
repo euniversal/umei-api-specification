@@ -3,7 +3,7 @@
 **Activation market:** Flexibility market where the assets are dispatched for the 
  period covered by a trade.  
 
-**Asset:** In this context, an asset represents a physical or vertical device which 
+**Asset:** In this context, an asset represents a physical or virtual device which 
 has power characteristics that can be controlled, thus providing flexibility. 
 Typically assets are either consumers (e.g. heating systems, factories) or producers
 (e.g. renewable energy sources or traditional power plants), while some assets
@@ -17,7 +17,7 @@ Typically assets are either consumers (e.g. heating systems, factories) or produ
 
 **Fill-or-kill:** Type of order that is immediately matched. The order is either matched in full and then killed, or else it is killed and instantly removed. No partial matching is allowed. Available in NODES continuous market. Commonly abbreviated as FoK. 
 
-**FMO:** Flexible Market Operator, a market where participants can trade flexibility. 
+**FMO:** Flexible Market Operator, the operator of the platform hosting a market on which participants can trade flexibility. 
 
 **FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   
 
@@ -35,7 +35,7 @@ For a sell order, this is the lower limit of what the seller is willing to accep
 
 **Order:** Flexibility order placed on a market. The order can be either “Buy” in case the market participant wants to procure flexibility or “Sell” in case the market participant wants to offer flexibility. 
 
-**PayAsBid:** This is a market rule stating that the price at which trade between two offers will occur is the proposed price of the first order placed on the platform. 
+**PayAsBid:** This is a market rule stating that the price at which trade between two orders will occur is the proposed price of the first order placed on the platform. 
 
 **PayAsCleared:** This is a market rule stating that the price at which a trade will occur is the one of the market equilibrium (determined by the buy and sell curves). 
 
