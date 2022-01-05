@@ -20,69 +20,22 @@
         "operationId": "Portfolio_Search",
         "parameters": [
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "name",
-            "in": "query",
-            "description": "Search by portfolio name",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
           }
         ],
         "responses": {
@@ -142,7 +95,7 @@
         }
       }
     },
-    "/Portfolios/{portfolioId}": {
+    "/Portfolios/{id}": {
       "get": {
         "tags": [
           "Portfolio"
@@ -151,7 +104,7 @@
         "operationId": "Portfolio_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -181,7 +134,7 @@
         "operationId": "Portfolio_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -233,7 +186,7 @@
         "operationId": "Portfolio_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -275,7 +228,7 @@
         "operationId": "Portfolio_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/portfolioId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -327,69 +280,52 @@
         "operationId": "BaselineInterval_Search",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -449,7 +385,7 @@
         }
       }
     },
-    "/BaselineIntervals/{baselineId}": {
+    "/BaselineIntervals/{id}": {
       "get": {
         "tags": [
           "BaselineInterval"
@@ -458,7 +394,7 @@
         "operationId": "BaselineInterval_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -488,7 +424,7 @@
         "operationId": "BaselineInterval_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -540,7 +476,7 @@
         "operationId": "BaselineInterval_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -582,7 +518,7 @@
         "operationId": "BaselineInterval_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/baselineId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -598,7 +534,7 @@
         }
       }
     },
-    "/MeterReadings/{meterReadingId}": {
+    "/MeterReadings/{id}": {
       "get": {
         "tags": [
           "MeterReading"
@@ -607,7 +543,7 @@
         "operationId": "MeterReading_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -637,7 +573,7 @@
         "operationId": "MeterReading_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -689,7 +625,7 @@
         "operationId": "MeterReading_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -731,7 +667,7 @@
         "operationId": "MeterReading_Delete_By_ID",
         "parameters": [
           {
-            "$ref": "#/components/parameters/meterReadingId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -793,40 +729,43 @@
         "operationId": "MeterReading_Delete_By_Query",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Delete by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Delete by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Delete by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -849,69 +788,52 @@
         "operationId": "MeterReading_Search",
         "parameters": [
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -1026,78 +948,55 @@
         "operationId": "Order_Search",
         "parameters": [
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "marketId",
-            "in": "query",
-            "description": "Search by market id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/marketId"
           },
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -1157,7 +1056,7 @@
         }
       }
     },
-    "/Orders/{orderId}": {
+    "/Orders/{id}": {
       "get": {
         "tags": [
           "Order"
@@ -1166,7 +1065,7 @@
         "operationId": "Order_GetById",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1196,7 +1095,7 @@
         "operationId": "Order_Update",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -1248,7 +1147,7 @@
         "operationId": "Order_Patch",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "requestBody": {
@@ -1290,7 +1189,7 @@
         "operationId": "Order_Delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/orderId"
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1315,87 +1214,58 @@
         "operationId": "Trade_Search",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "query",
-            "description": "Search by order id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderId"
           },
           {
-            "name": "gridNodeId",
-            "in": "query",
-            "description": "Search by grid node id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "name": "marketId",
-            "in": "query",
-            "description": "Search by market id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/marketId"
           },
           {
-            "name": "portfolioId",
-            "in": "query",
-            "description": "Search by portfolio id",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/portfolioId"
           },
           {
-            "name": "status",
-            "in": "query",
-            "description": "Search by status",
-            "schema": {
-              "enum": [
-                "Received",
-                "Pending",
-                "Rejected",
-                "Active",
-                "Inactive",
-                "Completed",
-                "Deleted"
-              ],
-              "type": "string",
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/status"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-            "schema": {
-              "type": "integer",
-              "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/take"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
+            "$ref": "#/components/parameters/skip"
           },
           {
-            "name": "orderBy",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "nullable": true
-            }
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
         "responses": {
@@ -1453,10 +1323,76 @@
       }
     },
     "parameters": {
-      "portfolioId": {
-        "name": "portfolioId",
+      "id": {
+        "name": "id",
+        "description": "The id of the item",
         "in": "path",
         "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "take": {
+        "name": "take",
+        "in": "query",
+        "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "skip": {
+        "name": "skip",
+        "description": "Skip the specified number of hits, used when paging",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "orderBy": {
+        "name": "orderBy",
+        "description": "Order the hits by the specified property. Legal values will depend on the FMO implementation but as a minimum the same properties that can be used for filtering can be used for sorting. ",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "nullable": true
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Search by status",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Received",
+            "Pending",
+            "Rejected",
+            "Active",
+            "Inactive",
+            "Completed",
+            "Deleted"
+          ],
+          "nullable": true
+        }
+      },
+      "portfolioId": {
+        "name": "portfolioId",
+        "description": "Search by portfolio id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "gridNodeId": {
+        "name": "gridNodeId",
+        "description": "Search by grid node id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
@@ -1464,8 +1400,8 @@
       },
       "baselineId": {
         "name": "baselineId",
-        "in": "path",
-        "required": true,
+        "description": "Search by baseline id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
@@ -1473,8 +1409,8 @@
       },
       "meterReadingId": {
         "name": "meterReadingId",
-        "in": "path",
-        "required": true,
+        "description": "Search by measurement id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
@@ -1482,11 +1418,108 @@
       },
       "orderId": {
         "name": "orderId",
-        "in": "path",
-        "required": true,
+        "description": "Search by order id",
+        "in": "query",
         "schema": {
           "type": "string",
           "nullable": true
+        }
+      },
+      "marketId": {
+        "name": "marketId",
+        "description": "Search by market id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "timeStamp": {
+        "name": "timeStamp",
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "periodFrom": {
+        "name": "periodFrom",
+        "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.gt": {
+        "name": "periodFrom.gt",
+        "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.gte": {
+        "name": "periodFrom.gte",
+        "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.lt": {
+        "name": "periodFrom.lt",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.lte": {
+        "name": "periodFrom.lte",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo": {
+        "name": "periodTo",
+        "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.gt": {
+        "name": "periodTo.gt",
+        "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.gte": {
+        "name": "periodTo.gte",
+        "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.lt": {
+        "name": "periodTo.lt",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.lte": {
+        "name": "periodTo.lte",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
         }
       }
     },
