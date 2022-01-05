@@ -60,7 +60,7 @@ directly from the market, while other can vary between orders with the same mark
 **QuantityType:** Some orders are for adjusting active power supply, some are for energy etc. 
 Each market operates in one quantity type. 
 
-**Quantity:** Some orders are can be matched-in-part, and some orders need to be fully "filled". This is deduced from the minimumAcceptanceCriteria. Possible categorizations are *Curtailable* (minimumAcceptanceQuantity < Quantity) and *AllOrNothing* (minimumAcceptanceQuantity == Quantity)
+**Quantity:** Some orders are can be matched-in-part, and some orders need to be fully "filled". This is deduced from the minimumAcceptanceQuantity. Possible categorizations are *Curtailable* (minimumAcceptanceQuantity < Quantity) and *AllOrNothing* (minimumAcceptanceQuantity == Quantity)
 
 **PriceCurve:** Some orders have a fixed price regardless of quantity, while some orders have price depending on quantity bought (using the piecewise linear price curve concept). Possible categorizations are *FixedPrice* or *VariablePrice*.
 
