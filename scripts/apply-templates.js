@@ -4,6 +4,7 @@ const fileToRead = 'umei-openapi.json';
 const fileToWrite = 'generated/umei-openapi.json';
 const whatToReplace = /\${description}/g;
 
+const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const readFileAsync = util.promisify(fs.readFile);
@@ -40,14 +41,14 @@ promise
 
 const doReplace = () => {
     // replacement = `\"description\": "${replacement}", `;
-    readFileAsync(fileToRead, 'utf8')
+    readFileAsync(path.resolve(process.cwd(), fileToRead), 'utf8')
         .then(data => {
             logInfo(`Read file ${fileToRead}`);
 
             const result = data.replace(whatToReplace, replacement);
             logInfo(`Replaced ${replacement} in  ${fileToRead} with ${replacement.substring(0, 40)}`);
 
-            fs.writeFile(fileToWrite, result, 'utf8', function (err) {
+            fs.writeFile(path.resolve(process.cwd(), fileToWrite), result, 'utf8', function (err) {
                 if (err) return logError(err);
                 console.log('wrote replacement file ' + fileToWrite);
             });
