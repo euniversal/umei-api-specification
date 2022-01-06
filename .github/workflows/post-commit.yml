@@ -39,6 +39,9 @@ jobs:
         # Deprecated. Use node-version instead. Will not be supported after October 1, 2019
         # version: # optional
         
+    - name: Check directories
+      run: node -e 'console.log(process.cwd())'
+        
     - name: Run javascript
       run: node scripts/apply-templates.js
       
