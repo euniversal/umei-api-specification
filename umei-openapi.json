@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "UMEI API Specification",
-    "description": "Specification for UMEI FMO API",
+    "description": "${description}",
     "version": "1.0.0"
   },
   "servers": [
