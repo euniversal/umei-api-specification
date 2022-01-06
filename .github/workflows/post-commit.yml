@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Post-process open api specification file
 
 on:
   push:
