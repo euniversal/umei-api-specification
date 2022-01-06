@@ -42,6 +42,9 @@ jobs:
     - name: Check directories
       run: node -e 'console.log(process.cwd())'
         
+    - name: Check file
+      run: node -e 'console.log(require("path").resolve(process.cwd(), "scripts/apply-templates.js"))'        
+        
     - name: Run javascript
       run: node scripts/apply-templates.js
       
