@@ -10,7 +10,7 @@ const util = require('util');
 const readFileAsync = util.promisify(fs.readFile);
 
 const logAndReturn = (category, msg) => {
-    console.log(`[${category}]`, (msg + "").substring(0, 60) + " ...");
+    console.log(`[${category}]`, (msg + "").substring(0, 70) + " ...");
     return msg;
 };
 const logError = x => logAndReturn('error' + x);
@@ -46,7 +46,7 @@ const doReplace = () => {
             logInfo(`Read file ${fileToRead}`);
 
             const result = data.replace(whatToReplace, replacement);
-            logInfo(`Replaced ${replacement} in  ${fileToRead} with ${replacement.substring(0, 40)}`);
+            logInfo(`Replaced ${whatToReplace} in  ${fileToRead} with ${replacement}`);
 
             fs.writeFile(path.resolve(process.cwd(), fileToWrite), result, 'utf8', function (err) {
                 if (err) return logError(err);
