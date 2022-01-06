@@ -1,0 +1,8 @@
+{
+  "openAPIUrl": "https://raw.githubusercontent.com/euniversal/umei-api-specification/main/umei-openapi.json",
+  "options": {
+    "packageName": "Umei.Server",
+    "useDateTimeOffset": "true"
+  },
+  "spec": {}
+}

@@ -1,0 +1,2136 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "UMEI API Specification",
+    "description": "${description}",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:8080"
+    }
+  ],
+  "paths": {
+    "/Portfolios": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "List or search one or several Portfolio(s) using a query",
+        "operationId": "Portfolio_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Portfolio(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PortfolioSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Create a new Portfolio",
+        "operationId": "Portfolio_Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Portfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Portfolio successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Portfolios/{id}": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Get an existing Portfolio by id",
+        "operationId": "Portfolio_GetById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Portfolio successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Update an existing Portfolio, or create if missing",
+        "operationId": "Portfolio_Update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Portfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Portfolios successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Portfolios successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Patch / partially update an existing Portfolio",
+        "operationId": "Portfolio_Patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Portfolio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Portfolio successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Delete/Remove an existing Portfolio",
+        "operationId": "Portfolio_Delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Portfolio successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Markets": {
+      "get": {
+        "tags": [
+          "Market"
+        ],
+        "summary": "List all Markets",
+        "operationId": "Market_List",
+        "responses": {
+          "200": {
+            "description": "Market(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/BaselineIntervals": {
+      "get": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "List or search one or several BaselineInterval(s) using a query",
+        "operationId": "BaselineInterval_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaselineInterval(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineIntervalSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Create a new BaselineInterval",
+        "operationId": "BaselineInterval_Create_Single",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "BaselineInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/BaselineIntervals/{id}": {
+      "get": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Get an existing BaselineInterval by id",
+        "operationId": "BaselineInterval_GetById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaselineInterval successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Update an existing BaselineInterval, or create if missing",
+        "operationId": "BaselineInterval_Update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "BaselineInterval successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "BaselineInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Patch / partially update an existing BaselineInterval",
+        "operationId": "BaselineInterval_Patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseLineInterval"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "BaselineInterval successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Delete/Remove an existing BaselineInterval",
+        "operationId": "BaselineInterval_Delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "BaselineInterval successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/MeterReadings/{id}": {
+      "get": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Get an existing MeterReading by id",
+        "operationId": "MeterReading_GetById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MeterReading successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Update an existing MeterReading, or create if missing",
+        "operationId": "MeterReading_Update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "MeterReading successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "MeterReading successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Patch / partially update an existing MeterReading",
+        "operationId": "MeterReading_Patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "MeterReading successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Delete/Remove an existing MeterReading",
+        "operationId": "MeterReading_Delete_By_ID",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "MeterReading successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/MeterReadings": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Create a new MeterReading",
+        "operationId": "MeterReading_Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "MeterReading successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Delete/Remove one or several existing MeterReading(s) using a query",
+        "operationId": "MeterReading_Delete_By_Query",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "MeterReading(s) successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "List or search one or several MeterReading(s) using a query",
+        "operationId": "MeterReading_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MeterReading(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReadingSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/MeterReadings/create-multiple": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Create several new MeterReadings",
+        "operationId": "MeterReading_CreateMultiple",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeterReading"
+                },
+                "nullable": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "MeterReadings successfully created"
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/MeterReadings/import": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Import and create several MeterReadings",
+        "operationId": "MeterReading_Import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "MeterReadings successfully imported and created"
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Orders": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "List or search one or several Order(s) using a query",
+        "operationId": "Order_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/marketId"
+          },
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Create a new Order",
+        "operationId": "Order_Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Order successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Orders/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Get an existing Order by id",
+        "operationId": "Order_GetById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Update an existing Order, or create if missing",
+        "operationId": "Order_Update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Order successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Order successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Patch / partially update an existing order",
+        "operationId": "Order_Patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Order successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Delete/Remove an existing Order",
+        "operationId": "Order_Delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Order successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Trades": {
+      "get": {
+        "tags": [
+          "Trade"
+        ],
+        "summary": "List or search one or several Trade(s) using a query",
+        "operationId": "Trade_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/orderId"
+          },
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/marketId"
+          },
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Trade(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "ValidationError": {
+        "description": "The server cannot or will not process the request due to something that is perceived to be a client error",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "UnauthenticatedError": {
+        "description": "Lack of valid authentication credentials for the requested resource",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "ForbiddenError": {
+        "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "description": "The id of the item",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "take": {
+        "name": "take",
+        "in": "query",
+        "description": "Number of hits to return.  If client does not specify Take the server MAY apply a default Take value (which will be returned in the SearchResult object). The default value is not guaranteed to be the same for different requests\"",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "skip": {
+        "name": "skip",
+        "description": "Skip the specified number of hits, used when paging",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "orderBy": {
+        "name": "orderBy",
+        "description": "Order the hits by the specified property. Legal values will depend on the FMO implementation but as a minimum the same properties that can be used for filtering can be used for sorting. ",
+        "in": "query",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "nullable": true
+        }
+      },
+      "status": {
+        "name": "status",
+        "in": "query",
+        "description": "Search by status",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Received",
+            "Pending",
+            "Rejected",
+            "Active",
+            "Inactive",
+            "Completed",
+            "Deleted"
+          ],
+          "nullable": true
+        }
+      },
+      "portfolioId": {
+        "name": "portfolioId",
+        "description": "Search by portfolio id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "gridNodeId": {
+        "name": "gridNodeId",
+        "description": "Search by grid node id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "baselineId": {
+        "name": "baselineId",
+        "description": "Search by baseline id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "meterReadingId": {
+        "name": "meterReadingId",
+        "description": "Search by measurement id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "orderId": {
+        "name": "orderId",
+        "description": "Search by order id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "marketId": {
+        "name": "marketId",
+        "description": "Search by market id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "timeStamp": {
+        "name": "timeStamp",
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "periodFrom": {
+        "name": "periodFrom",
+        "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.gt": {
+        "name": "periodFrom.gt",
+        "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.gte": {
+        "name": "periodFrom.gte",
+        "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.lt": {
+        "name": "periodFrom.lt",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodFrom.lte": {
+        "name": "periodFrom.lte",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo": {
+        "name": "periodTo",
+        "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.gt": {
+        "name": "periodTo.gt",
+        "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.gte": {
+        "name": "periodTo.gte",
+        "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.lt": {
+        "name": "periodTo.lt",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      },
+      "periodTo.lte": {
+        "name": "periodTo.lte",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
+        }
+      }
+    },
+    "schemas": {
+      "Link": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "method": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BaseLineInterval": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the baseline (should be unique)",
+            "nullable": false
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this baseline",
+            "nullable": false
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": false,
+            "readOnly": true
+          },
+          "portfolioId": {
+            "type": "string",
+            "description": "The portfolio for which this baseline applies. An error will be returned if this portfolio does not exist.",
+            "nullable": false
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this baseline applies.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this baseline applies.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "power": {
+            "type": "number",
+            "description": "Average power in MW forecasted for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001
+          }
+        },
+        "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+      },
+      "BaseLineIntervalSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseLineInterval"
+            },
+            "nullable": false
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": false,
+            "readOnly": true
+          }
+        }
+      },
+      "Portfolio": {
+        "type": "object",
+        "description": "A portfolio represents one or more assets that can participate in a flexibility market, e.g. batteries, dispatchable generators etc",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the portfolio (should be unique)",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this portfolio",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the portfolio",
+            "nullable": false
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
+            "nullable": true
+          }
+        }
+      },
+      "PortfolioSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Portfolio"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "Market": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the market. This id will be used to define to which market an order belongs.",
+            "nullable": false
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the market",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "A small description of the market",
+            "nullable": true
+          },
+          "quantityType": {
+            "type": "string",
+            "enum": [
+              "ActivePower",
+              "ReactivePower",
+              "Energy",
+              "Capacity"
+            ],
+            "description": "The type of quantity which is traded in this market. Each market can operate in only one type of quantity. ",
+            "nullable": false
+          }
+        }
+      },
+      "MarketSearchResult": {
+        "type": "object",
+        "properties": {
+          "markets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Market"
+            },
+            "nullable": true
+          }
+        }
+      },
+      "MeterReading": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the measurement (should be unique)",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this measurement",
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "portfolioId": {
+            "type": "string",
+            "description": "The portfolio for which this measurement applies. An error will be returned if this portfolio does not exist.",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this measurement applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this measurement applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "power": {
+            "type": "number",
+            "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
+            "format": "double",
+            "minimum": -1E6,
+            "maximum": 1E6,
+            "multipleOf": 0.001,
+            "nullable": true
+          }
+        },
+        "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+      },
+      "MeterReadingSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeterReading"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the order (should be unique)",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status of the order",
+            "nullable": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "The grid node this order applies to. An error will be returned if this grid node does not exist.",
+            "nullable": true
+          },
+          "marketId": {
+            "type": "string",
+            "description": "Reference to the market. An error will be returned if this market does not exist.",
+            "nullable": true
+          },
+          "portfolioId": {
+            "type": "string",
+            "description": "The portfolio for which this order applies. Required for sell orders only (an error will be returned if this portfolio does not exist). Not updatable.",
+            "nullable": true
+          },
+          "regulationType": {
+            "enum": [
+              "Up",
+              "Down"
+            ],
+            "type": "string",
+            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means a decrease in available power (either reduced production or increased consumption). ",
+            "nullable": true
+          },
+          "side": {
+            "enum": [
+              "Sell",
+              "Buy"
+            ],
+            "type": "string",
+            "description": "Type of submission of the order (buy / sell)",
+            "nullable": false
+          },
+          "pricePoints": {
+            "type": "array",
+            "description": "The array of quantity-price points of the order. If the order is a fixed-price order (meaning that the price is uniform/constant whatever the quantity) then the array will contain only one value. On the other hand, the array will contain several values if the order is an interpolated order (meaning that different prices will be defined for different quantities). In that case, the first quantity must always be zero.",
+            "items": {
+              "$ref": "#/components/schemas/QuantityPricePoint"
+            },
+            "minItems": 1,
+            "nullable": true
+          },
+          "minimumAcceptanceQuantity": {
+            "type": "number",
+            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order.",
+            "format": "double",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this order applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this order applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "longflexContractId": {
+            "type": "string",
+            "description": "A reference to the corresponding longflex contract, if this order is part of or based on a longflex contract",
+            "nullable": true
+          }
+        },
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node id is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
+      },
+      "QuantityPricePoint": {
+        "type": "object",
+        "description": "A price-quantity-point of an order. A non-empty set of quantity-price-points describe a piecewise linear mapping from quantity to price. ",
+        "properties": {
+          "quantity": {
+            "type": "number",
+            "description": "An amount of power or energy offered/bid in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "format": "double",
+            "nullable": false
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "The price per unit (currency/MWh) for the quantity offered/bid in the order, the currency being deduced from the market.",
+            "format": "double",
+            "nullable": false
+          }
+        }
+      },
+      "OrderSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Order"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "Trade": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the trade (should be unique)",
+            "nullable": true
+          },
+          "status": {
+            "enum": [
+              "Received",
+              "Pending",
+              "Rejected",
+              "Active",
+              "Inactive",
+              "Completed",
+              "Deleted"
+            ],
+            "type": "string",
+            "description": "Status for this trade",
+            "nullable": true
+          },
+          "marketId": {
+            "type": "string",
+            "description": "Reference to the market.",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "description": "Reference to the order.",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Quantity traded/filled.",
+            "format": "double",
+            "nullable": true
+          },
+          "side": {
+            "enum": [
+              "Buy",
+              "Sell"
+            ],
+            "type": "string",
+            "description": "Type of the trade (buy / sell)",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "Price at which the quantity has been traded/filled",
+            "format": "double",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this trade applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this trade applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gridNodeId": {
+            "type": "string",
+            "description": "Reference to the grid node.",
+            "nullable": true
+          },
+          "portfolioId": {
+            "type": "string",
+            "description": "Reference to the portfolio.",
+            "nullable": true
+          },
+          "regulationType": {
+            "enum": [
+              "Up",
+              "Down"
+            ],
+            "type": "string",
+            "description": "Type of regulation of the trade. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "TradeSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trade"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "description": "An object describing the problem in a machine-and-user readable version, based on / extending RFC7807. ",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when de-referenced, it provide human-readable documentation for the problem type (e.g., using HTML [W3C.REC-html5-20141028]). When this member is not present, its value is assumed to be \"about:blank\"",
+            "nullable": false,
+            "example": "https://umei.org/error-codes/invalid-grid-reference"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation;",
+            "example": "The grid node id is not found or not valid for this operation"
+          },
+          "status": {
+            "type": "string",
+            "description": "The HTTP status code generated by the origin server for this occurrence of the problem. ",
+            "example": "400",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem.",
+            "example": "Grid node #231432 MyGridNode is not participating in this market"
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if de-referenced.",
+            "example": "https://my-fmo.eu/error-instances/4232312"
+          },
+          "validation-errors": {
+            "type": "array",
+            "description": "If present, contains a list of invalid parameters that the client should correct before retrying the operation",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "type": "object",
+        "description": "Reference to a field that failed validation along with an description of the validation error",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "The name of the property, specified as a relative or absolute json path, e.g. 'marketId' or 'quantities[1].quantity'",
+            "nullable": false,
+            "example": "gridNodeId"
+          },
+          "message": {
+            "type": "string",
+            "description": "Description of the issue with this property",
+            "example": "The specified grid node is not participating in this market",
+            "nullable": false
+          },
+          "value": {
+            "type": "string",
+            "description": "Value received as input for this property",
+            "example": "231432",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}
