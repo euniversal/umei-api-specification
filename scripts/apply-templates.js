@@ -7,50 +7,43 @@ const whatToReplace = /\${description}/g;
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
+
 const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const logAndReturn = (category, msg) => {
-    console.log(`[${category}]`, (msg + "").substring(0, 70) + " ...");
+    console.log(`[${category}]`, (msg + "").substring(0, 70).replace(/[\r\n]/g, "") + " ...");
     return msg;
 };
-const logError = x => logAndReturn('error' + x);
-const logInfo = x => logAndReturn('log', x);
+const logError = msg => logAndReturn('error', msg);
+const logInfo = msg => logAndReturn('log', msg);
 
 let replacement = "";
 const files = ["glossary.md", "error-codes.md"];
 
-const readReplacementFiles = files
-    .map(f => readFileAsync(f)
-        .then(x => x.toString())
-        .then(x => {
-            logInfo('read file ' + f + ", got contents: " + x);
-            const data = x
-                .replace(/\r?\n/g, "\\n")
-                .replace(/"/g, "\\\"");
-            replacement += data;
-            return Promise.resolve(x);
-        }));
-
-let promise = readReplacementFiles
-    .reduce((prev, cur) => prev.then(() => cur), Promise.resolve());
-
-promise
-    .then(() => logInfo("promise then: "))
-    .then(() => logInfo(replacement.substring(0, 30) + "..."))
+files.map(file => readFileAsync(file)
+    .then(buffer => buffer.toString())
+    .then(text => {
+        logInfo('read file ' + file + ", got contents: " + text);
+        replacement += text;
+        return Promise.resolve(text);
+    }))
+    .reduce((prev, cur) => prev.then(() => cur), Promise.resolve(""))
     .then(() => doReplace());
 
 const doReplace = () => {
-    // replacement = `\"description\": "${replacement}", `;
     readFileAsync(path.resolve(process.cwd(), fileToRead), 'utf8')
         .then(data => {
             logInfo(`Read file ${fileToRead}`);
 
-            const result = data.replace(whatToReplace, replacement);
+            const obj = JSON.parse(data.toString());
+            obj.info.description = replacement;
+            const result = JSON.stringify(obj, null, "  ");
+
             logInfo(`Replaced ${whatToReplace} in  ${fileToRead} with ${replacement}`);
 
-            fs.writeFile(path.resolve(process.cwd(), fileToWrite), result, 'utf8', function (err) {
-                if (err) return logError(err);
-                console.log('wrote replacement file ' + fileToWrite);
-            });
+            writeFileAsync(path.resolve(process.cwd(), fileToWrite), result, 'utf8')
+                .then(() => console.log('wrote replacement file ' + fileToWrite))
+                .catch(err => logError(err));
         });
 };

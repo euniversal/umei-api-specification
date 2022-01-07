@@ -1596,8 +1596,8 @@
             "type": "number",
             "description": "Average power in MW forecasted for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
+            "minimum": -1000000,
+            "maximum": 1000000,
             "multipleOf": 0.001
           }
         },
@@ -1782,8 +1782,8 @@
             "type": "number",
             "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
             "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
+            "minimum": -1000000,
+            "maximum": 1000000,
             "multipleOf": 0.001,
             "nullable": true
           }
