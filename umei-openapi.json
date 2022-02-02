@@ -1340,7 +1340,7 @@
           "FlexibilityZone"
         ],
         "summary": "List or search one or several flexibility zones(s) using a query. Only the list of portfolios contained in the zone is returned.",
-        "operationId": "FlexibilityZone_Search",
+        "operationId": "PartialFlexibilityZone_Search",
         "parameters": [
           {
             "$ref": "#/components/parameters/flexibilityZoneId"
