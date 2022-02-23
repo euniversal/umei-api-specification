@@ -1295,43 +1295,6 @@
             "$ref": "#/components/responses/ForbiddenError"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "Trade"
-        ],
-        "summary": "Create a new Trade",
-        "operationId": "Trade_Create",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Trade"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Trade successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Trade"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
       }
     },
     "/Clearings": {
