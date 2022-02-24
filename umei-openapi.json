@@ -1235,6 +1235,9 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
+            "$ref": "#/components/parameters/clearingId"
+          },
+          {
             "$ref": "#/components/parameters/status"
           },
           {
@@ -1899,6 +1902,15 @@
       "marketId": {
         "name": "marketId",
         "description": "Search by market id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "clearingId": {
+        "name": "clearingId",
+        "description": "Search by clearing id",
         "in": "query",
         "schema": {
           "type": "string",
