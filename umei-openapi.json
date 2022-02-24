@@ -2433,7 +2433,7 @@
           },
           "sensitivity": {
             "type": "number",
-            "description": "Sensitivity of the flexibility zone. Must be provided only if another flexibility zone has the same equivalentPerimeterId as the current flexibility zone.",
+            "description": "Sensitivity of the flexibility zone. When two or more flexibility zones have the same equivalentPerimeterId, a different sensitivity has to be provided for each of them.",
             "format": "double",
             "minimum": 0.0,
             "maximum": 1.0,
@@ -2461,7 +2461,8 @@
             "nullable": true
           },
           "equivalentPerimeterId": {
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": "Id of the equivalent parameter. Some flexibility zones can be considered as equivalent in terms of ability to solve the congestion. Equivalent flexibility zones must be defined with the same equivalentPerimeterId.",
             "nullable": true
           }
