@@ -1510,7 +1510,7 @@
         }
       }
     },
-    "/FlexibilityZones/portfoliosAndClearing": {
+    "/PartialFlexibilityZones": {
       "get": {
         "tags": [
           "FlexibilityZone"
@@ -1523,7 +1523,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZonePartialSearchResult"
+                  "$ref": "#/components/schemas/PartialFlexibilityZoneSearchResult"
                 }
               }
             }
@@ -1740,219 +1740,6 @@
         "responses": {
           "204": {
             "description": "Flexibility zone successfully deleted"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
-    "/FlexibilityZonesLists": {
-      "get": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "List all list(s) of flexibility zones",
-        "operationId": "ListFlexibilityZones_Search",
-        "responses": {
-          "200": {
-            "description": "List(s) of flexibility zones successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZonesSearchResult"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "Create a new list of flexibility zones",
-        "operationId": "ListFlexibilityZones_Create",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ListFlexibilityZones"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "List of flexibility zones successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZones"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
-    "/FlexibilityZonesLists/{id}": {
-      "get": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "Get an existing list of flexibility zones by id",
-        "operationId": "ListFlexibilityZones_GetById",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of flexibility zones successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZones"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "Update an existing list of flexibility zones, or create if missing",
-        "operationId": "ListFlexibilityZones_Update",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ListFlexibilityZones"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "List of flexibility zones successfully updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZones"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "List of flexibility zones successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZones"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "Patch / partially update an existing list of flexibility zones",
-        "operationId": "ListFlexibilityZones_Patch",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ListFlexibilityZones"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "List of flexibility zones successfully updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListFlexibilityZones"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "List of FlexibilityZones"
-        ],
-        "summary": "Delete/Remove an existing list of flexibility zones",
-        "operationId": "ListFlexibilityZones_Delete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "List of flexibility zones successfully deleted"
           },
           "401": {
             "$ref": "#/components/responses/UnauthenticatedError"
@@ -2636,27 +2423,6 @@
         },
         "description": "Clearing defined by a start time and a delivery time interval"
       },
-      "ListFlexibilityZones": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Id of the list of flexibility zones (should be unique)",
-            "nullable": true
-          },
-          "flexibilityZoneIds": {
-            "type": "array",
-            "description": "The list of ids of the flexibility zones contained in the list",
-            "items": {
-              "type": "string",
-              "description": "Id of a flexibility zone contained in the list",
-              "nullable": false
-            },
-            "nullable": true
-          }
-        },
-        "description": "List of flexibility zones"
-      },
       "FlexibilityZone": {
         "type": "object",
         "properties": {
@@ -2667,7 +2433,7 @@
           },
           "sensitivity": {
             "type": "number",
-            "description": "Sensitivity of the flexibility zone",
+            "description": "Sensitivity of the flexibility zone. Must be provided only if another flexibility zone has the same equivalentPerimeterId as the current flexibility zone.",
             "format": "double",
             "minimum": 0.0,
             "maximum": 1.0,
@@ -2693,11 +2459,16 @@
             "type": "string",
             "description": "Reference to the clearing. An error will be returned if this clearing does not exist.",
             "nullable": true
+          },
+          "equivalentPerimeterId": {
+            "type": "string",
+            "description": "Id of the equivalent parameter. Some flexibility zones can be considered as equivalent in terms of ability to solve the congestion. Equivalent flexibility zones must be defined with the same equivalentPerimeterId.",
+            "nullable": true
           }
         },
-        "description": "Flexibility zone defined by a sensitivity, a flexibility need, a list of portfolios and a reference to a clearing"
+        "description": "Flexibility zone defined by a sensitivity, a flexibility need, a list of portfolios, a reference to a clearing and a id allowing to define equivalent zones"
       },
-      "FlexibilityZonePartial": {
+      "PartialFlexibilityZone": {
         "type": "object",
         "properties": {
           "id": {
@@ -2791,31 +2562,6 @@
           }
         }
       },
-      "ListFlexibilityZonesSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListFlexibilityZones"
-            },
-            "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        }
-      },
       "FlexibilityZoneSearchResult": {
         "type": "object",
         "properties": {
@@ -2841,7 +2587,7 @@
           }
         }
       },
-      "FlexibilityZonePartialSearchResult": {
+      "PartialFlexibilityZoneSearchResult": {
         "type": "object",
         "properties": {
           "numberOfHits": {
@@ -2852,7 +2598,7 @@
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FlexibilityZonePartial"
+              "$ref": "#/components/schemas/PartialFlexibilityZone"
             },
             "nullable": true
           },
