@@ -2443,14 +2443,6 @@
             "description": "Id of the flexibility zone (should be unique)",
             "nullable": true
           },
-          "sensitivity": {
-            "type": "number",
-            "description": "Sensitivity of the flexibility zone. When two or more flexibility zones have the same equivalentPerimeterId, a different sensitivity has to be provided for each of them.",
-            "format": "double",
-            "minimum": 0.0,
-            "maximum": 1.0,
-            "nullable": true
-          },
           "flexibilityNeed": {
             "type": "number",
             "description": "An amount of power or energy needed in the zone, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.",
@@ -2471,15 +2463,9 @@
             "type": "string",
             "description": "Reference to the clearing. An error will be returned if this clearing does not exist.",
             "nullable": true
-          },
-          "equivalentPerimeterId": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Id of the equivalent parameter. Some flexibility zones can be considered as equivalent in terms of ability to solve the congestion. Equivalent flexibility zones must be defined with the same equivalentPerimeterId.",
-            "nullable": true
           }
         },
-        "description": "Flexibility zone defined by a sensitivity, a flexibility need, a list of portfolios, a reference to a clearing and a id allowing to define equivalent zones"
+        "description": "Flexibility zone defined by a flexibility need, a list of portfolios and a reference to a clearing"
       },
       "PartialFlexibilityZone": {
         "type": "object",
