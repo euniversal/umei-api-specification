@@ -1287,6 +1287,54 @@
           }
         }
       }
+    },
+    "/BatchMeterReadings": {
+      "post": {
+        "tags": [
+          "BatchMeterReading"
+        ],
+        "summary": "Create a new BatchMeterReading. NOTE: this endpoint will be implemented by FSP.",
+        "operationId": "BatchMeterReading_Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchMeterReading"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "BatchMeterReading successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchMeterReading"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "BatchMeterReading"
+        ],
+        "summary": "List or search one or several MeterReading(s) using a query. NOTE: this endpoint is redundant because corresponding POST endpoint will be implemented by FSP.",
+        "operationId": "BatchMeterReading_Search",
+        "parameters": [],
+        "responses": {}
+      }
     }
   },
   "components": {
@@ -2140,6 +2188,83 @@
             "type": "string",
             "description": "Value received as input for this property",
             "example": "231432",
+            "nullable": true
+          }
+        }
+      },
+      "PowerReading": {
+        "type": "object",
+        "description": "Power reading corresponding to 3 related columns in one row from .sgl_V2 file",
+        "nullable": true,
+        "properties": {
+          "value": {
+            "type": "number",
+            "nullable": false
+          },
+          "status": {
+            "type": "integer",
+            "description": "0 - real, 1 - estimated, 2 - error",
+            "nullable": false
+          },
+          "loss": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "BatchMeterReadingItem": {
+        "type": "object",
+        "description": "Single item corresponding to a single row in .sgl_V2 file",
+        "properties": {
+          "at": {
+            "type": "string",
+            "description": "The measurement timestamp",
+            "format": "date-time",
+            "nullable": false
+          },
+          "activePower": {
+            "$ref": "#/components/schemas/PowerReading"
+          },
+          "reactiveInductivePower": {
+            "$ref": "#/components/schemas/PowerReading"
+          },
+          "reactiveCapacitativePower": {
+            "$ref": "#/components/schemas/PowerReading"
+          }
+        }
+      },
+      "BatchMeterReading": {
+        "type": "object",
+        "description": "(Daily) batch meter reading provided by DSO directly to FSP which is based on .sgl_V2 file",
+        "properties": {
+          "customerId": {
+            "type": "string",
+            "description": "DSO customer Id (PoD code).",
+            "nullable": false
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which these measurement apply.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which these measurement apply.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "The file creation timestamp.",
+            "format": "date-time",
+            "nullable": false
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchMeterReadingItem"
+            },
             "nullable": true
           }
         }
