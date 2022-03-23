@@ -1235,6 +1235,9 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
+            "$ref": "#/components/parameters/clearingId"
+          },
+          {
             "$ref": "#/components/parameters/status"
           },
           {
@@ -1297,54 +1300,226 @@
         }
       }
     },
+    "/Clearings": {
+      "get": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "List all clearings",
+        "operationId": "Clearing_Search",
+        "responses": {
+          "200": {
+            "description": "Clearing(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClearingSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "Create a new clearing",
+        "operationId": "Clearing_Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Clearing"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Clearing successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clearing"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
+    "/Clearings/{id}": {
+      "get": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "Get an existing clearing by id",
+        "operationId": "Clearing_GetById",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clearing successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clearing"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "Update an existing clearing, or create if missing",
+        "operationId": "Clearing_Update",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Clearing"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Clearing successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clearing"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Clearing successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clearing"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "Patch / partially update an existing clearing",
+        "operationId": "Clearing_Patch",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Clearing"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Clearing successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clearing"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clearing"
+        ],
+        "summary": "Delete/Remove an existing clearing",
+        "operationId": "Clearing_Delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Clearing successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
     "/PartialFlexibilityZones": {
       "get": {
         "tags": [
           "FlexibilityZone"
         ],
-        "summary": "List or search one or several flexibility zone(s) using a query. Only the list of portfolios contained in the zone and the time period associated to the zone are returned.",
+        "summary": "List all flexibility zones. Only the list of portfolios contained in the zone and the clearing associated to the zone are returned.",
         "operationId": "PartialFlexibilityZone_Search",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/take"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gte"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Flexibility zone(s) successfully returned",
@@ -1370,49 +1545,8 @@
         "tags": [
           "FlexibilityZone"
         ],
-        "summary": "List or search one or several flexibility zone(s) using a query",
+        "summary": "List all flexibility zones",
         "operationId": "FlexibilityZone_Search",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/take"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gte"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Flexibility zone(s) successfully returned",
@@ -1768,6 +1902,15 @@
       "marketId": {
         "name": "marketId",
         "description": "Search by market id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "clearingId": {
+        "name": "clearingId",
+        "description": "Search by clearing id",
         "in": "query",
         "schema": {
           "type": "string",
@@ -2242,6 +2385,35 @@
         },
         "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market id) for a given time interval. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
       },
+      "Clearing": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the clearing (should be unique)",
+            "nullable": true
+          },
+          "clearingTime": {
+            "type": "string",
+            "description": "The timestamp indicating the time at which the clearing will start. The orders submitted after this timestamp will not be participate to the clearing.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodFrom": {
+            "type": "string",
+            "description": "The timestamp indicating the start of the interval for which this clearing applies.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "periodTo": {
+            "type": "string",
+            "description": "The timestamp indicating the end of the interval for which this clearing applies.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "description": "Clearing defined by a start time and a delivery time interval"
+      },
       "FlexibilityZone": {
         "type": "object",
         "properties": {
@@ -2256,18 +2428,6 @@
             "format": "double",
             "nullable": true
           },
-          "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
           "portfolioIds": {
             "type": "array",
             "description": "The list of ids of the portfolios contained in the flexibility zone",
@@ -2277,9 +2437,14 @@
               "nullable": false
             },
             "nullable": true
+          },
+          "clearingId": {
+            "type": "string",
+            "description": "Reference to the clearing. An error will be returned if this clearing does not exist.",
+            "nullable": true
           }
         },
-        "description": "Flexibility zone defined by a flexibility need, a time period and a list of portfolios"
+        "description": "Flexibility zone defined by a flexibility need, a list of portfolios and a reference to a clearing"
       },
       "PartialFlexibilityZone": {
         "type": "object",
@@ -2289,18 +2454,6 @@
             "description": "Id of the flexibility zone (should be unique)",
             "nullable": true
           },
-          "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
           "portfolioIds": {
             "type": "array",
             "description": "The list of ids of the portfolios contained in the flexibility zone",
@@ -2310,9 +2463,14 @@
               "nullable": false
             },
             "nullable": true
+          },
+          "clearingId": {
+            "type": "string",
+            "description": "Reference to the clearing. An error will be returned if this clearing does not exist.",
+            "nullable": true
           }
         },
-        "description": "Flexibility zone defined by a time period and a list of portfolios"
+        "description": "Flexibility zone defined by a list of portfolios"
       },
       "QuantityPricePoint": {
         "type": "object",
@@ -2344,6 +2502,31 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Order"
+            },
+            "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        }
+      },
+      "ClearingSearchResult": {
+        "type": "object",
+        "properties": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Clearing"
             },
             "nullable": true
           },
