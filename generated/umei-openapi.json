@@ -23,9 +23,6 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "$ref": "#/components/parameters/flexibilityZoneId"
-          },
-          {
             "$ref": "#/components/parameters/portfolioId"
           },
           {
@@ -954,9 +951,6 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "$ref": "#/components/parameters/flexibilityZoneId"
-          },
-          {
             "$ref": "#/components/parameters/marketId"
           },
           {
@@ -1149,7 +1143,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Patch / partially update an existing Order",
+        "summary": "Patch / partially update an existing order",
         "operationId": "Order_Patch",
         "parameters": [
           {
@@ -1226,9 +1220,6 @@
             "$ref": "#/components/parameters/gridNodeId"
           },
           {
-            "$ref": "#/components/parameters/flexibilityZoneId"
-          },
-          {
             "$ref": "#/components/parameters/marketId"
           },
           {
@@ -1287,328 +1278,6 @@
                 }
               }
             }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
-    "/PartialFlexibilityZones": {
-      "get": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "List or search one or several flexibility zone(s) using a query. Only the list of portfolios contained in the zone and the time period associated to the zone are returned.",
-        "operationId": "PartialFlexibilityZone_Search",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/take"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gte"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Flexibility zone(s) successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PartialFlexibilityZoneSearchResult"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
-    "/FlexibilityZones": {
-      "get": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "List or search one or several flexibility zone(s) using a query",
-        "operationId": "FlexibilityZone_Search",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/take"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gte"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Flexibility zone(s) successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZoneSearchResult"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "Create a new flexibility zone",
-        "operationId": "FlexibilityZone_Create",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FlexibilityZone"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Flexibility zone successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZone"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
-    "/FlexibilityZones/{id}": {
-      "get": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "Get an existing flexibility zone by id",
-        "operationId": "FlexibilityZone_GetById",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Flexibility zone successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZone"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "Update an existing flexibility zone, or create if missing",
-        "operationId": "FlexibilityZone_Update",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FlexibilityZone"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Flexibility zone successfully updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZone"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "Flexibility zone successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZone"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "Patch / partially update an existing flexibility zone",
-        "operationId": "FlexibilityZone_Patch",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FlexibilityZone"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Flexibility zone successfully updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FlexibilityZone"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "Delete/Remove an existing flexibility zone",
-        "operationId": "FlexibilityZone_Delete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Flexibility zone successfully deleted"
           },
           "401": {
             "$ref": "#/components/responses/UnauthenticatedError"
@@ -1729,15 +1398,6 @@
           "nullable": true
         }
       },
-      "flexibilityZoneId": {
-        "name": "flexibilityZoneId",
-        "description": "Search by flexibility zone id",
-        "in": "query",
-        "schema": {
-          "type": "string",
-          "nullable": true
-        }
-      },
       "baselineId": {
         "name": "baselineId",
         "description": "Search by baseline id",
@@ -1774,84 +1434,92 @@
           "nullable": true
         }
       },
-      "periodFrom": {
-        "name": "periodFrom",
-        "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second), in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+      "timeStamp": {
+        "name": "timeStamp",
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
         "in": "query",
         "schema": {
           "type": "string"
+        }
+      },
+      "periodFrom": {
+        "name": "periodFrom",
+        "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
+        "in": "query",
+        "schema": {
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodFrom.gt": {
         "name": "periodFrom.gt",
-        "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodFrom.gte": {
         "name": "periodFrom.gte",
-        "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodFrom.lt": {
         "name": "periodFrom.lt",
-        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodFrom.lte": {
         "name": "periodFrom.lte",
-        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodTo": {
         "name": "periodTo",
-        "description": "Specify the \"periodTo\" by exact match (with a resolution of one second), in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodTo.gt": {
         "name": "periodTo.gt",
-        "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodTo.gte": {
         "name": "periodTo.gte",
-        "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodTo.lt": {
         "name": "periodTo.lt",
-        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       },
       "periodTo.lte": {
         "name": "periodTo.lte",
-        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value, in ISO-8601 format with Z (preferred) timezone identifier or offset.",
+        "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "type": "string"
+          "$ref": "#/components/parameters/timeStamp"
         }
       }
     },
@@ -2025,7 +1693,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Id of the market. This id will be used to define to which market an order belongs.",
+            "description": "The id of the market. This id will be used to define to which market an order belongs.",
             "nullable": false
           },
           "name": {
@@ -2054,12 +1722,25 @@
       "MarketSearchResult": {
         "type": "object",
         "properties": {
-          "markets": {
+          "numberOfHits": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "items": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Market"
             },
             "nullable": true
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "readOnly": true
           }
         }
       },
@@ -2174,11 +1855,6 @@
             "description": "The grid node this order applies to. An error will be returned if this grid node does not exist.",
             "nullable": true
           },
-          "flexibilityZoneId": {
-            "type": "string",
-            "description": "The flexibility zone this order applies to. An error will be returned if this flexibility zone does not exist.",
-            "nullable": true
-          },
           "marketId": {
             "type": "string",
             "description": "Reference to the market. An error will be returned if this market does not exist.",
@@ -2240,83 +1916,11 @@
             "nullable": true
           }
         },
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market id) for a given time interval. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
-      },
-      "FlexibilityZone": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Id of the flexibility zone (should be unique)",
-            "nullable": true
-          },
-          "flexibilityNeed": {
-            "type": "number",
-            "description": "An amount of power or energy needed in the zone, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.",
-            "format": "double",
-            "nullable": true
-          },
-          "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "portfolioIds": {
-            "type": "array",
-            "description": "The list of ids of the portfolios contained in the flexibility zone",
-            "items": {
-              "type": "string",
-              "description": "Id of a portfolio contained in the flexibility zone",
-              "nullable": false
-            },
-            "nullable": true
-          }
-        },
-        "description": "Flexibility zone defined by a flexibility need, a time period and a list of portfolios"
-      },
-      "PartialFlexibilityZone": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Id of the flexibility zone (should be unique)",
-            "nullable": true
-          },
-          "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "portfolioIds": {
-            "type": "array",
-            "description": "The list of ids of the portfolios contained in the flexibility zone",
-            "items": {
-              "type": "string",
-              "description": "Id of a portfolio contained in the flexibility zone",
-              "nullable": false
-            },
-            "nullable": true
-          }
-        },
-        "description": "Flexibility zone defined by a time period and a list of portfolios"
+        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market ID) for a given time interval. The portfolio ID is required only for sell orders. The grid node id is required for sell orders and buy orders unless it can be derived from the portfolio. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
       },
       "QuantityPricePoint": {
         "type": "object",
-        "description": "A price-quantity-point of an order. A non-empty set of quantity-price-points describes a piecewise linear mapping from quantity to price. ",
+        "description": "A price-quantity-point of an order. A non-empty set of quantity-price-points describe a piecewise linear mapping from quantity to price. ",
         "properties": {
           "quantity": {
             "type": "number",
@@ -2344,56 +1948,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Order"
-            },
-            "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        }
-      },
-      "FlexibilityZoneSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FlexibilityZone"
-            },
-            "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        }
-      },
-      "PartialFlexibilityZoneSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PartialFlexibilityZone"
             },
             "nullable": true
           },
@@ -2475,11 +2029,6 @@
           "gridNodeId": {
             "type": "string",
             "description": "Reference to the grid node.",
-            "nullable": true
-          },
-          "flexibilityZoneId": {
-            "type": "string",
-            "description": "Reference to the flexibility zone.",
             "nullable": true
           },
           "portfolioId": {
