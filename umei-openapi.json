@@ -1524,6 +1524,10 @@
       }
     },
     "schemas": {
+      "OwnerOrganizationId": {
+        "type": "string",
+        "description": "Which organization this item is owned by"
+      },
       "Link": {
         "type": "object",
         "properties": {
@@ -1660,6 +1664,9 @@
             "type": "string",
             "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
+          }, 
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
           }
         }
       },
@@ -1836,6 +1843,9 @@
             "description": "Id of the order (should be unique)",
             "nullable": true
           },
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
+          },
           "status": {
             "enum": [
               "Received",
@@ -1968,6 +1978,9 @@
             "type": "string",
             "description": "Id of the trade (should be unique)",
             "nullable": true
+          },
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
           },
           "status": {
             "enum": [
