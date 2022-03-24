@@ -351,7 +351,7 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "Create a new BaselineInterval",
+        "summary": "Create or update a BaselineInterval",
         "operationId": "BaselineInterval_Create_Single",
         "requestBody": {
           "content": {
@@ -365,6 +365,16 @@
         "responses": {
           "201": {
             "description": "BaselineInterval successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLineInterval"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "BaselineInterval successfully updated",
             "content": {
               "application/json": {
                 "schema": {
