@@ -1434,20 +1434,12 @@
           "nullable": true
         }
       },
-      "timeStamp": {
-        "name": "timeStamp",
-        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
-        "in": "query",
-        "schema": {
-          "type": "string"
-        }
-      },
       "periodFrom": {
         "name": "periodFrom",
         "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodFrom.gt": {
@@ -1455,7 +1447,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodFrom.gte": {
@@ -1463,7 +1455,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodFrom.lt": {
@@ -1471,7 +1463,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodFrom.lte": {
@@ -1479,7 +1471,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodTo": {
@@ -1487,7 +1479,7 @@
         "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodTo.gt": {
@@ -1495,7 +1487,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodTo.gte": {
@@ -1503,7 +1495,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodTo.lt": {
@@ -1511,7 +1503,7 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       },
       "periodTo.lte": {
@@ -1519,11 +1511,15 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/parameters/timeStamp"
+          "$ref": "#/components/schemas/timeStamp"
         }
       }
     },
     "schemas": {
+      "timeStamp": {
+        "type": "string",
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset"
+      },
       "Link": {
         "type": "object",
         "properties": {
