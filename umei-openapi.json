@@ -688,7 +688,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create a new MeterReading",
+        "summary": "Create or update a MeterReading",
         "operationId": "MeterReading_Create",
         "requestBody": {
           "content": {
@@ -702,6 +702,16 @@
         "responses": {
           "201": {
             "description": "MeterReading successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeterReading"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "MeterReading successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -861,7 +871,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create several new MeterReadings",
+        "summary": "Create and/or update several MeterReadings",
         "operationId": "MeterReading_CreateMultiple",
         "requestBody": {
           "content": {
@@ -877,8 +887,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "MeterReadings successfully created"
+          "204": {
+            "description": "MeterReadings successfully created and/or updated"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
@@ -925,7 +935,7 @@
         },
         "responses": {
           "201": {
-            "description": "MeterReadings successfully imported and created"
+            "description": "MeterReadings successfully imported and created and/or updated"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
