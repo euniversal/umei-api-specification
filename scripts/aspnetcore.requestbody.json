@@ -1,8 +1,12 @@
 {
   "openAPIUrl": "https://raw.githubusercontent.com/euniversal/umei-api-specification/main/umei-openapi.json",
   "options": {
-    "packageName": "Umei.Server",
-    "useDateTimeOffset": "true"
+    "packageName": "Umei.Core",
+    "useDateTimeOffset": true,
+    "isLibrary": true,
+    "classModifier": "abstract", 
+    "operationModifier": "abstract",
+    "targetFramework": "netcoreapp3.1"
   },
   "spec": {}
 }
