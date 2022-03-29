@@ -1297,74 +1297,6 @@
         }
       }
     },
-    "/PartialFlexibilityZones": {
-      "get": {
-        "tags": [
-          "FlexibilityZone"
-        ],
-        "summary": "List or search one or several flexibility zone(s) using a query. Only the list of portfolios contained in the zone and the time period associated to the zone are returned.",
-        "operationId": "PartialFlexibilityZone_Search",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/take"
-          },
-          {
-            "$ref": "#/components/parameters/skip"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodFrom.gte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.lte"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gt"
-          },
-          {
-            "$ref": "#/components/parameters/periodTo.gte"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Flexibility zone(s) successfully returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PartialFlexibilityZoneSearchResult"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
     "/FlexibilityZones": {
       "get": {
         "tags": [
@@ -2298,39 +2230,6 @@
         },
         "description": "Flexibility zone defined by a flexibility need, a time period and a list of portfolios"
       },
-      "PartialFlexibilityZone": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Id of the flexibility zone (should be unique)",
-            "nullable": true
-          },
-          "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "portfolioIds": {
-            "type": "array",
-            "description": "The list of ids of the portfolios contained in the flexibility zone",
-            "items": {
-              "type": "string",
-              "description": "Id of a portfolio contained in the flexibility zone",
-              "nullable": false
-            },
-            "nullable": true
-          }
-        },
-        "description": "Flexibility zone defined by a time period and a list of portfolios"
-      },
       "QuantityPricePoint": {
         "type": "object",
         "description": "A price-quantity-point of an order. A non-empty set of quantity-price-points describes a piecewise linear mapping from quantity to price. ",
@@ -2386,31 +2285,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlexibilityZone"
-            },
-            "nullable": true
-          },
-          "links": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        }
-      },
-      "PartialFlexibilityZoneSearchResult": {
-        "type": "object",
-        "properties": {
-          "numberOfHits": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PartialFlexibilityZone"
             },
             "nullable": true
           },
