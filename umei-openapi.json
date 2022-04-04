@@ -351,7 +351,7 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "Create or update a BaselineInterval",
+        "summary": "Create a BaselineInterval",
         "operationId": "BaselineInterval_Create_Single",
         "requestBody": {
           "content": {
@@ -365,16 +365,6 @@
         "responses": {
           "201": {
             "description": "BaselineInterval successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseLineInterval"
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "BaselineInterval successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -544,6 +534,53 @@
         }
       }
     },
+    "/BaselineIntervals/import": {
+      "post": {
+        "tags": [
+          "MeterReading"
+        ],
+        "summary": "Import (update or create) multiple BaselineIntervals",
+        "operationId": "BaselineIntervals_Import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Baseline intervals successfully imported and created and/or updated"
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
     "/MeterReadings/{id}": {
       "get": {
         "tags": [
@@ -698,7 +735,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create or update a MeterReading",
+        "summary": "Create a MeterReading",
         "operationId": "MeterReading_Create",
         "requestBody": {
           "content": {
@@ -712,16 +749,6 @@
         "responses": {
           "201": {
             "description": "MeterReading successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeterReading"
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "MeterReading successfully updated",
             "content": {
               "application/json": {
                 "schema": {
@@ -917,7 +944,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Import and create several MeterReadings",
+        "summary": "Import (update or create) multiple MeterReadings",
         "operationId": "MeterReading_Import",
         "requestBody": {
           "content": {
