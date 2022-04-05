@@ -5,7 +5,7 @@
 
 **Asset:** In this context, an asset represents a physical or virtual device which 
 has power characteristics that can be controlled, thus providing flexibility. 
-Typically assets are either consumers (e.g. heating systems, factories) or producers
+Typically, assets are either consumers (e.g. heating systems, factories) or producers
 (e.g. renewable energy sources or traditional power plants), while some assets
 (e.g. batteries) can both produce and consume. 
 
@@ -21,8 +21,11 @@ Typically assets are either consumers (e.g. heating systems, factories) or produ
 
 **FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   
 
-**GridNode:** Zone of the electrical grid to which an asset portfolio is connected and on which 
-  trading happens. 
+**GridNode:** Physical node of the electrical grid to which an asset portfolio is connected and on which 
+  trading happens.
+
+**FlexibilityZone** Set of several portfolios where the DSO defines specific flexibility needs and sensitivities. 
+A flexibility zone does not correspond to a physical zone of the electrical grid. 
 
 **Interpolated orders:** Order with a non-uniform price, i.e. instead of having one single price independently of the accepted part of the order, the price is evolving with the quantity accepted. Available on N-Side auction market. 
 
