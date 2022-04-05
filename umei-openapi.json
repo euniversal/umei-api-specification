@@ -351,7 +351,7 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "Create a BaselineInterval",
+        "summary": "Create a new BaselineInterval",
         "operationId": "BaselineInterval_Create_Single",
         "requestBody": {
           "content": {
@@ -534,53 +534,6 @@
         }
       }
     },
-    "/BaselineIntervals/import": {
-      "post": {
-        "tags": [
-          "MeterReading"
-        ],
-        "summary": "Import (update or create) multiple BaselineIntervals",
-        "operationId": "BaselineIntervals_Import",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "file": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "binary"
-                    },
-                    "nullable": true
-                  }
-                }
-              },
-              "encoding": {
-                "file": {
-                  "style": "form"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Baseline intervals successfully imported and created and/or updated"
-          },
-          "400": {
-            "$ref": "#/components/responses/ValidationError"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
-          }
-        }
-      }
-    },
     "/MeterReadings/{id}": {
       "get": {
         "tags": [
@@ -735,7 +688,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create a MeterReading",
+        "summary": "Create a new MeterReading",
         "operationId": "MeterReading_Create",
         "requestBody": {
           "content": {
@@ -908,7 +861,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create and/or update several MeterReadings",
+        "summary": "Create several new MeterReadings",
         "operationId": "MeterReading_CreateMultiple",
         "requestBody": {
           "content": {
@@ -924,8 +877,8 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "MeterReadings successfully created and/or updated"
+          "201": {
+            "description": "MeterReadings successfully created"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
@@ -944,7 +897,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Import (update or create) multiple MeterReadings",
+        "summary": "Import and create several MeterReadings",
         "operationId": "MeterReading_Import",
         "requestBody": {
           "content": {
@@ -972,7 +925,7 @@
         },
         "responses": {
           "201": {
-            "description": "MeterReadings successfully imported and created and/or updated"
+            "description": "MeterReadings successfully imported and created"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
@@ -1567,6 +1520,10 @@
         "type": "string",
         "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset"
       },
+      "OwnerOrganizationId": {
+        "type": "string",
+        "description": "Which organization this item is owned by"
+      },
       "Link": {
         "type": "object",
         "properties": {
@@ -1703,6 +1660,9 @@
             "type": "string",
             "description": "Id of the grid node where the assets are located. An error will be returned if this node does not exist in the grid.",
             "nullable": true
+          }, 
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
           }
         }
       },
@@ -1879,6 +1839,9 @@
             "description": "Id of the order (should be unique)",
             "nullable": true
           },
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
+          },
           "status": {
             "enum": [
               "Received",
@@ -2011,6 +1974,9 @@
             "type": "string",
             "description": "Id of the trade (should be unique)",
             "nullable": true
+          },
+          "ownerOrganizationId": {
+            "$ref": "#/components/schemas/OwnerOrganizationId"
           },
           "status": {
             "enum": [
