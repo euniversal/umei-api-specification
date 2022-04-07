@@ -1,0 +1,13 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "lib": [
+      "ES2021",
+      "dom",
+      "deno.ns"
+    ]
+    //    "module": "es2022",
+    //    "target": "es2017"
+  }
+}
