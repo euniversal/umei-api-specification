@@ -61,7 +61,7 @@
         "tags": [
           "Portfolio"
         ],
-        "summary": "Create a new Portfolio",
+        "summary": "Create a Portfolio",
         "operationId": "Portfolio_Create",
         "requestBody": {
           "content": {
@@ -351,8 +351,8 @@
         "tags": [
           "BaselineInterval"
         ],
-        "summary": "Create a new BaselineInterval",
-        "operationId": "BaselineInterval_Create_Single",
+        "summary": "Create a BaselineInterval",
+        "operationId": "BaselineInterval_Create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -534,6 +534,53 @@
         }
       }
     },
+    "/BaselineIntervals/import": {
+      "post": {
+        "tags": [
+          "BaselineInterval"
+        ],
+        "summary": "Import (update or create) multiple BaselineIntervals",
+        "operationId": "BaselineIntervals_Import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Baseline intervals successfully imported and created and/or updated"
+          },
+          "400": {
+            "$ref": "#/components/responses/ValidationError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
     "/MeterReadings/{id}": {
       "get": {
         "tags": [
@@ -688,7 +735,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create a new MeterReading",
+        "summary": "Create a MeterReading",
         "operationId": "MeterReading_Create",
         "requestBody": {
           "content": {
@@ -861,7 +908,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Create several new MeterReadings",
+        "summary": "Create and/or update several MeterReadings",
         "operationId": "MeterReading_CreateMultiple",
         "requestBody": {
           "content": {
@@ -877,8 +924,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "MeterReadings successfully created"
+          "204": {
+            "description": "MeterReadings successfully created and/or updated"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
@@ -897,7 +944,7 @@
         "tags": [
           "MeterReading"
         ],
-        "summary": "Import and create several MeterReadings",
+        "summary": "Import (update or create) multiple MeterReadings",
         "operationId": "MeterReading_Import",
         "requestBody": {
           "content": {
@@ -924,8 +971,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "MeterReadings successfully imported and created"
+          "204": {
+            "description": "MeterReadings successfully imported and created and/or updated"
           },
           "400": {
             "$ref": "#/components/responses/ValidationError"
@@ -1022,7 +1069,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Create a new Order",
+        "summary": "Create an Order",
         "operationId": "Order_Create",
         "requestBody": {
           "content": {
