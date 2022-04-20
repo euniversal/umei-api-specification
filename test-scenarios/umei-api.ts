@@ -3,26 +3,26 @@ import {doFetch, throwIfError} from "./utils.ts";
 export interface IOptions {
     baseUrl: string;
     init?: any,
-    organizationId: string | null,
-    authorizationHeader: string | null,
-    marketName?: string,
-    portfolioName?: string,
-    gridNodeId?: string,
+    authorizationHeader?: string | null,
+    organizationId?: string | null,
+    // marketName?: string,
+    // portfolioName?: string,
+    // gridNodeId?: string,
 }
 
-export const options: IOptions = {
+let options: IOptions = {
     baseUrl: "not-set",
-    init: {},
-    organizationId: null,
-    authorizationHeader: null,
 }
 
 
 export const configure = (o: IOptions) => {
-    for (const propertyName in o) {
-        const key = propertyName as keyof IOptions;
-        options[key] = o[key]
-    }
+    // //
+    // // Object.assign(options, o);
+    // for (const propertyName in o) {
+    //     const key = propertyName as keyof IOptions;
+    //     options[key] = o[key]
+    // }
+    options = o; 
     options.init = {
         headers: {
             "Authorization": options.authorizationHeader,
