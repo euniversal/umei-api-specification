@@ -5,7 +5,7 @@
 
 **Asset:** In this context, an asset represents a physical or virtual device which 
 has power characteristics that can be controlled, thus providing flexibility. 
-Typically, assets are either consumers (e.g. heating systems, factories) or producers
+Typically assets are either consumers (e.g. heating systems, factories) or producers
 (e.g. renewable energy sources or traditional power plants), while some assets
 (e.g. batteries) can both produce and consume. 
 
@@ -17,15 +17,12 @@ Typically, assets are either consumers (e.g. heating systems, factories) or prod
 
 **Fill-or-kill:** Type of order that is immediately matched. The order is either matched in full and then killed, or else it is killed and instantly removed. No partial matching is allowed. Available in NODES continuous market. Commonly abbreviated as FoK. 
 
-**FlexibilityZone** Set of several portfolios where the DSO defines specific flexibility needs and sensitivities.
-A flexibility zone does not necessarily correspond to a physical zone of the electrical grid.
-
 **FMO:** Flexible Market Operator, the operator of the platform hosting a market on which participants can trade flexibility. 
 
 **FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   
 
-**GridNode:** Physical node of the electrical grid to which an asset portfolio is connected and on which 
-  trading happens.
+**GridNode:** Zone of the electrical grid to which an asset portfolio is connected and on which 
+  trading happens. 
 
 **Interpolated orders:** Order with a non-uniform price, i.e. instead of having one single price independently of the accepted part of the order, the price is evolving with the quantity accepted. Available on N-Side auction market. 
 
