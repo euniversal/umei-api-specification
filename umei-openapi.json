@@ -61,7 +61,7 @@
         "tags": [
           "Portfolio"
         ],
-        "summary": "Create a new Portfolio",
+        "summary": "Create a Portfolio",
         "operationId": "Portfolio_Create",
         "requestBody": {
           "content": {
@@ -352,7 +352,7 @@
           "BaselineInterval"
         ],
         "summary": "Create a BaselineInterval",
-        "operationId": "BaselineInterval_Create_Single",
+        "operationId": "BaselineInterval_Create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -537,7 +537,7 @@
     "/BaselineIntervals/import": {
       "post": {
         "tags": [
-          "MeterReading"
+          "BaselineInterval"
         ],
         "summary": "Import (update or create) multiple BaselineIntervals",
         "operationId": "BaselineIntervals_Import",
@@ -566,7 +566,7 @@
           }
         },
         "responses": {
-          "201": {
+          "204": {
             "description": "Baseline intervals successfully imported and created and/or updated"
           },
           "400": {
@@ -971,7 +971,7 @@
           }
         },
         "responses": {
-          "201": {
+          "204": {
             "description": "MeterReadings successfully imported and created and/or updated"
           },
           "400": {
@@ -1069,7 +1069,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Create a new Order",
+        "summary": "Create an Order",
         "operationId": "Order_Create",
         "requestBody": {
           "content": {
