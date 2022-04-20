@@ -2,22 +2,27 @@ import {doFetch, throwIfError} from "./utils.ts";
 
 export interface IOptions {
     baseUrl: string;
-    init: any,
+    init?: any,
     organizationId: string | null,
     authorizationHeader: string | null,
+    marketName?: string,
+    portfolioName?: string,
+    gridNodeId?: string,
 }
 
 export const options: IOptions = {
-// const baseUrl = "https://dev.nodes-tech.com/umei/";
-    baseUrl: "https://localhost:5001/",
+    baseUrl: "not-set",
     init: {},
     organizationId: null,
     authorizationHeader: null,
-};
+}
 
 
-export const configure = (o: Partial<IOptions>) => {
-    for (const k in o) options[k] = o[k];
+export const configure = (o: IOptions) => {
+    for (const propertyName in o) {
+        const key = propertyName as keyof IOptions;
+        options[key] = o[key]
+    }
     options.init = {
         headers: {
             "Authorization": options.authorizationHeader,
@@ -27,7 +32,7 @@ export const configure = (o: Partial<IOptions>) => {
     }
 };
 
-export const fetchMarkets = async () => doFetch(options.baseUrl + "markets", options.init);
+export const fetchMarkets = async () => await doFetch(options.baseUrl + "markets", options.init);
 
 export const fetchPortfolios = async (searchParams: { gridNodeId?: string }) => {
     const url = `${options.baseUrl}portfolios?gridNodeId=${searchParams.gridNodeId}`
@@ -39,7 +44,7 @@ export const fetchTrades = async (searchParams: { gridNodeId: string, "periodFro
     return await doFetch(url, options.init);
 };
 
-export const fetchOrder = async (id) => await doFetch(`${options.baseUrl}orders/${id}`, options.init);
+export const fetchOrder = async (id: string) => await doFetch(`${options.baseUrl}orders/${id}`, options.init);
 
 export const postOrder = async (order: any) => {
     console.log('Posting order: ', order)
