@@ -1,2 +1,4 @@
 /scripts/output/
 /generated/umei-openapi.json
+/test-scenarios/scenario-config.local.ts
+/test-scenarios/umei-config.local.ts
