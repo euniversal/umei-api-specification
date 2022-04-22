@@ -1013,6 +1013,12 @@
             "$ref": "#/components/parameters/status"
           },
           {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
+          },
+          {
             "$ref": "#/components/parameters/take"
           },
           {
@@ -1283,6 +1289,12 @@
           },
           {
             "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1686,6 +1698,32 @@
             "Inactive",
             "Completed",
             "Deleted"
+          ],
+          "nullable": true
+        }
+      },
+      "side": {
+        "name": "side",
+        "in": "query",
+        "description": "Search by order side",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Buy",
+            "Sell"
+          ],
+          "nullable": true
+        }
+      },
+      "regulationType": {
+        "name": "regulationType",
+        "in": "query",
+        "description": "Search by regulationType",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Up",
+            "Down"
           ],
           "nullable": true
         }
