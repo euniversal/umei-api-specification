@@ -20,8 +20,12 @@ export const throwIfError = async (response: any) => {
 
 export const doFetch = async (url: string, init: {} = {}) => {
     const response = await fetch(url, {...init})
-    await throwIfError(response);
-    return await response.json();
+    await throwIfError(response)
+    // return await response.json()
+    const body = await response.text()
+    const obj = JSON.parse(body)
+    const json = JSON.stringify(obj, null, "  ");
+    return obj;
 }
 
 export const sleep = async (millis: number) => await new Promise(resolve => setTimeout(() => resolve({}), millis));

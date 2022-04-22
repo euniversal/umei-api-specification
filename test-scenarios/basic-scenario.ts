@@ -1,13 +1,13 @@
 import {
     configure,
     fetchMarkets,
-    fetchOrder,
+    fetchOrder, fetchOrders,
     fetchPortfolios,
     fetchTrades,
     IOptions,
     postOrder
 } from "./umei-api.ts"
-import {applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour} from "./utils.ts"
+import { applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
 
 console.log('UMEI Interoperability test - Running basic scenario')
 
@@ -32,8 +32,21 @@ if (!portfolio)
     throw new Error(`Portfolio ${scenarioOptions.portfolioName} not found among ${portfolios.numberOfHits} items: ${portfolios.items.map((p: any) => p.name).join(", ")}`)
 console.log(`Using portfolio #${portfolio.id}: ${portfolio.id}`)
 
-const periodFrom = truncateToHour(new Date().getTime() + 36*HOUR_IN_MILLIS);
+const periodFrom = truncateToHour(new Date().getTime() + 36 * HOUR_IN_MILLIS);
 const periodTo = new Date(periodFrom.getTime() + HOUR_IN_MILLIS)
+
+
+console.log('Checking order availability...')
+const orders = await fetchOrders(scenarioOptions.gridNodeId, market.id, periodFrom, periodTo)
+// const orderToString = (t: any) => `${t.periodFrom} <-> ${t.periodTo}: ${t.quantity} @ ${t.unitPrice}`
+orders.items.forEach(o => {
+    console.log(`   ${o.periodFrom} <-> ${o.periodTo}  - ID=${o.id || 'N/A'}, Status=${o.status}, Side=${o.side}, Type=${o.quantityType}`)
+    for (const p of o.pricePoints) {
+        console.log(`      ${p.quantity} <-> ${p.unitPrice}`)
+    }
+})
+Deno.exit(0)
+
 
 const newBuyOrder =
     {

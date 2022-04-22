@@ -1,4 +1,4 @@
-import {doFetch, throwIfError} from "./utils.ts";
+import { doFetch, throwIfError } from "./utils.ts";
 
 export interface IOptions {
     baseUrl: string;
@@ -22,7 +22,7 @@ export const configure = (o: IOptions) => {
     //     const key = propertyName as keyof IOptions;
     //     options[key] = o[key]
     // }
-    options = o; 
+    options = o;
     options.init = {
         headers: {
             "Authorization": options.authorizationHeader,
@@ -45,6 +45,19 @@ export const fetchTrades = async (searchParams: { gridNodeId: string, "periodFro
 };
 
 export const fetchOrder = async (id: string) => await doFetch(`${options.baseUrl}orders/${id}`, options.init);
+
+export const buildUrl = (baseUrl: string, queryParameters: {}) => {
+    let url = baseUrl + "?";
+    for (const q in queryParameters) {
+        url += "&" + q + "=" + queryParameters[q];
+    }
+    return url;
+}
+
+export const fetchOrders = async (gridNodeId:string, marketId: string, from: Date, to: Date) => await doFetch(
+    buildUrl(`${options.baseUrl}orders`, {gridNodeId, marketId, periodFrom: from.toISOString(), periodTo: to.toISOString()}),
+    // `${options.baseUrl}orders?periodFrom=${from.toISOString()}&periodTo=${to.toISOString()}`
+    options.init);
 
 export const postOrder = async (order: any) => {
     console.log('Posting order: ', order)

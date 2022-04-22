@@ -6,7 +6,9 @@
     "isLibrary": true,
     "classModifier": "abstract", 
     "operationModifier": "abstract",
-    "targetFramework": "netcoreapp3.1"
+    "targetFramework": "netcoreapp3.1",
+    "enumNameSuffix": "XXX",
+    "enumValueSuffix": "XXX"
   },
   "spec": {}
 }
