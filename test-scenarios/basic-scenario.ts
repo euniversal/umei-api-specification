@@ -9,6 +9,9 @@ import {
 } from "./umei-api.ts"
 import { applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
 
+
+Deno.exit(-1)
+
 console.log('UMEI Interoperability test - Running basic scenario')
 
 const scenarioOptions: any = {};
@@ -39,7 +42,7 @@ const periodTo = new Date(periodFrom.getTime() + HOUR_IN_MILLIS)
 console.log('Checking order availability...')
 const orders = await fetchOrders(scenarioOptions.gridNodeId, market.id, periodFrom, periodTo)
 // const orderToString = (t: any) => `${t.periodFrom} <-> ${t.periodTo}: ${t.quantity} @ ${t.unitPrice}`
-orders.items.forEach(o => {
+orders.items.forEach((o: any) => {
     console.log(`   ${o.periodFrom} <-> ${o.periodTo}  - ID=${o.id || 'N/A'}, Status=${o.status}, Side=${o.side}, Type=${o.quantityType}`)
     for (const p of o.pricePoints) {
         console.log(`      ${p.quantity} <-> ${p.unitPrice}`)
