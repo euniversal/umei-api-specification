@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1",
+  "openapi": "3.0.3",
   "info": {
     "title": "UMEI API Specification",
     "description": "${description}",
@@ -2249,7 +2249,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means a decrease in available power (either reduced production or increased consumption). ",
+            "description": "Type of regulation of the order. 'Up' means an increase in available quantity (either increased production or reduced consumption) and 'Down' means a decrease in available quantity (either reduced production or increased consumption).",
             "nullable": true
           },
           "side": {
@@ -2272,7 +2272,7 @@
           },
           "minimumAcceptanceQuantity": {
             "type": "number",
-            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order.",
+            "description": "The minimum quantity that should be traded/filled in the order.",
             "format": "double",
             "nullable": true
           },
@@ -2294,7 +2294,7 @@
             "nullable": true
           }
         },
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market id) for a given time interval. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
+        "description": "Order defining a quantity submitted (sell or buy) on a market (defined by a market id) for a given time interval, the type of quantity (i.e. power, energy, ...) being deduced from the market. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
       },
       "FlexibilityZone": {
         "type": "object",
@@ -2306,7 +2306,7 @@
           },
           "flexibilityNeed": {
             "type": "number",
-            "description": "An amount of power or energy needed in the zone, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.",
+            "description": "An amount of quantity needed in the zone, the type of quantity (i.e. power, energy, ...) being deduced from the market. For both quantities the unit is MW.",
             "format": "double",
             "nullable": true
           },
@@ -2341,7 +2341,7 @@
         "properties": {
           "quantity": {
             "type": "number",
-            "description": "An amount of power or energy offered/bid in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "description": "An amount of quantity offered/bid in the order, the type of quantity (i.e. power, energy, ...) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
             "format": "double",
             "nullable": false
           },
@@ -2489,7 +2489,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the trade. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
+            "description": "Type of regulation of the trade. 'Up' means an increase in available quantity (either increased production or reduced consumption) and 'Down' means an decrease in available quantity (either reduced production or increased consumption). ",
             "nullable": true
           },
           "links": {
