@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1",
   "info": {
     "title": "UMEI API Specification",
     "description": "${description}",
@@ -1796,7 +1796,7 @@
         "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.gt": {
@@ -1804,7 +1804,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.gte": {
@@ -1812,7 +1812,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.lt": {
@@ -1820,7 +1820,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.lte": {
@@ -1828,7 +1828,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo": {
@@ -1836,7 +1836,7 @@
         "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.gt": {
@@ -1844,7 +1844,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.gte": {
@@ -1852,7 +1852,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.lt": {
@@ -1860,7 +1860,7 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.lte": {
@@ -1868,12 +1868,32 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       }
     },
     "schemas": {
-      "timeStamp": {
+      "QuantityType": {
+        "type": "string",
+        "enum": [
+          "ActivePower",
+          "ReactivePower",
+          "Energy",
+          "Capacity"
+        ],
+        "description": "The type of quantity which this is traded in this market. Each market can operate in only one type of quantity. ",
+        "nullable": false
+      },
+      "Quantity": {
+        "type": "number",
+        "description": "Average production/consumption in the given period. The unit is deduced from the quantity type. A positive value corresponds to production and a negative value represents consumption.",
+        "format": "double",
+        "minimum": -1E6,
+        "maximum": 1E6,
+        "multipleOf": 0.001,
+        "nullable": true
+      },
+      "TimeStamp": {
         "type": "string",
         "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset"
       },
@@ -1949,16 +1969,15 @@
             "format": "date-time",
             "nullable": false
           },
-          "power": {
-            "type": "number",
-            "description": "Average power in MW forecasted for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
-            "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
-            "multipleOf": 0.001
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "quantityType": {
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity this baseline applies to"
           }
         },
-        "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Baseline of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -2067,15 +2086,8 @@
             "nullable": true
           },
           "quantityType": {
-            "type": "string",
-            "enum": [
-              "ActivePower",
-              "ReactivePower",
-              "Energy",
-              "Capacity"
-            ],
-            "description": "The type of quantity which is traded in this market. Each market can operate in only one type of quantity. ",
-            "nullable": false
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity which this is traded in this market. Each market can operate in only one type of quantity. "
           }
         }
       },
@@ -2151,17 +2163,15 @@
             "format": "date-time",
             "nullable": true
           },
-          "power": {
-            "type": "number",
-            "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
-            "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
-            "multipleOf": 0.001,
-            "nullable": true
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "quantityType": {
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity this measurement refers to. "
           }
         },
-        "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Quantity measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
@@ -2429,10 +2439,7 @@
             "nullable": true
           },
           "quantity": {
-            "type": "number",
-            "description": "Quantity traded/filled.",
-            "format": "double",
-            "nullable": true
+            "$ref": "#/components/schemas/Quantity"
           },
           "side": {
             "enum": [
