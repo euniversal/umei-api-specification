@@ -1010,6 +1010,9 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
+            "$ref": "#/components/parameters/ownerOrganizationId"
+          },
+          {
             "$ref": "#/components/parameters/status"
           },
           {
@@ -1731,6 +1734,15 @@
       "portfolioId": {
         "name": "portfolioId",
         "description": "Search by portfolio id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "ownerOrganizationId": {
+        "name": "ownerOrganizationId",
+        "description": "Search by ownerOrganizationId. This search parameter might be optional, unsupported or mandatory, depending on the FMO. An error message will be returned if the parameter is specified but unsupported, or if the parameter is unspecified but mandatory, or if the parameter is supported and specified but with an invalid value (e.g. an organization you do not have permission to view). ",
         "in": "query",
         "schema": {
           "type": "string",
