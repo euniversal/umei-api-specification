@@ -35,5 +35,3 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 **NonZeroFirstQuantity:** The quantity of the first 'QuantityPricePoint' of an interpolated order must always be zero
 
 **NonUpdatablePortfolio:** The portfolio can not be updated 
-
-**ResourceNotFound** The resource identified by the path parameter does not exist
