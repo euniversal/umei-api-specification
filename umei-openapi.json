@@ -126,6 +126,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -178,6 +181,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -220,6 +226,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -243,6 +252,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -416,6 +428,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -468,6 +483,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -510,6 +528,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -533,6 +554,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -612,6 +636,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -664,6 +691,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -706,6 +736,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -729,6 +762,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1143,6 +1179,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1195,6 +1234,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1237,6 +1279,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1260,6 +1305,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1489,6 +1537,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1541,6 +1592,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1583,6 +1637,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1606,6 +1663,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1635,6 +1695,16 @@
       },
       "ForbiddenError": {
         "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "ResourceNotFoundError": {
+        "description": "The server has not found anything matching the request URL",
         "content": {
           "application/problem+json": {
             "schema": {
