@@ -1796,7 +1796,8 @@
         "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodFrom.gt": {
@@ -1804,7 +1805,8 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodFrom.gte": {
@@ -1812,7 +1814,8 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodFrom.lt": {
@@ -1820,7 +1823,8 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodFrom.lte": {
@@ -1828,7 +1832,8 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodTo": {
@@ -1836,7 +1841,8 @@
         "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodTo.gt": {
@@ -1844,7 +1850,8 @@
         "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodTo.gte": {
@@ -1852,7 +1859,8 @@
         "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodTo.lt": {
@@ -1860,7 +1868,8 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       },
       "periodTo.lte": {
@@ -1868,7 +1877,8 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/TimeStamp"
+          "$ref": "#/components/schemas/TimeStamp",
+          "nullable": true
         }
       }
     },
