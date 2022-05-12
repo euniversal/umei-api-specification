@@ -36,4 +36,4 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 
 **NonUpdatablePortfolio:** The portfolio can not be updated 
 
-**ResourceNotFound** The resource identified by the path parameter does not exist
+**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges. 
