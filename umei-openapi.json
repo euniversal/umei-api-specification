@@ -995,7 +995,7 @@
           "Order"
         ],
         "summary": "View publicly available order information",
-        "description": "This endpoint returns information about publicly visible flexibility orders. Different FMOs might expose different information. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
+        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is pubilicy available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
         "operationId": "PublicOrder_Search",
         "parameters": [
           {
