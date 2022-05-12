@@ -1895,7 +1895,21 @@
       },
       "TimeStamp": {
         "type": "string",
-        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset"
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": true
+      },
+      "PeriodFrom": {
+        "type": "string",
+        "description": "The timestamp indicating the start of the interval for which this item applies, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": false
+      },
+      "PeriodTo": {
+        "type": "string",
+        "description": "The timestamp indicating the end of the interval for which this item applies, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": false
       },
       "OwnerOrganizationId": {
         "type": "string",
@@ -1958,16 +1972,10 @@
             "nullable": false
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this baseline applies.",
-            "format": "date-time",
-            "nullable": false
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this baseline applies.",
-            "format": "date-time",
-            "nullable": false
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity"
@@ -2152,16 +2160,10 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this measurement applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this measurement applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity"
@@ -2277,16 +2279,10 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this order applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this order applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "longflexContractId": {
             "type": "string",
@@ -2311,16 +2307,10 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "portfolioIds": {
             "type": "array",
@@ -2457,16 +2447,10 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this trade applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this trade applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "gridNodeId": {
             "type": "string",
