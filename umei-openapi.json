@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
     "title": "UMEI API Specification",
     "description": "${description}",
@@ -126,9 +126,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -181,9 +178,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -226,9 +220,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -252,9 +243,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -428,9 +416,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -483,9 +468,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -528,9 +510,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -554,9 +533,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -636,9 +612,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -691,9 +664,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -736,9 +706,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -762,9 +729,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1025,12 +989,106 @@
         }
       }
     },
+    "/PublicOrders": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "View publicly available order information",
+        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is pubilicy available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
+        "operationId": "PublicOrder_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/flexibilityZoneId"
+          },
+          {
+            "$ref": "#/components/parameters/marketId"
+          },
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/ownerOrganizationId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          }
+        }
+      }
+    },
     "/Orders": {
       "get": {
         "tags": [
           "Order"
         ],
-        "summary": "List or search one or several Order(s) using a query",
+        "summary": "List or search Order(s) using a query",
+        "description": "This endpoint returns your organization's orders, and possibly other orders which you have full access to. Use the /PublicOrders endpoint to get a (possibly limited) view of all publicly visible orders. ",
         "operationId": "Order_Search",
         "parameters": [
           {
@@ -1044,6 +1102,9 @@
           },
           {
             "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/ownerOrganizationId"
           },
           {
             "$ref": "#/components/parameters/status"
@@ -1179,9 +1240,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1234,9 +1292,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1279,9 +1334,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1305,9 +1357,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1537,9 +1586,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1592,9 +1638,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1637,9 +1680,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       },
@@ -1663,9 +1703,6 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
-          },
-          "404": {
-            "$ref": "#/components/responses/ResourceNotFoundError"
           }
         }
       }
@@ -1695,16 +1732,6 @@
       },
       "ForbiddenError": {
         "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
-        "content": {
-          "application/problem+json": {
-            "schema": {
-              "$ref": "#/components/schemas/ProblemDetails"
-            }
-          }
-        }
-      },
-      "ResourceNotFoundError": {
-        "description": "The server has not found anything matching the request URL",
         "content": {
           "application/problem+json": {
             "schema": {
@@ -1801,6 +1828,15 @@
       "portfolioId": {
         "name": "portfolioId",
         "description": "Search by portfolio id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "ownerOrganizationId": {
+        "name": "ownerOrganizationId",
+        "description": "Search by ownerOrganizationId. This search parameter might be optional, unsupported or mandatory, depending on the FMO. An error message will be returned if the parameter is specified but unsupported, or if the parameter is unspecified but mandatory, or if the parameter is supported and specified but with an invalid value (e.g. an organization you do not have permission to view). ",
         "in": "query",
         "schema": {
           "type": "string",
