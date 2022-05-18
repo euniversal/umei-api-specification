@@ -36,4 +36,6 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 
 **NonUpdatablePortfolio:** The portfolio can not be updated 
 
-**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges. 
+**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges.
+
+**EndpointNotSupported** The requested endpoint is known by the server, but the market platform does not support this method. The 'allow' header field of the response contains a list of methods that the market platform currently supports.

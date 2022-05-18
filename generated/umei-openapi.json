@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "UMEI API Specification",
-    "description": "# Glossary and abbreviations\n\n**Activation market:** Flexibility market where the assets are dispatched for the \n period covered by a trade.  \n\n**Asset:** In this context, an asset represents a physical or virtual device which \nhas power characteristics that can be controlled, thus providing flexibility. \nTypically, assets are either consumers (e.g. heating systems, factories) or producers\n(e.g. renewable energy sources or traditional power plants), while some assets\n(e.g. batteries) can both produce and consume. \n\n**Baseline:** The forecasted aggregated consumption/production of an asset portfolio (see portfolio) during a defined time period. \n\n**DSO:** Distribution System Operator, the entity responsible for operating a electrical grid. \n\n**Fill-and-kill:** Type of order that is immediately matched. The order is killed and instantly removed after matching, whether it is matched fully, partially or not at all. Available in NODES continuous market. Commonly abbreviated as FaK. Also known as Immediate-or-Cancel (IoC).\n\n**Fill-or-kill:** Type of order that is immediately matched. The order is either matched in full and then killed, or else it is killed and instantly removed. No partial matching is allowed. Available in NODES continuous market. Commonly abbreviated as FoK. \n\n**FlexibilityZone** Set of several portfolios where the DSO defines specific flexibility needs and sensitivities.\nA flexibility zone does not necessarily correspond to a physical zone of the electrical grid.\n\n**FMO:** Flexible Market Operator, the operator of the platform hosting a market on which participants can trade flexibility. \n\n**FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   \n\n**GridNode:** Physical node of the electrical grid to which an asset portfolio is connected and on which \n  trading happens.\n\n**Interpolated orders:** Order with a non-uniform price, i.e. instead of having one single price independently of the accepted part of the order, the price is evolving with the quantity accepted. Available on N-Side auction market. \n\n**Limit price:** For buy orders, this is the upper limit of what the buyer is willing to pay. \nFor a sell order, this is the lower limit of what the seller is willing to accept. See \"Market price\". \n\n**Market price:** For buy orders, this means that the buyer will is willing to pay the current market sell price. For sell orders, this means that the seller is willing to sell at the current market buy price. \n\n**MeterReading:** Registration of the actual power consumed/produced by an asset\n\n**Order:** Flexibility order placed on a market. The order can be either “Buy” in case the market participant wants to procure flexibility or “Sell” in case the market participant wants to offer flexibility. \n\n**PayAsBid:** This is a market rule stating that the price at which trade between two orders will occur is the proposed price of the first order placed on the platform. \n\n**PayAsCleared:** This is a market rule stating that the price at which a trade will occur is the one of the market equilibrium (determined by the buy and sell curves). \n\n**Portfolio:** A portfolio represents one or more assets (aggregated) that can participate in a flexibility market, e.g. batteries, dispatchable generators, etc. \n\n**QuantityType:** What is traded on a market / in an order. Possible values are \n*ActivePower*, *ReactivePower*, *Energy*, *Capacity*. \n\n**Reservation Market:** Flexibility market in which participants offer the reservation of their flexibility (possibly weeks or years in advance depending on market rules) before actual dispatching.\nThe actual dispatching can be done outside the market or in a consecutive activation market. \n\n**Trade:** A trade either between two participants of a market, or between one participant \nand the FMO. A trade is always the result of two or more orders being matched. \n\n\n# Categorization of orders\n\nOrders can be categorized along several *axes*. Some categorizations follow \ndirectly from the market, while other can vary between orders with the same market. \n\n\n**QuantityType:** Some orders are for adjusting active power supply, some are for energy etc. \nEach market operates in one quantity type. \n\n**Quantity:** Some orders are can be matched-in-part, and some orders need to be fully \"filled\". This is deduced from the minimumAcceptanceQuantity. Possible categorizations are *Curtailable* (minimumAcceptanceQuantity < Quantity) and *AllOrNothing* (minimumAcceptanceQuantity == Quantity)\n\n**PriceCurve:** Some orders have a fixed price regardless of quantity, while some orders have price depending on quantity bought (using the piecewise linear price curve concept). Possible categorizations are *FixedPrice* or *VariablePrice*.\n\n**Period:** Some orders needs to be matched for the whole period stated in the order \n(e.g. 1300-1800), while other orders can be divided into time-slots and some of them met \n(e.g. buying 1300-1500 of an order that has period 1300-1800). \nPossible categorizations are *SingleSlot* (must match the whole period) \nor *MultiSlot* (one can match/buy parts of the period).\n\n**FillType:** Depending on the fill type, some orders are killed immediately after matching, \nwhile some can remain in the market. \nPossible categorizations are *Normal* (remains in market), *FillOrKill*, *FillAndKill*.\n\n**PriceType:** Some orders have a fixed limit on how high (for buy orders) or low (for sell orders) \nthe price can be. Other orders will buy/sell at the current market price. \nPossible categorizations are: *Limit*, *Market*. \n\n\n# Status of items\n\nEach of the items within an FMO can have different statuses at different stages in their lifecycle. \nNot all status are relevant for all items. Each FMO can have limitations on allowed statuses, \ndepending on entity types and other factors (e.g. market rules). \n\nHowever, each of the statuses have the same meaning across different FMOs: \n\n**Received:** The item has been received but not yet processed. If the response includes a \nlink or id, the status of the item can be polled at a later time. \n\n**Pending:** The item has been received, but is pending approval from an external system, \neither manual or automatic. \n\n**Rejected:** The item has been received and stored, but rejected. The rejection can be \nautomatic or manual, by external partners or by the FMO, and can possibly be revoked. \n\n**Active:** The item is now active in the FMO system. \nNote that for orders in a continuous market, this means that the order in financial terms also \nis referred to as *passive*, meaning that it is lying in the system, \nawaiting possible future matches. \n\n**Inactive:** The item has manually or automatically been marked as not operational. The \nstatus might be changed at a later time. \n\n**Completed:** The item has completed it lifecycle and is no longer active. An example of this \nis an order that has been fully matched. \n\n**Deleted:** The item has been deleted, manually or automatically, and is no longer active. \n# List of error codes\n\nThis is a non-exhaustive list of error codes. The main purpose is to harmonize error codes between different FMOs, enabling users and code to handle common errors in the same way even when interfacing with different FMOs. \n\nNote that this list is non-exhaustive. FMOs are free to perform additional validations and to provide errors messages with error codes not in this list. However, FMOs are strongly encouraged to re-use existing error codes if possible. \n\nSee the definition of the ProblemDetails object in the OpenAPI documentation for usage, or the problem details RFC: https://datatracker.ietf.org/doc/html/rfc7807\n\n\n### Security related error codes\n\n**Forbidden:** The current user is not authorized to perform the requested operation. Corresponds to http status 403 Forbidden.\n\n**Unauthenticated:** This operation requires a logged-in user, but the request did not specify valid authentication parameters. Corresponds to http status 401 Unauthorized (sic).\n\n\n### Error codes related to invalid request data \n\n**InvalidMarket** The given market does not exist, is not available for the current user, or is otherwise not available for the given order\n\n**InvalidGridNode:** The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order\n\n**InvalidPortfolio:** The given portfolio does not exist, or is not available for the current user\n\n**InvalidStatus:** The status specified is not valid for the item selected\n\n**InvalidLongflexContractId:** The given longflex contract does not exist, or is not available for the current user\n\n**MarketClosed:** The market is not open for trading for the period specified in the order\n\n**MarketNotYetOpen:** The market has not yet opened for trading for the period specified in the order\n\n**InconsistentPeriods:** 'periodTo' must be subsequent to 'periodFrom'\n\n**NonZeroFirstQuantity:** The quantity of the first 'QuantityPricePoint' of an interpolated order must always be zero\n\n**NonUpdatablePortfolio:** The portfolio can not be updated \n\n**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges. \n",
+    "description": "# List of error codes\n\nThis is a non-exhaustive list of error codes. The main purpose is to harmonize error codes between different FMOs, enabling users and code to handle common errors in the same way even when interfacing with different FMOs. \n\nNote that this list is non-exhaustive. FMOs are free to perform additional validations and to provide errors messages with error codes not in this list. However, FMOs are strongly encouraged to re-use existing error codes if possible. \n\nSee the definition of the ProblemDetails object in the OpenAPI documentation for usage, or the problem details RFC: https://datatracker.ietf.org/doc/html/rfc7807\n\n\n### Security related error codes\n\n**Forbidden:** The current user is not authorized to perform the requested operation. Corresponds to http status 403 Forbidden.\n\n**Unauthenticated:** This operation requires a logged-in user, but the request did not specify valid authentication parameters. Corresponds to http status 401 Unauthorized (sic).\n\n\n### Error codes related to invalid request data \n\n**InvalidMarket** The given market does not exist, is not available for the current user, or is otherwise not available for the given order\n\n**InvalidGridNode:** The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order\n\n**InvalidPortfolio:** The given portfolio does not exist, or is not available for the current user\n\n**InvalidStatus:** The status specified is not valid for the item selected\n\n**InvalidLongflexContractId:** The given longflex contract does not exist, or is not available for the current user\n\n**MarketClosed:** The market is not open for trading for the period specified in the order\n\n**MarketNotYetOpen:** The market has not yet opened for trading for the period specified in the order\n\n**InconsistentPeriods:** 'periodTo' must be subsequent to 'periodFrom'\n\n**NonZeroFirstQuantity:** The quantity of the first 'QuantityPricePoint' of an interpolated order must always be zero\n\n**NonUpdatablePortfolio:** The portfolio can not be updated \n\n**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges.\n\n**EndpointNotSupported** The requested endpoint is known by the server, but the market platform does not support this method. The 'allow' header field of the response contains a list of methods that the market platform currently supports.# Glossary and abbreviations\n\n**Activation market:** Flexibility market where the assets are dispatched for the \n period covered by a trade.  \n\n**Asset:** In this context, an asset represents a physical or virtual device which \nhas power characteristics that can be controlled, thus providing flexibility. \nTypically, assets are either consumers (e.g. heating systems, factories) or producers\n(e.g. renewable energy sources or traditional power plants), while some assets\n(e.g. batteries) can both produce and consume. \n\n**Baseline:** The forecasted aggregated consumption/production of an asset portfolio (see portfolio) during a defined time period. \n\n**DSO:** Distribution System Operator, the entity responsible for operating a electrical grid. \n\n**Fill-and-kill:** Type of order that is immediately matched. The order is killed and instantly removed after matching, whether it is matched fully, partially or not at all. Available in NODES continuous market. Commonly abbreviated as FaK. Also known as Immediate-or-Cancel (IoC).\n\n**Fill-or-kill:** Type of order that is immediately matched. The order is either matched in full and then killed, or else it is killed and instantly removed. No partial matching is allowed. Available in NODES continuous market. Commonly abbreviated as FoK. \n\n**FlexibilityZone** Set of several portfolios where the DSO defines specific flexibility needs and sensitivities.\nA flexibility zone does not necessarily correspond to a physical zone of the electrical grid.\n\n**FMO:** Flexible Market Operator, the operator of the platform hosting a market on which participants can trade flexibility. \n\n**FSP:** Flexibility Service Provider, an entity offering flexible assets into a market.   \n\n**GridNode:** Physical node of the electrical grid to which an asset portfolio is connected and on which \n  trading happens.\n\n**Interpolated orders:** Order with a non-uniform price, i.e. instead of having one single price independently of the accepted part of the order, the price is evolving with the quantity accepted. Available on N-Side auction market. \n\n**Limit price:** For buy orders, this is the upper limit of what the buyer is willing to pay. \nFor a sell order, this is the lower limit of what the seller is willing to accept. See \"Market price\". \n\n**Market price:** For buy orders, this means that the buyer will is willing to pay the current market sell price. For sell orders, this means that the seller is willing to sell at the current market buy price. \n\n**MeterReading:** Registration of the actual power consumed/produced by an asset\n\n**Order:** Flexibility order placed on a market. The order can be either “Buy” in case the market participant wants to procure flexibility or “Sell” in case the market participant wants to offer flexibility. \n\n**PayAsBid:** This is a market rule stating that the price at which trade between two orders will occur is the proposed price of the first order placed on the platform. \n\n**PayAsCleared:** This is a market rule stating that the price at which a trade will occur is the one of the market equilibrium (determined by the buy and sell curves). \n\n**Portfolio:** A portfolio represents one or more assets (aggregated) that can participate in a flexibility market, e.g. batteries, dispatchable generators, etc. \n\n**QuantityType:** What is traded on a market / in an order. Possible values are \n*ActivePower*, *ReactivePower*, *Energy*, *Capacity*. \n\n**Reservation Market:** Flexibility market in which participants offer the reservation of their flexibility (possibly weeks or years in advance depending on market rules) before actual dispatching.\nThe actual dispatching can be done outside the market or in a consecutive activation market. \n\n**Trade:** A trade either between two participants of a market, or between one participant \nand the FMO. A trade is always the result of two or more orders being matched. \n\n\n# Categorization of orders\n\nOrders can be categorized along several *axes*. Some categorizations follow \ndirectly from the market, while other can vary between orders with the same market. \n\n\n**QuantityType:** Some orders are for adjusting active power supply, some are for energy etc. \nEach market operates in one quantity type. \n\n**Quantity:** Some orders are can be matched-in-part, and some orders need to be fully \"filled\". This is deduced from the minimumAcceptanceQuantity. Possible categorizations are *Curtailable* (minimumAcceptanceQuantity < Quantity) and *AllOrNothing* (minimumAcceptanceQuantity == Quantity)\n\n**PriceCurve:** Some orders have a fixed price regardless of quantity, while some orders have price depending on quantity bought (using the piecewise linear price curve concept). Possible categorizations are *FixedPrice* or *VariablePrice*.\n\n**Period:** Some orders needs to be matched for the whole period stated in the order \n(e.g. 1300-1800), while other orders can be divided into time-slots and some of them met \n(e.g. buying 1300-1500 of an order that has period 1300-1800). \nPossible categorizations are *SingleSlot* (must match the whole period) \nor *MultiSlot* (one can match/buy parts of the period).\n\n**FillType:** Depending on the fill type, some orders are killed immediately after matching, \nwhile some can remain in the market. \nPossible categorizations are *Normal* (remains in market), *FillOrKill*, *FillAndKill*.\n\n**PriceType:** Some orders have a fixed limit on how high (for buy orders) or low (for sell orders) \nthe price can be. Other orders will buy/sell at the current market price. \nPossible categorizations are: *Limit*, *Market*. \n\n\n# Status of items\n\nEach of the items within an FMO can have different statuses at different stages in their lifecycle. \nNot all status are relevant for all items. Each FMO can have limitations on allowed statuses, \ndepending on entity types and other factors (e.g. market rules). \n\nHowever, each of the statuses have the same meaning across different FMOs: \n\n**Received:** The item has been received but not yet processed. If the response includes a \nlink or id, the status of the item can be polled at a later time. \n\n**Pending:** The item has been received, but is pending approval from an external system, \neither manual or automatic. \n\n**Rejected:** The item has been received and stored, but rejected. The rejection can be \nautomatic or manual, by external partners or by the FMO, and can possibly be revoked. \n\n**Active:** The item is now active in the FMO system. \nNote that for orders in a continuous market, this means that the order in financial terms also \nis referred to as *passive*, meaning that it is lying in the system, \nawaiting possible future matches. \n\n**Inactive:** The item has manually or automatically been marked as not operational. The \nstatus might be changed at a later time. \n\n**Completed:** The item has completed it lifecycle and is no longer active. An example of this \nis an order that has been fully matched. \n\n**Deleted:** The item has been deleted, manually or automatically, and is no longer active. \n",
     "version": "1.0.0"
   },
   "servers": [
@@ -57,6 +57,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -94,6 +97,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -129,6 +135,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -184,6 +193,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -229,6 +241,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -255,6 +270,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -282,6 +300,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -359,6 +380,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -396,6 +420,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -431,6 +458,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -486,6 +516,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -531,6 +564,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -557,6 +593,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -604,6 +643,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -639,6 +681,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -694,6 +739,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -739,6 +787,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -765,6 +816,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -804,6 +858,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -938,6 +995,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -974,6 +1034,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1021,6 +1084,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1114,6 +1180,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1207,6 +1276,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1244,6 +1316,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1279,6 +1354,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1334,6 +1412,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1379,6 +1460,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1405,6 +1489,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1497,6 +1584,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1565,6 +1655,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1602,6 +1695,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1637,6 +1733,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1692,6 +1791,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1737,6 +1839,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1763,6 +1868,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1802,6 +1910,16 @@
       },
       "ResourceNotFoundError": {
         "description": "The server has not found anything matching the request URL",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "EndpointNotSupportedError": {
+        "description": "The requested endpoint is known by the server, but the market platform does not support this method.",
         "content": {
           "application/problem+json": {
             "schema": {
