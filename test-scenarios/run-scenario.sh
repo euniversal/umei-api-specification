@@ -1,1 +1,1 @@
-deno run --config tsconfig.json --allow-net --unsafely-ignore-certificate-errors basic-scenario.ts 
+deno run --config ../tsconfig.json --allow-net --unsafely-ignore-certificate-errors basic-scenario.ts 

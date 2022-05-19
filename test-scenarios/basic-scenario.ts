@@ -1,16 +1,16 @@
 import {
     configure,
     fetchMarkets,
-    fetchOrder, fetchOrders,
-    fetchPortfolios,
+    fetchOrder,
+    fetchPortfolios, fetchPrivateOrders, fetchPublicOrders,
     fetchTrades,
     IOptions,
     postOrder
 } from "./umei-api.ts"
-import { applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
+import {applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour} from "./utils.ts"
 
 
-Deno.exit(-1)
+// Deno.exit(-1)
 
 console.log('UMEI Interoperability test - Running basic scenario')
 
@@ -38,16 +38,22 @@ console.log(`Using portfolio #${portfolio.id}: ${portfolio.id}`)
 const periodFrom = truncateToHour(new Date().getTime() + 36 * HOUR_IN_MILLIS);
 const periodTo = new Date(periodFrom.getTime() + HOUR_IN_MILLIS)
 
-
-console.log('Checking order availability...')
-const orders = await fetchOrders(scenarioOptions.gridNodeId, market.id, periodFrom, periodTo)
+for (const f of [fetchPrivateOrders, fetchPublicOrders]) {
+    console.log('executing order fetch', f)
+    const orders = await f('Up', market.id, scenarioOptions.gridNodeId, periodFrom, periodTo)
+    const pendingOrders = orders.items.filter((o: any) => o.status == 'Pending')
+    console.log(` fetched ${orders.items.length} orders. `)
+    if (pendingOrders.length > 0)
+        console.log(` ${pendingOrders.length} PENDING orders. `)
 // const orderToString = (t: any) => `${t.periodFrom} <-> ${t.periodTo}: ${t.quantity} @ ${t.unitPrice}`
-orders.items.forEach((o: any) => {
-    console.log(`   ${o.periodFrom} <-> ${o.periodTo}  - ID=${o.id || 'N/A'}, Status=${o.status}, Side=${o.side}, Type=${o.quantityType}`)
-    for (const p of o.pricePoints) {
-        console.log(`      ${p.quantity} <-> ${p.unitPrice}`)
-    }
-})
+    orders.items.forEach((o: any) => {
+        console.log(`   ${o.periodFrom} <-> ${o.periodTo}  - ID=${o.id || 'N/A'}, Status=${o.status}, Side=${o.side}`)
+        for (const p of o.pricePoints) {
+            console.log(`      qty ${p.quantity} => price ${p.unitPrice}`)
+        }
+    })
+}
+console.log('Done ?')
 Deno.exit(0)
 
 
@@ -67,6 +73,10 @@ const newBuyOrder =
 
 const createdBuyOrder = await postOrder(newBuyOrder)
 console.log('Created buy order: ', createdBuyOrder)
+
+// console.log('Done ?')
+// Deno.exit(0)
+
 
 const newSellOrder =
     {

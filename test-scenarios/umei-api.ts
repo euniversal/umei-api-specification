@@ -1,4 +1,4 @@
-import { doFetch, throwIfError } from "./utils.ts";
+import {doFetch, throwIfError} from "./utils.ts";
 
 export interface IOptions {
     baseUrl: string;
@@ -46,7 +46,7 @@ export const fetchTrades = async (searchParams: { gridNodeId: string, "periodFro
 
 export const fetchOrder = async (id: string) => await doFetch(`${options.baseUrl}orders/${id}`, options.init);
 
-export const buildUrl = (baseUrl: string, queryParameters: {}) => {
+export const buildUrl = (baseUrl: string, queryParameters: any) => {
     let url = baseUrl + "?";
     for (const q in queryParameters) {
         url += "&" + q + "=" + queryParameters[q];
@@ -54,8 +54,25 @@ export const buildUrl = (baseUrl: string, queryParameters: {}) => {
     return url;
 }
 
-export const fetchOrders = async (gridNodeId:string, marketId: string, from: Date, to: Date) => await doFetch(
-    buildUrl(`${options.baseUrl}orders`, {gridNodeId, marketId, periodFrom: from.toISOString(), periodTo: to.toISOString()}),
+export const fetchPrivateOrders = async (regulationType: string, marketId: string, gridNodeId: string, from: Date, to: Date) => await doFetch(
+    buildUrl(`${options.baseUrl}orders`, {
+        regulationType,
+        marketId,
+        gridNodeId,
+        periodFrom: from.toISOString(),
+        periodTo: to.toISOString()
+    }),
+    // `${options.baseUrl}orders?periodFrom=${from.toISOString()}&periodTo=${to.toISOString()}`
+    options.init);
+
+export const fetchPublicOrders = async (regulationType: string, marketId: string, gridNodeId: string, from: Date, to: Date) => await doFetch(
+    buildUrl(`${options.baseUrl}PublicOrders`, {
+        regulationType,
+        marketId,
+        gridNodeId,
+        "periodFrom.gte": from.toISOString(),
+        "periodTo.lte": to.toISOString()
+    }),
     // `${options.baseUrl}orders?periodFrom=${from.toISOString()}&periodTo=${to.toISOString()}`
     options.init);
 
@@ -66,6 +83,8 @@ export const postOrder = async (order: any) => {
         body: JSON.stringify(order),
         headers: options.init.headers,
     });
-    await throwIfError(response);
-    return response.json();
+    await throwIfError(response)
+    const createdOrder = await response.json() as any
+    console.log(' Posted order: ', createdOrder.id)
+    return createdOrder
 };
