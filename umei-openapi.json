@@ -57,6 +57,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -94,6 +97,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -129,6 +135,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -184,6 +193,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -229,6 +241,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -255,6 +270,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -282,6 +300,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -359,6 +380,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -396,6 +420,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -431,6 +458,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -486,6 +516,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -531,6 +564,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -557,6 +593,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -604,6 +643,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -639,6 +681,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -694,6 +739,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -739,6 +787,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -765,6 +816,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -804,6 +858,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -938,6 +995,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -974,6 +1034,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1021,6 +1084,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1114,6 +1180,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1207,6 +1276,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1244,6 +1316,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1279,6 +1354,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1334,6 +1412,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1379,6 +1460,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1405,6 +1489,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1497,6 +1584,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1565,6 +1655,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1602,6 +1695,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1637,6 +1733,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1692,6 +1791,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1737,6 +1839,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1763,6 +1868,9 @@
           },
           "404": {
             "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1802,6 +1910,16 @@
       },
       "ResourceNotFoundError": {
         "description": "The server has not found anything matching the request URL",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "EndpointNotSupportedError": {
+        "description": "The requested endpoint is known by the server, but the market platform does not support this method.",
         "content": {
           "application/problem+json": {
             "schema": {
