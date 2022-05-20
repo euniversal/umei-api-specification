@@ -18,6 +18,10 @@ A post-processed OpenAPI specification including more documentation is available
 A SwaggerUI-version can be viewed here:  
 [UMEI Swagger Interface](swagger-ui.html)
 
+
+A Redoc-version can be viewed here:  
+[REDOC Interface](https://redocly.github.io/redoc/?url=https://euniversal.github.io/umei-api-specification/umei-openapi.json)
+
 A PDF version of the API can be generated here:  
 [UMEI API PDF Documentation](generate-pdf.html)
 
