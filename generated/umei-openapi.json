@@ -41,6 +41,16 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_portfolios"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Portfolio(s) successfully returned",
@@ -78,6 +88,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_portfolios"
+            ]
+          }
+        ],
         "responses": {
           "201": {
             "description": "Portfolio successfully created",
@@ -114,6 +134,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_portfolios"
+            ]
           }
         ],
         "responses": {
@@ -161,6 +191,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_portfolios"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Portfolios successfully updated",
@@ -219,6 +259,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_portfolios"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Portfolio successfully updated",
@@ -258,6 +308,16 @@
             "$ref": "#/components/parameters/id"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_portfolios"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "Portfolio successfully deleted"
@@ -284,6 +344,16 @@
         ],
         "summary": "List all Markets",
         "operationId": "Market_List",
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_markets"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Market(s) successfully returned",
@@ -364,6 +434,16 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_baselines"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "BaselineInterval(s) successfully returned",
@@ -401,6 +481,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_baselines"
+            ]
+          }
+        ],
         "responses": {
           "201": {
             "description": "BaselineInterval successfully created",
@@ -437,6 +527,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_baselines"
+            ]
           }
         ],
         "responses": {
@@ -484,6 +584,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_baselines"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "BaselineInterval successfully updated",
@@ -542,6 +652,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_baselines"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "BaselineInterval successfully updated",
@@ -579,6 +699,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_baselines"
+            ]
           }
         ],
         "responses": {
@@ -631,6 +761,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_baselines"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "Baseline intervals successfully imported and created and/or updated"
@@ -660,6 +800,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_meter_readings"
+            ]
           }
         ],
         "responses": {
@@ -707,6 +857,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "MeterReading successfully updated",
@@ -765,6 +925,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "MeterReading successfully updated",
@@ -804,6 +974,16 @@
             "$ref": "#/components/parameters/id"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "MeterReading successfully deleted"
@@ -839,6 +1019,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "201": {
             "description": "MeterReading successfully created",
@@ -911,6 +1101,16 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "MeterReading(s) successfully deleted"
@@ -979,6 +1179,16 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "MeterReading(s) successfully returned",
@@ -1022,6 +1232,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "MeterReadings successfully created and/or updated"
@@ -1072,6 +1292,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_meter_readings"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "MeterReadings successfully imported and created and/or updated"
@@ -1097,7 +1327,7 @@
           "Order"
         ],
         "summary": "View publicly available order information",
-        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is pubilicy available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
+        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is publicly available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
         "operationId": "PublicOrder_Search",
         "parameters": [
           {
@@ -1162,6 +1392,16 @@
           },
           {
             "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_orders"
+            ]
           }
         ],
         "responses": {
@@ -1260,6 +1500,16 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_orders"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Order(s) successfully returned",
@@ -1297,6 +1547,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_orders"
+            ]
+          }
+        ],
         "responses": {
           "201": {
             "description": "Order successfully created",
@@ -1333,6 +1593,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_orders"
+            ]
           }
         ],
         "responses": {
@@ -1380,6 +1650,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_orders"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Order successfully updated",
@@ -1438,6 +1718,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_orders"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Order successfully updated",
@@ -1475,6 +1765,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_orders"
+            ]
           }
         ],
         "responses": {
@@ -1568,6 +1868,16 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_trades"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Trade(s) successfully returned",
@@ -1639,6 +1949,17 @@
             "$ref": "#/components/parameters/periodTo.gte"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_flexibility_zones",
+              "partial_read_flexibility_zones"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Flexibility zone(s) successfully returned",
@@ -1676,6 +1997,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_flexibility_zones"
+            ]
+          }
+        ],
         "responses": {
           "201": {
             "description": "Flexibility zone successfully created",
@@ -1712,6 +2043,17 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
+          }
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "read_flexibility_zones",
+              "partial_read_flexibility_zones"
+            ]
           }
         ],
         "responses": {
@@ -1759,6 +2101,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_flexibility_zones"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Flexibility zone successfully updated",
@@ -1817,6 +2169,16 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "write_flexibility_zones"
+            ]
+          }
+        ],
         "responses": {
           "200": {
             "description": "Flexibility zone successfully updated",
@@ -1856,6 +2218,16 @@
             "$ref": "#/components/parameters/id"
           }
         ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "OAuth2": [
+              "delete_flexibility_zones"
+            ]
+          }
+        ],
         "responses": {
           "204": {
             "description": "Flexibility zone successfully deleted"
@@ -1877,6 +2249,41 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://example.com/oauth/token",
+            "scopes": {
+              "read_portfolios": "Grands read access to portfolios (GET)",
+              "write_portfolios": "Grands write access to portfolios (POST, PUT, PATCH)",
+              "delete_portfolios": "Grands delete access to portfolios (DELETE)",
+              "read_markets": "Grands read access to markets (GET)",
+              "read_baselines": "Grands read access to baselines (GET)",
+              "write_baselines": "Grands write access to baselines (POST, PUT, PATCH)",
+              "delete_baselines": "Grands delete access to baselines (DELETE)",
+              "read_meter_readings": "Grands read access to meter_readings (GET)",
+              "write_meter_readings": "Grands write access to meter_readings (POST, PUT, PATCH)",
+              "delete_meter_readings": "Grands delete access to meter_readings (DELETE)",
+              "read_orders": "Grands read access to orders (GET)",
+              "write_orders": "Grands write access to orders (POST, PUT, PATCH)",
+              "delete_orders": "Grands delete access to orders (DELETE)",
+              "read_trades": "Grands read access to trades (GET)",
+              "read_flexibility_zones": "Grands read access to flexibility_zones (GET)",
+              "partial_read_flexibility_zones": "Grands partial read access to flexibility_zones (GET): flexibility need not accessible",
+              "write_flexibility_zones": "Grands write access to flexibility_zones (POST, PUT, PATCH)",
+              "delete_flexibility_zones": "Grands delete access to flexibility_zones (DELETE)"
+            }
+          }
+        }
+      }
+    },
     "responses": {
       "ValidationError": {
         "description": "The server cannot or will not process the request due to something that is perceived to be a client error",
@@ -1899,7 +2306,7 @@
         }
       },
       "ForbiddenError": {
-        "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
+        "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource)",
         "content": {
           "application/problem+json": {
             "schema": {
