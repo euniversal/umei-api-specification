@@ -19,7 +19,7 @@ const logError = msg => logAndReturn('error', msg);
 const logInfo = msg => logAndReturn('log', msg);
 
 let replacement = "";
-const files = ["glossary.md", "error-codes.md"];
+const files = ["glossary.md", "auth.md", "error-codes.md"];
 
 files.map(file => readFileAsync(file)
     .then(buffer => buffer.toString())
