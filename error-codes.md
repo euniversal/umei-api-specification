@@ -16,22 +16,26 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 
 ### Error codes related to invalid request data 
 
-**InvalidMarket** The given market does not exist, is not available for the current user, or is otherwise not available for the given order
+**EndpointNotSupported** The requested endpoint is known by the server, but the market platform does not support this method. The 'allow' header field of the response contains a list of methods that the market platform currently supports.
+
+**InconsistentPeriods:** 'periodTo' must be subsequent to 'periodFrom'
 
 **InvalidGridNode:** The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order
+
+**InvalidLongflexContractId:** The given longflex contract does not exist, or is not available for the current user
+
+**InvalidMarket** The given market does not exist, is not available for the current user, or is otherwise not available for the given order
 
 **InvalidPortfolio:** The given portfolio does not exist, or is not available for the current user
 
 **InvalidStatus:** The status specified is not valid for the item selected
 
-**InvalidLongflexContractId:** The given longflex contract does not exist, or is not available for the current user
-
 **MarketClosed:** The market is not open for trading for the period specified in the order
 
 **MarketNotYetOpen:** The market has not yet opened for trading for the period specified in the order
 
-**InconsistentPeriods:** 'periodTo' must be subsequent to 'periodFrom'
+**NonUpdatablePortfolio:** The portfolio can not be updated
 
 **NonZeroFirstQuantity:** The quantity of the first 'QuantityPricePoint' of an interpolated order must always be zero
 
-**NonUpdatablePortfolio:** The portfolio can not be updated 
+**ResourceNotFound** The resource identified by the path parameter does not exist or the logged-in user does not have sufficient privileges.

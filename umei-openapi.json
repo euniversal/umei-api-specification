@@ -57,6 +57,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -94,6 +97,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -126,6 +132,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -178,6 +190,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -220,6 +238,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -243,6 +267,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -270,6 +300,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -347,6 +380,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -384,6 +420,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -416,6 +455,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -468,6 +513,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -510,6 +561,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -533,6 +590,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -580,6 +643,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -612,6 +678,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -664,6 +736,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -706,6 +784,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -729,6 +813,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -768,6 +858,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -902,6 +995,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -938,6 +1034,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -985,17 +1084,21 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
     },
-    "/Orders": {
+    "/PublicOrders": {
       "get": {
         "tags": [
           "Order"
         ],
-        "summary": "List or search one or several Order(s) using a query",
-        "operationId": "Order_Search",
+        "summary": "View publicly available order information",
+        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is pubilicy available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
+        "operationId": "PublicOrder_Search",
         "parameters": [
           {
             "$ref": "#/components/parameters/gridNodeId"
@@ -1010,7 +1113,16 @@
             "$ref": "#/components/parameters/portfolioId"
           },
           {
+            "$ref": "#/components/parameters/ownerOrganizationId"
+          },
+          {
             "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1068,6 +1180,105 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
+          }
+        }
+      }
+    },
+    "/Orders": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "List or search Order(s) using a query",
+        "description": "This endpoint returns your organization's orders, and possibly other orders which you have full access to. Use the /PublicOrders endpoint to get a (possibly limited) view of all publicly visible orders. ",
+        "operationId": "Order_Search",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/gridNodeId"
+          },
+          {
+            "$ref": "#/components/parameters/flexibilityZoneId"
+          },
+          {
+            "$ref": "#/components/parameters/marketId"
+          },
+          {
+            "$ref": "#/components/parameters/portfolioId"
+          },
+          {
+            "$ref": "#/components/parameters/ownerOrganizationId"
+          },
+          {
+            "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
+          },
+          {
+            "$ref": "#/components/parameters/take"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodFrom.gte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.lte"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gt"
+          },
+          {
+            "$ref": "#/components/parameters/periodTo.gte"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order(s) successfully returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1105,6 +1316,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1137,6 +1351,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1189,6 +1409,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1231,6 +1457,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1254,6 +1486,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1283,6 +1521,12 @@
           },
           {
             "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/side"
+          },
+          {
+            "$ref": "#/components/parameters/regulationType"
           },
           {
             "$ref": "#/components/parameters/take"
@@ -1340,6 +1584,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1408,6 +1655,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1445,6 +1695,9 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1477,6 +1730,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1529,6 +1788,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1571,6 +1836,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       },
@@ -1594,6 +1865,12 @@
           },
           "403": {
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "404": {
+            "$ref": "#/components/responses/ResourceNotFoundError"
+          },
+          "405": {
+            "$ref": "#/components/responses/EndpointNotSupportedError"
           }
         }
       }
@@ -1623,6 +1900,26 @@
       },
       "ForbiddenError": {
         "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "ResourceNotFoundError": {
+        "description": "The server has not found anything matching the request URL",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          }
+        }
+      },
+      "EndpointNotSupportedError": {
+        "description": "The requested endpoint is known by the server, but the market platform does not support this method.",
         "content": {
           "application/problem+json": {
             "schema": {
@@ -1690,9 +1987,44 @@
           "nullable": true
         }
       },
+      "side": {
+        "name": "side",
+        "in": "query",
+        "description": "Search by order side",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Buy",
+            "Sell"
+          ],
+          "nullable": true
+        }
+      },
+      "regulationType": {
+        "name": "regulationType",
+        "in": "query",
+        "description": "Search by regulationType",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Up",
+            "Down"
+          ],
+          "nullable": true
+        }
+      },
       "portfolioId": {
         "name": "portfolioId",
         "description": "Search by portfolio id",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "ownerOrganizationId": {
+        "name": "ownerOrganizationId",
+        "description": "Search by ownerOrganizationId. This search parameter might be optional, unsupported or mandatory, depending on the FMO. An error message will be returned if the parameter is specified but unsupported, or if the parameter is unspecified but mandatory, or if the parameter is supported and specified but with an invalid value (e.g. an organization you do not have permission to view). ",
         "in": "query",
         "schema": {
           "type": "string",
@@ -1758,7 +2090,7 @@
         "description": "Specify the \"periodFrom\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.gt": {
@@ -1766,7 +2098,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.gte": {
@@ -1774,7 +2106,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.lt": {
@@ -1782,7 +2114,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodFrom.lte": {
@@ -1790,7 +2122,7 @@
         "description": "If specified, only return entries with a \"periodFrom\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo": {
@@ -1798,7 +2130,7 @@
         "description": "Specify the \"periodTo\" by exact match (with a resolution of one second)",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.gt": {
@@ -1806,7 +2138,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.gte": {
@@ -1814,7 +2146,7 @@
         "description": "If specified, only return entries with a \"periodTo\" that is equal to (with a resolution of one second) or greater (later) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.lt": {
@@ -1822,7 +2154,7 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       },
       "periodTo.lte": {
@@ -1830,14 +2162,48 @@
         "description": "If specified, only return entries with a \"periodTo\" smaller (earlier) than or equal to (with a resolution of one second) this specified value. ",
         "in": "query",
         "schema": {
-          "$ref": "#/components/schemas/timeStamp"
+          "$ref": "#/components/schemas/TimeStamp"
         }
       }
     },
     "schemas": {
-      "timeStamp": {
+      "QuantityType": {
         "type": "string",
-        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset"
+        "enum": [
+          "ActivePower",
+          "ReactivePower",
+          "Energy",
+          "Capacity"
+        ],
+        "description": "The type of quantity which this is traded in this market. Each market can operate in only one type of quantity. ",
+        "nullable": false
+      },
+      "Quantity": {
+        "type": "number",
+        "description": "Average production/consumption in the given period. The unit is deduced from the quantity type. A positive value corresponds to production and a negative value represents consumption.",
+        "format": "double",
+        "minimum": -1E6,
+        "maximum": 1E6,
+        "multipleOf": 0.001,
+        "nullable": true
+      },
+      "TimeStamp": {
+        "type": "string",
+        "description": "A timestamp, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": true
+      },
+      "PeriodFrom": {
+        "type": "string",
+        "description": "The timestamp indicating the start of the interval for which this item applies, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": false
+      },
+      "PeriodTo": {
+        "type": "string",
+        "description": "The timestamp indicating the end of the interval for which this item applies, with a resolution of seconds, in ISO-8601 format with Z (preferred), timezone identifier or offset",
+        "format": "date-time",
+        "nullable": false
       },
       "OwnerOrganizationId": {
         "type": "string",
@@ -1900,27 +2266,20 @@
             "nullable": false
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this baseline applies.",
-            "format": "date-time",
-            "nullable": false
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this baseline applies.",
-            "format": "date-time",
-            "nullable": false
+            "$ref": "#/components/schemas/PeriodTo"
           },
-          "power": {
-            "type": "number",
-            "description": "Average power in MW forecasted for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
-            "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
-            "multipleOf": 0.001
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "quantityType": {
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity this baseline applies to"
           }
         },
-        "description": "Baseline (i.e. average power) of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Baseline of a portfolio for a time interval.  \r\nA baseline covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "BaseLineIntervalSearchResult": {
         "type": "object",
@@ -2029,15 +2388,8 @@
             "nullable": true
           },
           "quantityType": {
-            "type": "string",
-            "enum": [
-              "ActivePower",
-              "ReactivePower",
-              "Energy",
-              "Capacity"
-            ],
-            "description": "The type of quantity which is traded in this market. Each market can operate in only one type of quantity. ",
-            "nullable": false
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity which this is traded in this market. Each market can operate in only one type of quantity. "
           }
         }
       },
@@ -2102,28 +2454,20 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this measurement applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this measurement applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
-          "power": {
-            "type": "number",
-            "description": "Average power in MW measured for the portfolio. A positive value corresponds to a production and a negative value is a consumption.",
-            "format": "double",
-            "minimum": -1E6,
-            "maximum": 1E6,
-            "multipleOf": 0.001,
-            "nullable": true
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "quantityType": {
+            "$ref": "#/components/schemas/QuantityType",
+            "description": "The type of quantity this measurement refers to. "
           }
         },
-        "description": "Power measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
+        "description": "Quantity measured for a portfolio for a time interval.  \r\nA measurement covers a fixed interval in time, e.g. one minute from 15:00 to 15:01 on a specific date. Dates are always UTC and should always be sent and parsed as ISO-8856-1 with the UTC time zone reference, 'Z', to avoid ambiguity."
       },
       "MeterReadingSearchResult": {
         "type": "object",
@@ -2201,7 +2545,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the order. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means a decrease in available power (either reduced production or increased consumption). ",
+            "description": "Type of regulation of the order. 'Up' means an increase in available quantity (either increased production or reduced consumption) and 'Down' means a decrease in available quantity (either reduced production or increased consumption).",
             "nullable": true
           },
           "side": {
@@ -2224,21 +2568,15 @@
           },
           "minimumAcceptanceQuantity": {
             "type": "number",
-            "description": "The minimum quantity (power or energy, MW) that should be traded/filled in the order.",
+            "description": "The minimum quantity that should be traded/filled in the order.",
             "format": "double",
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this order applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this order applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "longflexContractId": {
             "type": "string",
@@ -2246,7 +2584,7 @@
             "nullable": true
           }
         },
-        "description": "Order defining a quantity (power or energy) submitted (sell or buy) on a market (defined by a market id) for a given time interval. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
+        "description": "Order defining a quantity submitted (sell or buy) on a market (defined by a market id) for a given time interval, the type of quantity (i.e. power, energy, ...) being deduced from the market. The portfolio id is required for sell orders. The grid node id is required only for sell orders and buy orders unless it can be derived from the portfolio. The portfolio id and the grid node id are not required if flexibility zones are created by the DSO, but in that case the flexibility zone id is required instead. The order can either be a fixed-price order (i.e. order with uniform/constant price that can be traded/filled only with a minimum quantity) or an interpolated order (i.e. order described by a piecewise linear function described by a list of price-points (prices and quantities). "
       },
       "FlexibilityZone": {
         "type": "object",
@@ -2258,21 +2596,15 @@
           },
           "flexibilityNeed": {
             "type": "number",
-            "description": "An amount of power or energy needed in the zone, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.",
+            "description": "An amount of quantity needed in the zone, the type of quantity (i.e. power, energy, ...) being deduced from the market. For both quantities the unit is MW.",
             "format": "double",
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this flexibility need applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "portfolioIds": {
             "type": "array",
@@ -2293,7 +2625,7 @@
         "properties": {
           "quantity": {
             "type": "number",
-            "description": "An amount of power or energy offered/bid in the order, the type of quantity (i.e. power or energy) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
+            "description": "An amount of quantity offered/bid in the order, the type of quantity (i.e. power, energy, ...) being deduced from the market. For both quantities the unit is MW.  \r\n\r\nFor power, it denotes the max (in absolute terms) power\r\nconsumption/production in MW during the specified period.\r\n            \r\nFor energy, it denotes the energy available during the specified period. The unit is still MW, thus the length of the interval needs to be taken into account to calculate the actual energy consumption/production.",
             "format": "double",
             "nullable": false
           },
@@ -2391,10 +2723,7 @@
             "nullable": true
           },
           "quantity": {
-            "type": "number",
-            "description": "Quantity traded/filled.",
-            "format": "double",
-            "nullable": true
+            "$ref": "#/components/schemas/Quantity"
           },
           "side": {
             "enum": [
@@ -2412,16 +2741,10 @@
             "nullable": true
           },
           "periodFrom": {
-            "type": "string",
-            "description": "The timestamp indicating the start of the interval for which this trade applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodFrom"
           },
           "periodTo": {
-            "type": "string",
-            "description": "The timestamp indicating the end of the interval for which this trade applies.",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodTo"
           },
           "gridNodeId": {
             "type": "string",
@@ -2444,7 +2767,7 @@
               "Down"
             ],
             "type": "string",
-            "description": "Type of regulation of the trade. 'Up' means an increase in available power (either increased production or reduced consumption) and 'Down' means an decrease in available power (either reduced production or increased consumption). ",
+            "description": "Type of regulation of the trade. 'Up' means an increase in available quantity (either increased production or reduced consumption) and 'Down' means an decrease in available quantity (either reduced production or increased consumption). ",
             "nullable": true
           },
           "links": {
