@@ -1097,7 +1097,7 @@
           "Order"
         ],
         "summary": "View publicly available order information",
-        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is publicly available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
+        "description": "This endpoint returns information about publicly visible flexibility orders. Publicly visible orders may contain less details then the information in an organizations own orders, in which case some fields will be empty. Different FMOs and different markets may have different rules regarding which information is pubilicy available. Each 'Order' returned in this endpoint represents either a single order, or multiple orders that have been aggregated together.  ",
         "operationId": "PublicOrder_Search",
         "parameters": [
           {
@@ -1899,7 +1899,7 @@
         }
       },
       "ForbiddenError": {
-        "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource)",
+        "description": "The server understands the request but refuses to authorize it (insufficient rights to a resource))",
         "content": {
           "application/problem+json": {
             "schema": {
@@ -2813,7 +2813,7 @@
             "type": "string",
             "description": "A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when de-referenced, it provide human-readable documentation for the problem type (e.g., using HTML [W3C.REC-html5-20141028]). When this member is not present, its value is assumed to be \"about:blank\"",
             "nullable": false,
-            "example": "https://umei.org/error-codes/InvalidGridNode"
+            "example": "https://umei.org/error-codes/invalid-grid-reference"
           },
           "title": {
             "type": "string",

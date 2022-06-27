@@ -20,21 +20,13 @@ See the definition of the ProblemDetails object in the OpenAPI documentation for
 
 **InconsistentPeriods:** 'periodTo' must be subsequent to 'periodFrom'
 
-**InvalidBaseline** The baseline provided is not valid (input data validation error)
-
-**InvalidFlexibilityZone** The flexibility zone provided is not valid (input data validation error)
-
 **InvalidGridNode:** The given grid node does not exist, is not available for the current user, or is otherwise not available for the given order
 
 **InvalidLongflexContractId:** The given longflex contract does not exist, or is not available for the current user
 
 **InvalidMarket** The given market does not exist, is not available for the current user, or is otherwise not available for the given order
 
-**InvalidMeterReading** The meter reading provided is not valid (input data validation error)
-
-**InvalidOrder** The order provided is not valid (input data validation error)
-
-**InvalidPortfolio:** The given portfolio is not valid (input data validation error), does not exist, or is not available for the current user
+**InvalidPortfolio:** The given portfolio does not exist, or is not available for the current user
 
 **InvalidStatus:** The status specified is not valid for the item selected
 
