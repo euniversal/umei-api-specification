@@ -10,12 +10,18 @@ export const truncateToHour = (date: number) => {
 
 export const throwIfError = async (response: any) => {
     if (!response.ok) {
-        const body = await response.json();
-        console.log('response: ', response.statusText + ": " + JSON.stringify(body))
+        const body = await response.text()
+        let obj = null;
+        try {
+            obj = JSON.parse(body)
+        } catch( jsonError) {
+            console.error('Got non-json-body: ', body)
+            throw new Error('Error parsing body ')
+        }
+        console.log('response: ', response.statusText + ": " + JSON.stringify(obj))
         throw new Error('Http failure: ' + response.status + ' ' + response.statusText)
     }
-    return null;
-};
+}
 
 
 export const doFetch = async (url: string, init: {} = {}) => {
