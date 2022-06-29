@@ -32,6 +32,8 @@ export const getById = async (type: DTOType, id:string) => await doFetch(options
 
 export const fetchMarkets = async () => await doFetch(options.baseUrl + "markets", options.init);
 
+export const searchFlexibilityZones = async () => await doFetch(options.baseUrl + "flexibilityzones", options.init)
+
 export const fetchPortfolios = async (searchParams: { gridNodeId?: string }) => {
     const url = buildUrl(`${options.baseUrl}portfolios`, searchParams)
     // const url = `${options.baseUrl}portfolios?gridNodeId=${searchParams.gridNodeId}`

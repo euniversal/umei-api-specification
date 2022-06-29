@@ -6,7 +6,7 @@ import {
     fetchPortfolios, fetchPrivateOrders, fetchPublicOrders,
     fetchTrades, getById,
     IOptions, options, patchBaselineInterval,
-    postOrder, tokenRequestType, updateBaselineInterval
+    postOrder, searchFlexibilityZones, tokenRequestType, updateBaselineInterval
 } from "./umei-api.ts"
 import { applyOptionalConfigFile, doFetch, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
 import { fetchCurrentUserInfo } from './nodes-api.ts';
