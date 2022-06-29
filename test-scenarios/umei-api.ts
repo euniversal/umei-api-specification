@@ -26,15 +26,21 @@ export const configure = (o: IOptions) => {
     }
 };
 
+export declare type DTOType = 'markets' | 'gridnodes';
+
+export const getById = async (type: DTOType, id:string) => await doFetch(options.baseUrl + type + "/" + id, options.init)
+
 export const fetchMarkets = async () => await doFetch(options.baseUrl + "markets", options.init);
 
 export const fetchPortfolios = async (searchParams: { gridNodeId?: string }) => {
-    const url = `${options.baseUrl}portfolios?gridNodeId=${searchParams.gridNodeId}`
+    const url = buildUrl(`${options.baseUrl}portfolios`, searchParams)
+    // const url = `${options.baseUrl}portfolios?gridNodeId=${searchParams.gridNodeId}`
     return await doFetch(url, options.init);
 };
 
-export const fetchTrades = async (searchParams: { gridNodeId: string, "periodFrom.gte"?: Date }) => {
-    const url = `${options.baseUrl}trades?gridNodeId=${searchParams.gridNodeId}&periodFrom.gte=${searchParams["periodFrom.gte"]?.toISOString()}`
+export const fetchTrades = async (searchParams: { gridNodeId?: string, orderId?: string, "periodFrom.gte"?: Date }) => {
+    // const url = `${options.baseUrl}trades?gridNodeId=${p.gridNodeId}&orderId=${p.orderId}&periodFrom.gte=${p["periodFrom.gte"]?.toISOString()}`
+    const url = buildUrl(`${options.baseUrl}trades`, searchParams)
     return await doFetch(url, options.init);
 };
 
@@ -43,11 +49,16 @@ export const fetchOrder = async (id: string) => await doFetch(`${options.baseUrl
 export const fetchBaselineInterval = async (id: string) => await doFetch(`${options.baseUrl}BaselineIntervals/${id}`, options.init);
 
 export const buildUrl = (baseUrl: string, queryParameters: any) => {
-    let url = baseUrl + "?";
-    for (const q in queryParameters) {
-        url += "&" + q + "=" + queryParameters[q];
-    }
-    return url;
+    const queryDict = Object.keys(queryParameters)
+        .filter(qn => queryParameters[qn] !== null && queryParameters[qn] !== undefined)
+        .map(qn => ({
+            qn,
+            qv: queryParameters[qn] instanceof Date ? queryParameters[qn].toISOString() : queryParameters[qn].toString()
+        }))
+        .map(kvp => kvp.qn + "=" + kvp.qv )
+    return queryDict.length == 0
+        ? baseUrl
+        : baseUrl + "?" + queryDict.join("&");
 }
 
 export const fetchBaselineIntervals = async (portfolioId?: string) => await doFetch(
@@ -127,7 +138,7 @@ export const acquireToken = async (server: string, obj: tokenRequestType) => {
     const tokenResponseText = await tokenResponse.text()
     // console.log({tokenResponseText})
     const tokenResponseObj = JSON.parse(tokenResponseText)
-    if(tokenResponse.status >= 400) {
+    if (tokenResponse.status >= 400) {
         // console.error('Token acquisition error: ', tokenResponseObj)
         throw new Error('Token acquisition error: ' + tokenResponseObj.error_description)
     }

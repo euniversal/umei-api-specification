@@ -4,11 +4,11 @@ import {
     fetchMarkets,
     fetchOrder,
     fetchPortfolios, fetchPrivateOrders, fetchPublicOrders,
-    fetchTrades,
+    fetchTrades, getById,
     IOptions, options, patchBaselineInterval,
     postOrder, tokenRequestType, updateBaselineInterval
 } from "./umei-api.ts"
-import { applyOptionalConfigFile, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
+import { applyOptionalConfigFile, doFetch, HOUR_IN_MILLIS, sleep, truncateToHour } from "./utils.ts"
 import { fetchCurrentUserInfo } from './nodes-api.ts';
 import { tokenData, tokenServer } from './umei-config.local.ts';
 
@@ -22,12 +22,6 @@ await applyOptionalConfigFile('./scenario-config.local.ts', o => Object.assign(s
 const token = await acquireToken(tokenServer, tokenData)
 options.init.headers.Authorization = 'Bearer ' + token
 
-if (1 == 1) {
-    const me = await fetchCurrentUserInfo()
-    console.log('Current user info: ', me)
-    Deno.exit(0)
-}
-
 const markets = await fetchMarkets()
 const market = markets.items.find((m: any) => m.name === scenarioOptions.marketName)
 if (!market)
@@ -38,7 +32,12 @@ const portfolios = await fetchPortfolios({gridNodeId: scenarioOptions.gridNodeId
 const portfolio = portfolios.items.find((p: any) => p.name === scenarioOptions.portfolioName)
 if (!portfolio)
     throw new Error(`Portfolio ${scenarioOptions.portfolioName} not found among ${portfolios.numberOfHits} items: ${portfolios.items.map((p: any) => p.name).join(", ")}`)
-console.log(`Using portfolio #${portfolio.id}: ${portfolio.id}`)
+console.log(`Using portfolio #${portfolio.id}: ${portfolio.id} @ ${portfolio.gridNodeId}`)
+
+// const gridNode = await getById('gridnodes', scenarioOptions.gridNodeId)
+// console.log('Using grid node: ', gridNode)
+//
+
 
 const periodFrom = truncateToHour(new Date().getTime() + 36 * HOUR_IN_MILLIS);
 const periodTo = new Date(periodFrom.getTime() + HOUR_IN_MILLIS)
@@ -99,17 +98,17 @@ const newBuyOrder =
         marketId: market.id,
         gridNodeId: scenarioOptions.gridNodeId,
         pricePoints: [
+            // {
+            //     quantity: 0,
+            //     unitPrice: 15,
+            // },
+            // {
+            //     quantity: 2,
+            //     unitPrice: 12,
+            // },
             {
-                quantity: 0,
-                unitPrice: 15,
-            },
-            {
-                quantity: 2,
-                unitPrice: 12,
-            },
-            {
-                quantity: 3,
-                unitPrice: 9,
+                quantity: 11,
+                unitPrice: 19,
             },
         ],
         periodFrom: periodFrom.toISOString(),
@@ -148,7 +147,13 @@ await sleep(1000);
     console.log(` Order ${order.id}, side ${order.side}, status ${order.status}`)
 })
 
+const tradeToString = (t: any) => `${t.periodFrom} <-> ${t.periodTo}  ${t.side} \t${t.quantity}  oid=${t.orderId}`
+
 const trades = await fetchTrades({gridNodeId: scenarioOptions.gridNodeId!, "periodFrom.gte": periodFrom})
-const tradeToString = (t: any) => `${t.periodFrom} <-> ${t.periodTo}`
 console.log(`Fetched ${trades.numberOfHits} trades: `, trades.items.map(tradeToString))
 
+const sellTrade = trades.items.filter((t: any) => t.orderId === createdSellOrder.id)
+console.log('The sell trade: ', sellTrade)
+
+const tradesByOrder = await fetchTrades({orderId: createdBuyOrder.id})
+console.log(`Fetched by order id: ${tradesByOrder.numberOfHits} trades: `, tradesByOrder.items.map(tradeToString))

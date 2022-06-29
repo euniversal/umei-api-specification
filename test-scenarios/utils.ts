@@ -16,7 +16,7 @@ export const throwIfError = async (response: any) => {
             obj = JSON.parse(body)
         } catch( jsonError) {
             console.error('Got non-json-body: ', body)
-            throw new Error('Error parsing body ')
+            throw new Error('Error parsing body as json. Http code:  ' + response.status)
         }
         console.log('response: ', response.statusText + ": " + JSON.stringify(obj))
         throw new Error('Http failure: ' + response.status + ' ' + response.statusText)
