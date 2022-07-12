@@ -1119,6 +1119,9 @@
             "$ref": "#/components/parameters/status"
           },
           {
+            "$ref": "#/components/parameters/completionType"
+          },
+          {
             "$ref": "#/components/parameters/side"
           },
           {
@@ -1521,6 +1524,9 @@
           },
           {
             "$ref": "#/components/parameters/status"
+          },
+          {
+            "$ref": "#/components/parameters/completionType"
           },
           {
             "$ref": "#/components/parameters/side"
@@ -1983,6 +1989,21 @@
             "Inactive",
             "Completed",
             "Deleted"
+          ],
+          "nullable": true
+        }
+      },
+      "completionType": {
+        "name": "completionType",
+        "in": "query",
+        "description": "Search by completion type",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "Filled",
+            "Killed",
+            "Expired",
+            "Cancelled"
           ],
           "nullable": true
         }
@@ -2517,6 +2538,17 @@
             ],
             "type": "string",
             "description": "Status of the order",
+            "nullable": true
+          },
+          "completionType": {
+            "enum": [
+              "Filled",
+              "Killed",
+              "Expired",
+              "Cancelled"
+            ],
+            "type": "string",
+            "description": "Completion type of the order. When the status of the order is Completed, it gives extra information regarding how it completed.",
             "nullable": true
           },
           "gridNodeId": {
