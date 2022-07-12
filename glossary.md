@@ -111,3 +111,17 @@ status might be changed at a later time.
 is an order that has been fully matched. 
 
 **Deleted:** The item has been deleted, manually or automatically, and is no longer active. 
+
+## Completion Type
+
+In addition to Status, an extra field (CompletionType) is available for orders. It exposes extra information regarding what caused the order to be completed. The usage is dependent on the FMO and it will not be set for statuses other than Completed.
+
+The possible values are:
+
+**Filled:** The order has been traded in full.
+
+**Killed:** The order was set up as either FillAndKill or FillOrKill, and was killed after being processed.
+
+**Expired:** The order has come to the end of the period of validity and still had quantity remaining.
+
+**Cancelled:** The order was explicitly cancelled.
