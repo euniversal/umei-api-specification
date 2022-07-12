@@ -1218,6 +1218,9 @@
             "$ref": "#/components/parameters/status"
           },
           {
+            "$ref": "#/components/parameters/completionType"
+          },
+          {
             "$ref": "#/components/parameters/side"
           },
           {
@@ -1524,9 +1527,6 @@
           },
           {
             "$ref": "#/components/parameters/status"
-          },
-          {
-            "$ref": "#/components/parameters/completionType"
           },
           {
             "$ref": "#/components/parameters/side"
