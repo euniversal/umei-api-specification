@@ -1,4 +1,4 @@
-# UMEI API (DRAFT)
+# UMEI API
 
 This site contains drafts of specifications of the API 
 for Flexibility Market Operators (FMOs) as defined by 
