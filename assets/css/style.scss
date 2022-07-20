@@ -1,0 +1,25 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.project-name {
+    font-size: 32px !important;
+}
+
+.page-header {
+    background-color: #1B75BC;
+    background-image: none;
+}
+
+#content h1 {
+    font-size: 32px;
+}
+
+#content h1, #content h2 {
+    color: #27AAE1;
+}
+
+p {
+    font-size: 16px;
+}
