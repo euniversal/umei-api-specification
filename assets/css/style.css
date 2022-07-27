@@ -375,7 +375,7 @@ a:hover { text-decoration: underline; }
 
 #content h1, #content h2 { color: #27AAE1; }
 
-.project-tagline { width: 50%; }
+.project-tagline { width: 50%; text-align: center; }
 
 p { font-size: 16px; }
 
