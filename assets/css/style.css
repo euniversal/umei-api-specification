@@ -375,7 +375,7 @@ a:hover { text-decoration: underline; }
 
 #content h1, #content h2 { color: #27AAE1; }
 
-.project-tagline { max-width: 64rem; margin: 2em auto; text-align: center; }
+.project-tagline { max-width: 64rem; margin: 2em auto; text-align: center; font-size: 16px; }
 
 p { font-size: 16px; }
 
