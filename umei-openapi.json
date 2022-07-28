@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "UMEI API Specification",
-    "description": "${description}",
+    "description": "Specification for the API that FMOs, DSOs, and FSPs in the eUniversal project should support.",
     "version": "1.0.0"
   },
   "servers": [
