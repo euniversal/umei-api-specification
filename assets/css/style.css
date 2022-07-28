@@ -369,13 +369,11 @@ a:hover { text-decoration: underline; }
 
 .project-name { font-size: 32px !important; }
 
-.page-header { background-color: #1B75BC; background-image: none; }
+.page-header { background-color: #1B75BC; background-image: none; max-width: 64rem; padding: 2rem 6rem; margin: 0 auto; font-size: 1.1rem; }
 
 #content h1 { font-size: 32px; }
 
 #content h1, #content h2 { color: #27AAE1; }
-
-.project-tagline { width: 50%; margin: 2em auto; }
 
 p { font-size: 16px; }
 
