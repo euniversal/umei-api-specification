@@ -10,6 +10,10 @@
 .page-header {
     background-color: #1B75BC;
     background-image: none;
+    max-width: 64rem;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
 }
 
 #content h1 {
@@ -21,8 +25,6 @@
 }
 
 .project-tagline {
-    width: 50%;
-    margin: 2em auto;
 }
 
 p {
