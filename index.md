@@ -33,3 +33,9 @@ A glossary is available here:
 A list of error codes is provided here:   
 [UMEI List of error codes](error-codes). 
 
+
+## The UMEI Step by Step
+
+![](/images/UMEI_SBS_1.jpg)
+![](/images/UMEI_SBS_2.jpg)
+
