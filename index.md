@@ -29,9 +29,6 @@ A PDF version of the API can be generated here:
 A glossary is available here:  
 [UMEI Glossary](glossary)
 
-The UMEI Step-by-Step Guide:
-<br><a href='./TheUMEI.pdf' target="_blank">UMEI SbS</a>
-
 A list of error codes is provided here:   
 [UMEI List of error codes](error-codes). 
 
