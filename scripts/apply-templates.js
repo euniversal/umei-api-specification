@@ -19,17 +19,23 @@ const logError = msg => logAndReturn('error', msg);
 const logInfo = msg => logAndReturn('log', msg);
 
 let replacement = "";
-const files = ["glossary.md", "auth.md", "error-codes.md"];
+const files = [
+    "glossary.md",
+    "auth.md",
+    "error-codes.md"
+];
 
 files.map(file => readFileAsync(file)
     .then(buffer => buffer.toString())
     .then(text => {
         logInfo('read file ' + file + ", got contents: " + text);
-        replacement += text;
+        replacement += text + "\n\n"; // Ensure there is a blank line between files
         return Promise.resolve(text);
-    }))
+    }, err => logError(err)))
     .reduce((prev, cur) => prev.then(() => cur), Promise.resolve(""))
-    .then(() => doReplace());
+    .then(
+        () => doReplace(),
+        err => logError(err));
 
 const doReplace = () => {
     readFileAsync(path.resolve(process.cwd(), fileToRead), 'utf8')
