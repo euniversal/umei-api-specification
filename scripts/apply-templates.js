@@ -43,7 +43,7 @@ const doReplace = () => {
             logInfo(`Read file ${fileToRead}`);
 
             const obj = JSON.parse(data.toString());
-            obj.info.description = replacement;
+            obj.info.description = obj.info.description + "\n\n" + replacement;
             const result = JSON.stringify(obj, null, "  ");
 
             logInfo(`Replaced ${whatToReplace} in  ${fileToRead} with ${replacement}`);
