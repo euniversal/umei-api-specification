@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "UMEI API Specification",
-    "description": "Specification for the API that FMOs, DSOs, and FSPs in the eUniversal project should support.",
+    "description": "Specification for the API that FMOs, DSOs, and FSPs in the eUniversal project should support. \n\nThe UMEI v1 includes a set of OpenAPI specifications developed by the flexibility market operators NODES and N-SIDE as part of the EUniversal project.\nIn case of further development or modification of the existing specifications, please contact either NODES or N-SIDE.\n",
     "version": "1.0.0"
   },
   "servers": [
