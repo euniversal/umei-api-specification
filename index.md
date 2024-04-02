@@ -6,9 +6,10 @@ The UMEI has materialized in the conceptual architecture design and the implemen
 
 The UMEI consists of publicly available APIs, allowing any stakeholder to adopt them or to develop new APIs concerning new services while complying with the UMEI interface specification.
 
-The UMEI v1 includes a set of OpenAPI specifications developed by the flexibility market operators NODES and N-SIDE as part of the EUniversal project.
-In case of further development or modification of the existing specifications, please contact either NODES or N-SIDE.
+The UMEI v1 includes a set of OpenAPI specifications developed by NODES, N-SIDE, E-REDES, and CENTRICA BUSINESS SOLUTIONS as part of the EUniversal project.
+In case of further development or modification of the existing specifications, please contact one of the above mentioned partners.
 
+This UMEI is licensed under the Apache License 2.0.
 
 ## OpenAPI specifications 
 
